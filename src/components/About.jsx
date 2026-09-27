@@ -1,14 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function About() {
   const [popup, setPopup] = useState(null);
+  const [count, setCount] = useState(0);
+  const cardRef = useRef(null);
+  const animated = useRef(false);
 
-  const handleImageError = (e) => {
-    const src = e.currentTarget.src;
-    if (src.endsWith('.jpg')) {
-      e.currentTarget.src = src.replace('.jpg', '.svg');
-    }
-  };
+  useEffect(() => {
+    const target = 20;
+    const duration = 1500;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !animated.current) {
+          animated.current = true;
+          const start = performance.now();
+          const tick = (now) => {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            // ease-out cubic
+            const eased = 1 - Math.pow(1 - progress, 3);
+            setCount(Math.floor(eased * target));
+            if (progress < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        }
+      },
+      { threshold: 0.4 }
+    );
+    if (cardRef.current) observer.observe(cardRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="about" className="about">
@@ -18,21 +39,20 @@ function About() {
         {/* LEFT SIDE - VISUALS */}
         <div className="about-highlights">
 
-          {/* COMPLETED PROJECTS */}
+          {/* COMPLETED PROJECTS — counting animation */}
           <div
-            className="about-highlight"
+            ref={cardRef}
+            className="about-highlight about-highlight--counter"
             onClick={() =>
               document.getElementById("projects")?.scrollIntoView({
                 behavior: "smooth",
               })
             }
           >
-            <img
-              src="/images/project.jpg"
-              alt="Completed Projects"
-              onError={handleImageError}
-            />
-
+            <div className="about-counter">
+              <span className="about-counter-number">{count}</span>
+              <span className="about-counter-plus">+</span>
+            </div>
             <p>Finished Projects</p>
           </div>
 
@@ -45,10 +65,10 @@ function About() {
             <img
               src="/images/certification.jpg"
               alt="Certifications and Courses"
-              onError={handleImageError}
+              onError={(e) => { if (e.currentTarget.src.endsWith('.jpg')) e.currentTarget.src = e.currentTarget.src.replace('.jpg', '.svg'); }}
             />
 
-            <p>Certifications & Courses</p>
+            <p>Certifications &amp; Courses</p>
           </div>
 
 
@@ -60,13 +80,14 @@ function About() {
             <img
               src="/images/award.jpg"
               alt="Achievement"
-              onError={handleImageError}
+              onError={(e) => { if (e.currentTarget.src.endsWith('.jpg')) e.currentTarget.src = e.currentTarget.src.replace('.jpg', '.svg'); }}
             />
 
             <p>Achievements</p>
           </div>
 
         </div>
+
 
 
         {/* CENTER LINE */}
