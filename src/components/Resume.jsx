@@ -1,3 +1,5 @@
+import { route } from '../utils/asset';
+
 function Resume() {
   return (
     <section id="resume" className="resume">
@@ -19,7 +21,7 @@ function Resume() {
         <div className="resume-links">
 
           <a
-            href="/resume.pdf"
+            href={route('/resume.pdf')}
             target="_blank"
             rel="noopener noreferrer"
             className="resume-button primary"
@@ -28,7 +30,7 @@ function Resume() {
           </a>
 
           <a
-            href="/resume.pdf"
+            href={route('/resume.pdf')}
             download="Sriram_S_Resume.pdf"
             className="resume-button secondary"
           >

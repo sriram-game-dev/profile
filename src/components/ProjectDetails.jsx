@@ -1,5 +1,6 @@
 import NavBar from './NavBar';
 import './ProjectDetails.css';
+import { navigateTo } from '../utils/asset';
 
 function ProjectDetails({ project }) {
 
@@ -19,9 +20,7 @@ function ProjectDetails({ project }) {
       ].includes(project.link);
 
       const target = isProfessional ? '/professional' : '/personal';
-      window.history.pushState(null, '', target);
-      window.dispatchEvent(new PopStateEvent('popstate'));
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      navigateTo(target);
     }
   };
 

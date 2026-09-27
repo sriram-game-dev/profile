@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
+import { normalizePath, route } from '../utils/asset';
 
 function NavBar() {
   const [showGoTop, setShowGoTop] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const path = window.location.pathname;
-  const isHomePage = path === '/';
+  const currentPath = normalizePath(window.location.pathname);
+  const isHomePage = currentPath === '/';
 
   /* Scroll handling */
   useEffect(() => {
@@ -42,6 +43,8 @@ function NavBar() {
     event.preventDefault();
     setMenuOpen(false);
 
+    const targetUrl = `${route('/')}#${section}`;
+
     if (isHomePage) {
       const element = document.getElementById(section);
       if (element) {
@@ -49,12 +52,12 @@ function NavBar() {
           behavior: 'smooth',
           block: 'start'
         });
-        window.history.pushState(null, '', `/#${section}`);
+        window.history.pushState(null, '', targetUrl);
       }
       return;
     }
 
-    window.history.pushState(null, '', `/#${section}`);
+    window.history.pushState(null, '', targetUrl);
     window.dispatchEvent(new PopStateEvent('popstate'));
 
     setTimeout(() => {
@@ -73,16 +76,18 @@ function NavBar() {
     event.preventDefault();
     setMenuOpen(false);
 
+    const homeUrl = route('/');
+
     if (isHomePage) {
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
-      window.history.pushState(null, '', '/');
+      window.history.pushState(null, '', homeUrl);
       return;
     }
 
-    window.history.pushState(null, '', '/');
+    window.history.pushState(null, '', homeUrl);
     window.dispatchEvent(new PopStateEvent('popstate'));
 
     setTimeout(() => {
@@ -100,7 +105,7 @@ function NavBar() {
         {/* LOGO (GERLOGU STYLE: bold first name, clean studio branding) */}
         <div className="logo-container">
           <a
-            href="/"
+            href={route('/')}
             className="logo gerlogu-brand"
             onClick={handleLogoClick}
           >

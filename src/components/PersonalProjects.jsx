@@ -1,11 +1,10 @@
 import './PersonalProjects.css';
 import { personalProjects } from '../data/projectsData';
+import { navigateTo } from '../utils/asset';
 
 function PersonalProjects() {
   const handleNavigate = (link) => {
-    window.history.pushState(null, '', link);
-    window.dispatchEvent(new PopStateEvent('popstate'));
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    navigateTo(link);
   };
 
   return (

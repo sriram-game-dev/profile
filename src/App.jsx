@@ -16,12 +16,13 @@ import ProfessionalProjects from './components/ProfessionalProjects';
 import PersonalProjects from './components/PersonalProjects';
 import ProjectDetails from './components/ProjectDetails';
 import { projects, personalProjects } from './data/projectsData';
+import { normalizePath } from './utils/asset';
 
 
 function App() {
 
   const [path, setPath] = useState(
-    window.location.pathname
+    normalizePath(window.location.pathname)
   );
 
 
@@ -32,7 +33,7 @@ function App() {
   useEffect(() => {
 
     const handleNavigation = () => {
-      setPath(window.location.pathname);
+      setPath(normalizePath(window.location.pathname));
     };
 
     window.addEventListener(

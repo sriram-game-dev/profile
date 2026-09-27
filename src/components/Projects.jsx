@@ -1,11 +1,9 @@
-const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
+import { BASE_PATH, route, navigateTo } from '../utils/asset';
 
 function Projects() {
   const handleNavigate = (e, path) => {
     e.preventDefault();
-    window.history.pushState(null, '', path);
-    window.dispatchEvent(new PopStateEvent('popstate'));
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    navigateTo(path);
   };
 
   // Safe onError: only swap .jpg→.svg once, never loop
@@ -28,13 +26,13 @@ function Projects() {
 
         {/* PROFESSIONAL */}
         <a
-          href="/professional"
+          href={route('/professional')}
           className="project-category"
           onClick={(e) => handleNavigate(e, '/professional')}
         >
           <div className="category-card">
             <img
-              src={`${BASE}/projects/professional.jpg`}
+              src={`${BASE_PATH}/projects/professional.jpg`}
               alt="Professional Projects"
               onError={handleImgError}
             />
@@ -45,16 +43,17 @@ function Projects() {
 
         {/* SIDEQUEST */}
         <a
-          href="/personal"
+          href={route('/personal')}
           className="project-category"
           onClick={(e) => handleNavigate(e, '/personal')}
         >
           <div className="category-card">
             <img
-              src={`${BASE}/projects/personal.jpg`}
+              src={`${BASE_PATH}/projects/personal.jpg`}
               alt="Sidequest Projects"
               onError={handleImgError}
             />
+
             <span>SIDEQUEST</span>
           </div>
         </a>
