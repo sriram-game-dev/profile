@@ -788,10 +788,57 @@ section {
   margin-top: 8px;
 }
 
+/* ========================================
+   ICON CARD (Certifications & Achievements)
+======================================== */
+
+.about-highlight--icon {
+  align-items: center;
+}
+
+.about-card-icon-box {
+  width: 220px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  background: rgba(15, 23, 42, 0.85);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(139, 92, 246, 0.08);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-highlight--icon:hover .about-card-icon-box {
+  transform: translateY(-5px) scale(1.02);
+  border-color: #8b5cf6;
+  box-shadow:
+    0 12px 30px rgba(139, 92, 246, 0.25),
+    0 0 24px rgba(245, 158, 11, 0.2);
+}
+
+.about-svg-icon {
+  width: 52px;
+  height: 52px;
+  color: #c084fc;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.about-highlight--icon:hover .about-svg-icon {
+  color: #f59e0b;
+  transform: scale(1.1);
+}
+
 
 /* ========================================
    IMAGES
 ======================================== */
+
 
 .about-highlight img {
   width: 220px;

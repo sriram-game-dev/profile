@@ -71,40 +71,36 @@ function About() {
 
           {/* CERTIFICATIONS & COURSES */}
           <div
-            className="about-highlight"
+            className="about-highlight about-highlight--icon"
             onClick={() => setPopup("certifications")}
           >
-            <img
-              src={`${import.meta.env.BASE_URL}images/certification.jpg`}
-              alt="Certifications and Courses"
-              onError={(e) => {
-                if (!e.currentTarget.dataset.errored) {
-                  e.currentTarget.dataset.errored = 'true';
-                  e.currentTarget.src = `${import.meta.env.BASE_URL}images/certification.svg`;
-                }
-              }}
-            />
-
+            <div className="about-card-icon-box">
+              <svg className="about-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <path d="M12 18v-4"></path>
+                <path d="M9 15l3 3 3-3"></path>
+                <circle cx="12" cy="14" r="3"></circle>
+              </svg>
+            </div>
             <p>Certifications &amp; Courses</p>
           </div>
 
 
           {/* ACHIEVEMENTS */}
           <div
-            className="about-highlight"
+            className="about-highlight about-highlight--icon"
             onClick={() => setPopup("achievements")}
           >
-            <img
-              src={`${import.meta.env.BASE_URL}images/award.jpg`}
-              alt="Achievement"
-              onError={(e) => {
-                if (!e.currentTarget.dataset.errored) {
-                  e.currentTarget.dataset.errored = 'true';
-                  e.currentTarget.src = `${import.meta.env.BASE_URL}images/award.svg`;
-                }
-              }}
-            />
-
+            <div className="about-card-icon-box">
+              <svg className="about-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                <path d="M4 22h16"></path>
+                <path d="M10 14.66V17c0 .55-.45 1-1 1H7v2h10v-2h-2c-.55 0-1-.45-1-1v-2.34"></path>
+                <path d="M18 4H6v7a6 6 0 0 0 12 0V4z"></path>
+              </svg>
+            </div>
             <p>Achievements</p>
           </div>
 
