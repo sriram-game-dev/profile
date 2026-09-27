@@ -1,0 +1,96 @@
+import './ProfessionalProjects.css';
+import { projects } from '../data/projectsData';
+
+function ProfessionalProjects() {
+  const handleNavigate = (link) => {
+    window.history.pushState(null, '', link);
+    window.dispatchEvent(new PopStateEvent('popstate'));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <main className="professional-page">
+
+      {/* PROFESSIONAL HEADER */}
+
+      <section className="professional-header">
+
+        <h1>PROFESSIONAL PROJECTS</h1>
+
+        <div className="professional-line"></div>
+
+      </section>
+
+
+      {/* PROJECT GRID */}
+
+      <section className="professional-grid">
+
+        {projects.map((project) => (
+
+          <div
+            className="professional-card"
+            key={project.title}
+            onClick={() => handleNavigate(project.link)}
+          >
+
+            <div className="professional-image">
+
+              <img
+                src={project.image}
+                alt={project.title}
+                onError={(e) => {
+                  if (project.image.endsWith('.jpg')) {
+                    e.currentTarget.src = project.image.replace('.jpg', '.svg');
+                  }
+                }}
+              />
+
+              <div className="project-overlay">
+
+                <div className="project-overlay-content">
+
+                  <h2>{project.title}</h2>
+
+                  <p className="project-description">
+                    {project.description}
+                  </p>
+
+                  <p className="project-technologies">
+                    {project.technologies}
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        ))}
+
+      </section>
+
+
+      {/* NDA NOTICE */}
+
+      <div className="nda-notice">
+
+        <h3>Disclaimer and Professional Notice</h3>
+
+        <p>
+          The projects and case studies showcased on this portfolio website
+          are for illustrative purposes only. Some work is protected under
+          Non-Disclosure Agreements (NDAs), and any proprietary information
+          has been excluded or anonymized. These materials are not intended
+          for commercial use or redistribution.
+        </p>
+
+      </div>
+
+    </main>
+  );
+}
+
+export default ProfessionalProjects;

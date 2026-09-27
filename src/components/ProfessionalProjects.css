@@ -1,0 +1,486 @@
+/* ========================================
+   PROFESSIONAL PAGE
+======================================== */
+
+.professional-page {
+  width: 100%;
+  max-width: none;
+
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 50px 40px;
+
+  background: #0f172a;
+
+  text-align: left;
+}
+
+
+/* ========================================
+   PROFESSIONAL HEADER
+======================================== */
+
+.professional-header {
+  width: 100%;
+
+  margin: 0 0 35px;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center !important;
+
+  text-align: center !important;
+}
+
+.professional-header h1 {
+  width: 100%;
+
+  margin: 0;
+
+  color: #f8fafc;
+
+  font-size: 2rem;
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.03em;
+
+  text-align: center !important;
+}
+
+
+/* ========================================
+   HEADER LINE
+======================================== */
+
+.professional-line {
+  width: 45px;
+  height: 3px;
+
+  margin: 10px auto 0;
+
+  background: linear-gradient(90deg, #f59e0b, #8b5cf6);
+
+  border-radius: 2px;
+}
+
+
+/* ========================================
+   PROJECT GRID
+======================================== */
+
+.professional-grid {
+  width: 100%;
+  max-width: 1280px;
+
+  margin: 0 auto !important;
+  padding: 0 !important;
+
+  display: grid !important;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 40px;
+
+  align-items: start !important;
+
+  text-align: left !important;
+}
+
+
+/* ========================================
+   PROJECT CARD
+======================================== */
+
+.professional-card {
+  width: 100%;
+  min-width: 0;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+
+  cursor: pointer;
+
+  text-align: left !important;
+
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.professional-card:hover {
+  transform: translateY(-5px);
+  border-color: #8b5cf6;
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+
+/* ========================================
+   PROJECT IMAGE
+======================================== */
+
+.professional-image {
+  position: relative;
+
+  width: 100%;
+  height: 360px;
+
+  overflow: hidden;
+
+  background: #1e293b;
+
+  text-align: left !important;
+}
+
+.professional-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+
+/* ========================================
+   IMAGE HOVER
+======================================== */
+
+.professional-card:hover .professional-image img {
+  transform: scale(1.04);
+}
+
+
+/* ========================================
+   PROJECT INFORMATION
+======================================== */
+
+.project-overlay {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+
+  padding: 24px 14px;
+
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 20%, rgba(15, 23, 42, 0.7) 70%, transparent 100%);
+
+  text-align: left !important;
+
+  align-items: flex-start !important;
+}
+
+
+/* ========================================
+   OVERLAY CONTENT
+======================================== */
+
+.project-overlay-content {
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  display: block;
+
+  text-align: left !important;
+
+  align-items: flex-start !important;
+}
+
+
+/* ========================================
+   PROJECT TITLE
+======================================== */
+
+.project-overlay h2 {
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  color: #f8fafc;
+
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  line-height: 1.4;
+
+  text-align: left !important;
+}
+
+
+/* ========================================
+   PROJECT DESCRIPTION
+======================================== */
+
+.project-description {
+  width: 100%;
+
+  max-height: 0;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  color: #cbd5e1;
+
+  font-size: 1rem;
+  font-weight: 400;
+
+  line-height: 1.5;
+
+  text-align: left !important;
+
+  transition:
+    max-height 0.35s ease,
+    opacity 0.3s ease,
+    margin 0.35s ease;
+}
+
+.professional-card:hover .project-description {
+  max-height: 80px;
+
+  margin-top: 7px;
+
+  opacity: 1;
+}
+
+
+/* ========================================
+   TECHNOLOGIES
+======================================== */
+
+.project-technologies {
+  width: 100%;
+
+  margin: 8px 0 0;
+  padding: 0;
+
+  color: #f59e0b;
+  font-family: 'JetBrains Mono', monospace;
+
+  font-size: 0.7rem;
+  font-weight: 600;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.05em;
+
+  text-align: left !important;
+}
+
+
+/* ========================================
+   NDA NOTICE
+======================================== */
+
+.nda-notice {
+  width: 100%;
+  max-width: 900px;
+
+  margin: 70px auto 0;
+  padding: 25px 30px;
+
+  text-align: center !important;
+
+  border-top: 1px solid #334155;
+  border-bottom: 1px solid #334155;
+}
+
+.nda-notice h3 {
+  margin: 0 0 10px;
+
+  color: #3b82f6;
+
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+
+  text-align: center !important;
+}
+
+.nda-notice p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 0.85rem;
+
+  line-height: 1.7;
+
+  text-align: center !important;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+  .professional-page {
+    padding: 40px 30px;
+  }
+
+  .professional-grid {
+    max-width: 700px;
+
+    grid-template-columns: repeat(2, 1fr) !important;
+
+    gap: 22px;
+  }
+
+  .professional-image {
+    height: 220px;
+  }
+
+  .project-overlay {
+    padding: 11px 13px;
+  }
+
+  .project-overlay h2 {
+    font-size: 0.85rem;
+  }
+
+  .project-description {
+    font-size: 0.7rem;
+  }
+
+  .project-technologies {
+    font-size: 0.6rem;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+
+  .professional-page {
+    padding: 35px 20px;
+  }
+
+  .professional-grid {
+    max-width: 450px;
+
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .professional-image {
+    height: 220px;
+  }
+
+  .project-overlay {
+    padding: 15px 16px;
+  }
+
+  .project-overlay h2 {
+    font-size: 1rem;
+  }
+
+  .project-description {
+    font-size: 0.8rem;
+
+    line-height: 1.55;
+  }
+
+  .project-technologies {
+    font-size: 0.65rem;
+  }
+
+}
+
+
+/* ========================================
+   NDA NOTICE - MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .nda-notice {
+    margin-top: 50px;
+
+    padding: 20px 15px;
+  }
+
+  .nda-notice p {
+    font-size: 0.8rem;
+
+    line-height: 1.6;
+  }
+
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+  .professional-page {
+    padding: 30px 18px;
+  }
+
+  .professional-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .professional-line {
+    width: 40px;
+  }
+
+  .professional-grid {
+    gap: 20px;
+  }
+
+  .professional-image {
+    height: 200px;
+  }
+
+  .nda-notice {
+    margin-top: 40px;
+
+    padding: 18px 12px;
+  }
+
+  .nda-notice h3 {
+    font-size: 0.75rem;
+  }
+
+  .nda-notice p {
+    font-size: 0.75rem;
+
+    line-height: 1.55;
+  }
+
+}
+

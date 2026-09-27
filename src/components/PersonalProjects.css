@@ -1,0 +1,414 @@
+/* ========================================
+   PERSONAL PAGE
+======================================== */
+
+.personal-page {
+  width: 100%;
+  max-width: none;
+
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 50px 40px;
+
+  background: #0f172a;
+
+  text-align: left;
+}
+
+
+/* ========================================
+   PERSONAL HEADER
+======================================== */
+
+.personal-header {
+  width: 100%;
+
+  padding: 0 !important;
+  margin: 0 0 35px !important;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center !important;
+
+  text-align: center !important;
+}
+
+.personal-header h1 {
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  color: #f8fafc;
+
+  font-size: 2rem;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.03em;
+
+  text-align: center !important;
+}
+
+
+/* ========================================
+   HEADER LINE
+======================================== */
+
+.personal-line {
+  width: 45px;
+
+  height: 3px;
+
+  margin: 10px auto 0;
+
+  background: linear-gradient(90deg, #f59e0b, #8b5cf6);
+
+  border-radius: 2px;
+}
+
+
+/* ========================================
+   PROJECT GRID
+======================================== */
+
+.personal-grid {
+  width: 100%;
+  max-width: 1280px;
+
+  padding: 0 !important;
+  margin: 0 auto !important;
+
+  display: grid !important;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 40px;
+
+  align-items: start !important;
+
+  text-align: left !important;
+}
+
+
+/* ========================================
+   PROJECT CARD
+======================================== */
+
+.personal-card {
+  width: 100%;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+
+  cursor: pointer;
+
+  text-align: left !important;
+
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.personal-card:hover {
+  transform: translateY(-5px);
+  border-color: #8b5cf6;
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+
+/* ========================================
+   PROJECT IMAGE
+======================================== */
+
+.personal-image {
+  position: relative;
+
+  width: 100%;
+  height: 360px;
+
+  overflow: hidden;
+
+  background: #1e293b;
+
+  text-align: left !important;
+}
+
+.personal-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+
+/* ========================================
+   IMAGE HOVER
+======================================== */
+
+.personal-card:hover .personal-image img {
+  transform: scale(1.04);
+}
+
+
+/* ========================================
+   PROJECT OVERLAY
+======================================== */
+
+.personal-overlay {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+
+  padding: 24px 14px;
+
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 20%, rgba(15, 23, 42, 0.7) 70%, transparent 100%);
+
+  text-align: left !important;
+
+  align-items: flex-start !important;
+}
+
+
+/* ========================================
+   OVERLAY CONTENT
+======================================== */
+
+.personal-overlay-content {
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  display: block;
+
+  text-align: left !important;
+
+  align-items: flex-start !important;
+}
+
+
+/* ========================================
+   PROJECT TITLE
+======================================== */
+
+.personal-overlay h2 {
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  color: #f8fafc;
+
+  font-size: 1.5rem;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+
+  text-align: left !important;
+}
+
+
+/* ========================================
+   DESCRIPTION
+======================================== */
+
+.personal-description {
+  width: 100%;
+
+  max-height: 0;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  color: #cbd5e1;
+
+  font-size: 1rem;
+
+  font-weight: 400;
+
+  line-height: 1.5;
+
+  text-align: left !important;
+
+  transition:
+    max-height 0.35s ease,
+    opacity 0.3s ease,
+    margin 0.35s ease;
+}
+
+
+/* ========================================
+   DESCRIPTION HOVER
+======================================== */
+
+.personal-card:hover .personal-description {
+  max-height: 80px;
+
+  margin-top: 7px;
+
+  opacity: 1;
+}
+
+
+/* ========================================
+   TECHNOLOGIES
+======================================== */
+
+.personal-technologies {
+  width: 100%;
+
+  margin: 8px 0 0;
+  padding: 0;
+
+  color: #f59e0b;
+  font-family: 'JetBrains Mono', monospace;
+
+  font-size: 0.7rem;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.05em;
+
+  text-align: left !important;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+  .personal-page {
+    padding: 40px 30px;
+  }
+
+  .personal-grid {
+    max-width: 700px;
+
+    grid-template-columns: repeat(2, 1fr) !important;
+
+    gap: 22px;
+  }
+
+  .personal-image {
+    height: 220px;
+  }
+
+  .personal-overlay {
+    padding: 11px 13px;
+  }
+
+  .personal-overlay h2 {
+    font-size: 0.85rem;
+  }
+
+  .personal-description {
+    font-size: 0.7rem;
+  }
+
+  .personal-technologies {
+    font-size: 0.6rem;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+
+  .personal-page {
+    padding: 35px 20px;
+  }
+
+  .personal-grid {
+    max-width: 450px;
+
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .personal-image {
+    height: 220px;
+  }
+
+  .personal-overlay {
+    padding: 15px 16px;
+  }
+
+  .personal-overlay h2 {
+    font-size: 1rem;
+  }
+
+  .personal-description {
+    font-size: 0.8rem;
+
+    line-height: 1.55;
+  }
+
+  .personal-technologies {
+    font-size: 0.65rem;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+  .personal-page {
+    padding: 30px 18px;
+  }
+
+  .personal-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .personal-line {
+    width: 40px;
+  }
+
+  .personal-grid {
+    gap: 20px;
+  }
+
+  .personal-image {
+    height: 200px;
+  }
+}
