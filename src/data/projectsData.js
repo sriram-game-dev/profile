@@ -1,7 +1,10 @@
+import { asset } from '../utils/asset.js';
+
 export const projects = [
+
   {
     title: 'LOTO VR Training',
-    image: '/projects/loto-vr.jpg',
+    image: asset('/projects/loto-vr.jpg'),
 
     description:
       'Interactive VR-based industrial safety training application that simulates Lockout/Tagout procedures, equipment isolation, maintenance activities, and system restoration.',
@@ -37,15 +40,13 @@ export const projects = [
       'Optimized VR interactions and application performance for Meta Quest devices.'
     ],
 
-    technologies:
-      'UNITY · C# · META SDK INTERACTION TOOLKIT · META QUEST · VR',
-
+    technologies: 'UNITY · C# · META SDK INTERACTION TOOLKIT · META QUEST · VR',
     link: '/projects/loto-vr'
   },
 
   {
     title: 'Industrial Hose Manufacturing VR Training',
-    image: '/projects/hose-manufacturing.jpg',
+    image: asset('/projects/hose-manufacturing.jpg'),
 
     description:
       'Large-scale VR-based industrial training application covering five specialized Industrial Hose manufacturing modules.',
@@ -84,7 +85,6 @@ export const projects = [
     ],
 
     categoryTitle: 'Modules',
-
     categories: [
       'Industrial Hose - Metal-Based Module',
       'Industrial Hose - Rubber-Based Module',
@@ -93,15 +93,13 @@ export const projects = [
       'Industrial Hose - Aerospace Module'
     ],
 
-    technologies:
-      'UNITY · C# · META SDK INTERACTION TOOLKIT · META QUEST · VR',
-
+    technologies: 'UNITY · C# · META SDK INTERACTION TOOLKIT · META QUEST · VR',
     link: '/projects/hose-manufacturing'
   },
 
   {
     title: 'AI-Powered AR Virtual Try-On',
-    image: '/projects/ai-virtual-tryon.jpg',
+    image: asset('/projects/ai-virtual-tryon.jpg'),
 
     description:
       'AI-powered AR experiences developed for interactive PC kiosk applications, featuring outfit, accessory, and hairstyle customization.',
@@ -116,7 +114,6 @@ export const projects = [
     ],
 
     categoryTitle: 'Applications',
-
     categories: [
       'Movie Character Style AR (Tamil)',
       'Xmas Event AR',
@@ -143,15 +140,13 @@ export const projects = [
       'Tested and refined UI and interaction flows across the AR applications.'
     ],
 
-    technologies:
-      'UNITY · C# · AR · AI',
-
+    technologies: 'UNITY · C# · AR · AI',
     link: '/projects/ai-virtual-tryon'
   },
 
   {
     title: 'Industrial LOTO & Services VR Training',
-    image: '/projects/industrial-safety.jpg',
+    image: asset('/projects/industrial-safety.jpg'),
 
     description:
       'Interactive VR-based industrial service training application featuring permit-to-work, Lockout/Tagout (LOTO), equipment isolation, maintenance, animation, and power restoration procedures.',
@@ -165,7 +160,6 @@ export const projects = [
     ],
 
     categoryTitle: 'Modules',
-
     categories: [
       'Electrical Power Isolation & LOTO Training',
       'Machine & Valve Isolation Maintenance Training'
@@ -200,18 +194,15 @@ export const projects = [
       'Tested and refined interaction and training workflows across both Unity scenes.'
     ],
 
-    technologies:
-      'UNITY · C# · VR · META SDK INTERACTION TOOLKIT · META QUEST',
-
+    technologies: 'UNITY · C# · VR · META SDK INTERACTION TOOLKIT · META QUEST',
     link: '/projects/industrial-safety'
   },
 
   {
     title: 'VR PAINT',
-    image: '/projects/vr-paint.jpg',
+    image: asset('/projects/vr-paint.jpg'),
 
-    description:
-      'Interactive VR painting experience developed using Unity.',
+    description: 'Interactive VR painting experience developed using Unity.',
 
     overview: [
       'Developed an interactive VR painting experience using Unity and C#.',
@@ -239,18 +230,15 @@ export const projects = [
       'Tested and optimized interactions for Meta Quest VR devices.'
     ],
 
-    technologies:
-      'UNITY · C# · XR · META QUEST',
-
+    technologies: 'UNITY · C# · XR · META QUEST',
     link: '/projects/vr-paint'
   },
 
   {
     title: 'F1 SHOWROOM',
-    image: '/projects/f1-showroom.jpg',
+    image: asset('/projects/f1-showroom.jpg'),
 
-    description:
-      'Interactive virtual showroom prototype developed using Unity.',
+    description: 'Interactive virtual showroom prototype developed using Unity.',
 
     overview: [
       'Developed an interactive virtual showroom prototype using Unity and C#.',
@@ -278,18 +266,15 @@ export const projects = [
       'Created supporting UI and interactive feedback elements.'
     ],
 
-    technologies:
-      'UNITY · C# · XR',
-
+    technologies: 'UNITY · C# · XR',
     link: '/projects/f1-showroom'
   },
 
   {
     title: 'FACTORY PROTOTYPE',
-    image: '/projects/factory-prototype.jpg',
+    image: asset('/projects/factory-prototype.jpg'),
 
-    description:
-      'Industrial VR experience developed for interactive environments.',
+    description: 'Industrial VR experience developed for interactive environments.',
 
     overview: [
       'Developed an industrial VR prototype using Unity and C#.',
@@ -318,9 +303,7 @@ export const projects = [
       'Optimized the VR environment for a smooth user experience.'
     ],
 
-    technologies:
-      'UNITY · C# · VR',
-
+    technologies: 'UNITY · C# · VR',
     link: '/projects/factory-prototype'
   }
 ];
@@ -328,7 +311,7 @@ export const projects = [
 export const personalProjects = [
   {
     title: 'FLY AWAY',
-    image: '/projects/game-project.jpg',
+    image: asset('/projects/game-project.jpg'),
 
     description:
       '2D side-scrolling endless runner game developed with Unity and C# featuring responsive controls, dynamic obstacles, and score tracking.',
@@ -359,15 +342,13 @@ export const personalProjects = [
       'Tested, balanced gameplay difficulty pacing, and optimized build performance.'
     ],
 
-    technologies:
-      'UNITY 2D · C# · GAMEPLAY PROGRAMMING · SPRITE ANIMATION',
-
+    technologies: 'UNITY 2D · C# · GAMEPLAY PROGRAMMING · SPRITE ANIMATION',
     link: '/projects/game-project'
   },
 
   {
     title: 'VR INTERACTION LAB',
-    image: '/projects/vr-experience.jpg',
+    image: asset('/projects/vr-experience.jpg'),
 
     description:
       'Experimental VR laboratory exploring advanced spatial interactions, telekinesis physics, direct hand-tracking, and spatial UI mechanics.',
@@ -394,15 +375,13 @@ export const personalProjects = [
       'Designed interactive sandbox levels with varied physical props, puzzles, and lever systems.'
     ],
 
-    technologies:
-      'UNITY · C# · VR · XR INTERACTION TOOLKIT · META QUEST',
-
+    technologies: 'UNITY · C# · VR · XR INTERACTION TOOLKIT · META QUEST',
     link: '/projects/vr-experience'
   },
 
   {
     title: 'AUGMENTED REALITY LAB',
-    image: '/projects/ar-project.jpg',
+    image: asset('/projects/ar-project.jpg'),
 
     description:
       'Mobile AR application exploring real-time horizontal/vertical plane detection, surface anchoring, and interactive gesture-based 3D object manipulation.',
@@ -428,15 +407,13 @@ export const personalProjects = [
       'Optimized 3D asset draw calls and materials for smooth mobile AR performance.'
     ],
 
-    technologies:
-      'UNITY · C# · AR · MOBILE PASSTHROUGH · GESTURE RECOGNITION',
-
+    technologies: 'UNITY · C# · AR · MOBILE PASSTHROUGH · GESTURE RECOGNITION',
     link: '/projects/ar-project'
   },
 
   {
     title: 'WEBGL 3D INTERACTIVE',
-    image: '/projects/webgl-project.jpg',
+    image: asset('/projects/webgl-project.jpg'),
 
     description:
       'High-performance browser-based 3D interactive application optimized with Unity WebGL, lightweight shaders, and responsive canvas scaling.',
@@ -463,10 +440,7 @@ export const personalProjects = [
       'Profiled and achieved stable 60 FPS performance across major web browsers (Chrome, Firefox, Safari, Edge).'
     ],
 
-    technologies:
-      'UNITY · C# · WEBGL · WASM · HTML5 · REAL-TIME 3D',
-
+    technologies: 'UNITY · C# · WEBGL · WASM · HTML5 · REAL-TIME 3D',
     link: '/projects/webgl-project'
   }
 ];
-
