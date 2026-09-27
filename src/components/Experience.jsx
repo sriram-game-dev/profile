@@ -23,29 +23,7 @@ function Experience() {
         <div className="experience-header-line"></div>
       </div>
 
-      {/* STUDIO & TECH CAROUSEL RIBBON (GERLOGU STYLE) */}
-      <div className="backstory-partners-ribbon">
-        <div className="partner-badge">
-          <span className="partner-icon">◈</span>
-          <span>HEPL · Digifox Studio</span>
-        </div>
-        <div className="partner-badge">
-          <span className="partner-icon">❖</span>
-          <span>Unity Engine</span>
-        </div>
-        <div className="partner-badge">
-          <span className="partner-icon">⬡</span>
-          <span>Meta Quest XR</span>
-        </div>
-        <div className="partner-badge">
-          <span className="partner-icon">⚡</span>
-          <span>C# &amp; Game Architecture</span>
-        </div>
-        <div className="partner-badge">
-          <span className="partner-icon">▲</span>
-          <span>PC Standalone · Android</span>
-        </div>
-      </div>
+
 
       {/* TIMELINE CONTAINER */}
       <div className="experience-content">
