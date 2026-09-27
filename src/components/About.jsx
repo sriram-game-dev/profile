@@ -1,10 +1,22 @@
 import { useState, useEffect, useRef } from "react";
 
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 function About() {
   const [popup, setPopup] = useState(null);
   const [count, setCount] = useState(0);
   const cardRef = useRef(null);
   const animated = useRef(false);
+
+  const handleImageError = (e) => {
+    if (!e.currentTarget.dataset.errored) {
+      e.currentTarget.dataset.errored = 'true';
+      const src = e.currentTarget.src;
+      if (src.includes('.jpg')) {
+        e.currentTarget.src = src.replace('.jpg', '.svg');
+      }
+    }
+  };
 
   useEffect(() => {
     const target = 20;
@@ -63,9 +75,14 @@ function About() {
             onClick={() => setPopup("certifications")}
           >
             <img
-              src="/images/certification.jpg"
+              src={`${import.meta.env.BASE_URL}images/certification.jpg`}
               alt="Certifications and Courses"
-              onError={(e) => { if (e.currentTarget.src.endsWith('.jpg')) e.currentTarget.src = e.currentTarget.src.replace('.jpg', '.svg'); }}
+              onError={(e) => {
+                if (!e.currentTarget.dataset.errored) {
+                  e.currentTarget.dataset.errored = 'true';
+                  e.currentTarget.src = `${import.meta.env.BASE_URL}images/certification.svg`;
+                }
+              }}
             />
 
             <p>Certifications &amp; Courses</p>
@@ -78,13 +95,19 @@ function About() {
             onClick={() => setPopup("achievements")}
           >
             <img
-              src="/images/award.jpg"
+              src={`${import.meta.env.BASE_URL}images/award.jpg`}
               alt="Achievement"
-              onError={(e) => { if (e.currentTarget.src.endsWith('.jpg')) e.currentTarget.src = e.currentTarget.src.replace('.jpg', '.svg'); }}
+              onError={(e) => {
+                if (!e.currentTarget.dataset.errored) {
+                  e.currentTarget.dataset.errored = 'true';
+                  e.currentTarget.src = `${import.meta.env.BASE_URL}images/award.svg`;
+                }
+              }}
             />
 
             <p>Achievements</p>
           </div>
+
 
         </div>
 
@@ -166,7 +189,7 @@ function About() {
                 <div className="certificate-image-wrapper">
 
                   <img
-                    src="/images/certification2.jpg"
+                    src={`${BASE}/images/certification2.jpg`}
                     alt="Diploma in 3D Game Development With Unity Engine"
                     onError={handleImageError}
                   />
@@ -222,7 +245,7 @@ function About() {
                 <div className="certificate-image-wrapper">
 
                   <img
-                    src="/images/webinar.jpg"
+                    src={`${BASE}/images/webinar.jpg`}
                     alt="Game Development Webinar"
                     onError={handleImageError}
                   />
@@ -278,7 +301,7 @@ function About() {
                 <div className="certificate-image-wrapper">
 
                   <img
-                    src="/images/certification.jpg"
+                    src={`${BASE}/images/certification.jpg`}
                     alt="ChatGPT 101 Certification"
                     onError={handleImageError}
                   />
@@ -334,7 +357,7 @@ function About() {
                 <div className="certificate-image-wrapper">
 
                   <img
-                    src="/images/certification3.jpg"
+                    src={`${BASE}/images/certification3.jpg`}
                     alt="Introduction to Prompt Engineering"
                     onError={handleImageError}
                   />
@@ -390,7 +413,7 @@ function About() {
                 <div className="certificate-image-wrapper">
 
                   <img
-                    src="/images/course.jpg"
+                    src={`${BASE}/images/course.jpg`}
                     alt="Create with Code Course"
                     onError={handleImageError}
                   />
@@ -480,7 +503,7 @@ function About() {
                 <div className="achievement-image-wrapper">
 
                   <img
-                    src="/images/award.jpg"
+                    src={`${BASE}/images/award.jpg`}
                     alt="Esports Tournament Participation Certificate"
                     onError={handleImageError}
                   />
