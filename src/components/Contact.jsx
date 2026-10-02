@@ -1,14 +1,37 @@
 import { useState } from 'react';
 
 function Contact() {
-  const [copied, setCopied] = useState(false);
+  const [copyStatus, setCopyStatus] = useState('idle'); // 'idle' | 'copied' | 'error'
 
   const email = 'sriramsridhar29@gmail.com';
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
+  const handleCopy = async () => {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(email);
+        setCopyStatus('copied');
+      } else {
+        // Fallback for older browsers or insecure contexts
+        const textarea = document.createElement('textarea');
+        textarea.value = email;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        const successful = document.execCommand('copy');
+        document.body.removeChild(textarea);
+        if (successful) {
+          setCopyStatus('copied');
+        } else {
+          throw new Error('execCommand copy failed');
+        }
+      }
+      setTimeout(() => setCopyStatus('idle'), 2500);
+    } catch {
+      setCopyStatus('error');
+      setTimeout(() => setCopyStatus('idle'), 3000);
+    }
   };
 
   return (
@@ -68,10 +91,10 @@ function Contact() {
             type="button"
             aria-label="Copy email address"
             style={{
-              background: 'rgba(245, 158, 11, 0.15)',
-              border: '1px solid rgba(245, 158, 11, 0.3)',
+              background: copyStatus === 'error' ? 'rgba(239, 68, 68, 0.2)' : 'rgba(245, 158, 11, 0.15)',
+              border: copyStatus === 'error' ? '1px solid rgba(239, 68, 68, 0.4)' : '1px solid rgba(245, 158, 11, 0.3)',
               borderRadius: '6px',
-              color: '#f59e0b',
+              color: copyStatus === 'error' ? '#ef4444' : '#f59e0b',
               fontFamily: "'JetBrains Mono', monospace",
               fontSize: '0.75rem',
               fontWeight: '600',
@@ -80,16 +103,17 @@ function Contact() {
               transition: 'all 0.2s ease'
             }}
             onMouseOver={(e) => {
-              e.target.style.background = 'rgba(245, 158, 11, 0.25)';
-              e.target.style.transform = 'translateY(-1px)';
+              e.currentTarget.style.background = copyStatus === 'error' ? 'rgba(239, 68, 68, 0.3)' : 'rgba(245, 158, 11, 0.25)';
+              e.currentTarget.style.transform = 'translateY(-1px)';
             }}
             onMouseOut={(e) => {
-              e.target.style.background = 'rgba(245, 158, 11, 0.15)';
-              e.target.style.transform = 'translateY(0)';
+              e.currentTarget.style.background = copyStatus === 'error' ? 'rgba(239, 68, 68, 0.2)' : 'rgba(245, 158, 11, 0.15)';
+              e.currentTarget.style.transform = 'translateY(0)';
             }}
           >
-            {copied ? 'Copied! ✓' : 'Copy'}
+            {copyStatus === 'copied' ? 'Copied! ✓' : copyStatus === 'error' ? 'Failed to copy' : 'Copy'}
           </button>
+
         </div>
 
         <div

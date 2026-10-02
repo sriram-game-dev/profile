@@ -48,10 +48,12 @@ function ProjectDetails({ project }) {
             src={project.image}
             alt={project.title}
             onError={(e) => {
-              if (project.image.endsWith('.jpg')) {
+              if (!e.currentTarget.dataset.errored && project.image.endsWith('.jpg')) {
+                e.currentTarget.dataset.errored = 'true';
                 e.currentTarget.src = project.image.replace('.jpg', '.svg');
               }
             }}
+
           />
 
         </section>

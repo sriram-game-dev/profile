@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { route } from "../utils/asset";
 
 function Home() {
   const [text, setText] = useState("A Gamer.");
@@ -69,15 +70,28 @@ function Home() {
       </p>
 
       <div className="home-links">
-        <a href="#projects">
+        <a
+          href={route('/#projects')}
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+          }}
+        >
           <span>Explore Quests</span>
           <span style={{ color: '#0f172a' }}>→</span>
         </a>
-        <a href="#contact">
+        <a
+          href={route('/#contact')}
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+          }}
+        >
           <span>Connect</span>
           <span style={{ color: '#8b5cf6' }}>✦</span>
         </a>
       </div>
+
 
     </section>
   );

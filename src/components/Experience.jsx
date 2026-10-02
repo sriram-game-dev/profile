@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { route } from "../utils/asset";
 
 function Experience() {
+
   const [popup, setPopup] = useState(null);
 
   const handleOpenPopup = (type) => {
@@ -257,7 +259,7 @@ function Experience() {
 
               <div className="popup-footer-actions">
                 <a
-                  href="#projects"
+                  href={route('/#projects')}
                   className="popup-cta-btn"
                   onClick={() => {
                     handleClosePopup();
@@ -267,6 +269,7 @@ function Experience() {
                   Browse Game Projects ➜
                 </a>
               </div>
+
 
             </div>
 

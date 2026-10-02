@@ -27,19 +27,40 @@ function App() {
 
 
   // ========================================
-  // HANDLE NAVIGATION
+  // HANDLE NAVIGATION & HASH SCROLL
   // ========================================
 
   useEffect(() => {
 
     const handleNavigation = () => {
       setPath(normalizePath(window.location.pathname));
+
+      if (window.location.hash) {
+        const id = window.location.hash.replace('#', '');
+        setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 100);
+      }
     };
 
     window.addEventListener(
       'popstate',
       handleNavigation
     );
+
+    // Initial check for hash on page load
+    if (window.location.hash) {
+      const id = window.location.hash.replace('#', '');
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 150);
+    }
 
     return () => {
       window.removeEventListener(

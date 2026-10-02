@@ -30,7 +30,16 @@ function PersonalProjects() {
           <div
             className="personal-card"
             key={project.title}
+            role="button"
+            tabIndex={0}
+            aria-label={`View project details for ${project.title}`}
             onClick={() => handleNavigate(project.link)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                handleNavigate(project.link);
+              }
+            }}
           >
 
             <div className="personal-image">
@@ -39,7 +48,8 @@ function PersonalProjects() {
                 src={project.image}
                 alt={project.title}
                 onError={(e) => {
-                  if (project.image.endsWith('.jpg')) {
+                  if (!e.currentTarget.dataset.errored && project.image.endsWith('.jpg')) {
+                    e.currentTarget.dataset.errored = 'true';
                     e.currentTarget.src = project.image.replace('.jpg', '.svg');
                   }
                 }}
@@ -68,6 +78,7 @@ function PersonalProjects() {
           </div>
 
         ))}
+
 
       </section>
 

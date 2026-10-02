@@ -55,11 +55,20 @@ function About() {
           <div
             ref={cardRef}
             className="about-highlight about-highlight--counter"
+            role="button"
+            tabIndex={0}
+            aria-label="View finished projects"
             onClick={() =>
               document.getElementById("projects")?.scrollIntoView({
                 behavior: "smooth",
               })
             }
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
           >
             <div className="about-counter">
               <span className="about-counter-number">{count}</span>
@@ -72,10 +81,19 @@ function About() {
           {/* CERTIFICATIONS & COURSES */}
           <div
             className="about-highlight about-highlight--icon"
+            role="button"
+            tabIndex={0}
+            aria-label="Open certifications and courses popup"
             onClick={() => setPopup("certifications")}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                setPopup("certifications");
+              }
+            }}
           >
             <div className="about-card-icon-box">
-              <svg className="about-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <svg className="about-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                 <polyline points="14 2 14 8 20 8"></polyline>
                 <path d="M12 18v-4"></path>
@@ -90,10 +108,19 @@ function About() {
           {/* ACHIEVEMENTS */}
           <div
             className="about-highlight about-highlight--icon"
+            role="button"
+            tabIndex={0}
+            aria-label="Open achievements popup"
             onClick={() => setPopup("achievements")}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                setPopup("achievements");
+              }
+            }}
           >
             <div className="about-card-icon-box">
-              <svg className="about-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <svg className="about-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
                 <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
                 <path d="M4 22h16"></path>
@@ -103,6 +130,7 @@ function About() {
             </div>
             <p>Achievements</p>
           </div>
+
 
 
         </div>

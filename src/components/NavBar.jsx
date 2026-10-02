@@ -5,9 +5,20 @@ function NavBar() {
   const [showGoTop, setShowGoTop] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [currentPath, setCurrentPath] = useState(
+    normalizePath(window.location.pathname)
+  );
 
-  const currentPath = normalizePath(window.location.pathname);
   const isHomePage = currentPath === '/';
+
+  /* Track path changes reactively */
+  useEffect(() => {
+    const handlePopState = () => {
+      setCurrentPath(normalizePath(window.location.pathname));
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   /* Scroll handling */
   useEffect(() => {
@@ -68,7 +79,7 @@ function NavBar() {
           block: 'start'
         });
       }
-    }, 100);
+    }, 120);
   };
 
   /* Logo click */
@@ -120,9 +131,9 @@ function NavBar() {
         </div>
 
         {/* DESKTOP NAV LINKS (CENTERED, CLEAN TYPOGRAPHY WITH GROW UNDERLINE) */}
-        <nav className="nav-links desktop-nav">
+        <nav className="nav-links desktop-nav" aria-label="Primary navigation">
           <a
-            href="/#home"
+            href={route('/#home')}
             className="nav-item"
             onClick={(event) => handleSectionClick(event, 'home')}
           >
@@ -130,7 +141,7 @@ function NavBar() {
           </a>
 
           <a
-            href="/#about"
+            href={route('/#about')}
             className="nav-item"
             onClick={(event) => handleSectionClick(event, 'about')}
           >
@@ -138,7 +149,7 @@ function NavBar() {
           </a>
 
           <a
-            href="/#experience"
+            href={route('/#experience')}
             className="nav-item"
             onClick={(event) => handleSectionClick(event, 'experience')}
           >
@@ -146,7 +157,7 @@ function NavBar() {
           </a>
 
           <a
-            href="/#skills"
+            href={route('/#skills')}
             className="nav-item"
             onClick={(event) => handleSectionClick(event, 'skills')}
           >
@@ -154,7 +165,7 @@ function NavBar() {
           </a>
 
           <a
-            href="/#resume"
+            href={route('/#resume')}
             className="nav-item"
             onClick={(event) => handleSectionClick(event, 'resume')}
           >
@@ -162,7 +173,7 @@ function NavBar() {
           </a>
 
           <a
-            href="/#contact"
+            href={route('/#contact')}
             className="nav-item"
             onClick={(event) => handleSectionClick(event, 'contact')}
           >
@@ -176,7 +187,7 @@ function NavBar() {
             className="nav-item nav-item--external"
           >
             <span>GitHub</span>
-            <svg className="external-arrow" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" strokeWidth="2.2">
+            <svg className="external-arrow" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true">
               <path d="M7 17L17 7M17 7H7M17 7V17" />
             </svg>
           </a>
@@ -185,28 +196,28 @@ function NavBar() {
         {/* RIGHT SIDE: TACTICAL GAME DEVELOPER CTA BUTTON & MOBILE TOGGLE */}
         <div className="navbar-right">
           <a
-            href="/#projects"
+            href={route('/#projects')}
             onClick={(event) => handleSectionClick(event, 'projects')}
-            className="nav-cta-link"
+            className="nav-game-button nav-cta-link"
+            aria-label="Explore Portfolio"
           >
-            <button className="nav-game-button" type="button" aria-label="Explore Portfolio">
-              <span className="btn-shape">
-                <span className="btn-skew-slide"></span>
-                <span className="btn-text">
-                  <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" style={{ marginRight: '6px' }}>
-                    <path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/>
-                  </svg>
-                  PORTFOLIO
-                </span>
+            <span className="btn-shape">
+              <span className="btn-skew-slide"></span>
+              <span className="btn-text">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" style={{ marginRight: '6px' }} aria-hidden="true">
+                  <path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/>
+                </svg>
+                PORTFOLIO
               </span>
-            </button>
+            </span>
           </a>
 
           {/* HAMBURGER TOGGLE FOR MOBILE/TABLET */}
           <button
             className={`mobile-menu-toggle ${menuOpen ? 'is-active' : ''}`}
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle navigation menu"
+            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={menuOpen}
             type="button"
           >
             <span className="hamburger-bar"></span>
@@ -219,51 +230,51 @@ function NavBar() {
 
       {/* MOBILE DROPDOWN DRAWER */}
       <div className={`mobile-nav-drawer ${menuOpen ? 'drawer-open' : ''}`}>
-        <nav className="mobile-nav-links">
+        <nav className="mobile-nav-links" aria-label="Mobile navigation">
           <a
-            href="/#home"
+            href={route('/#home')}
             className="mobile-nav-item"
             onClick={(event) => handleSectionClick(event, 'home')}
           >
             <span>Home</span>
           </a>
           <a
-            href="/#about"
+            href={route('/#about')}
             className="mobile-nav-item"
             onClick={(event) => handleSectionClick(event, 'about')}
           >
             <span>About</span>
           </a>
           <a
-            href="/#experience"
+            href={route('/#experience')}
             className="mobile-nav-item"
             onClick={(event) => handleSectionClick(event, 'experience')}
           >
             <span>Experience</span>
           </a>
           <a
-            href="/#projects"
+            href={route('/#projects')}
             className="mobile-nav-item"
             onClick={(event) => handleSectionClick(event, 'projects')}
           >
             <span>Projects</span>
           </a>
           <a
-            href="/#skills"
+            href={route('/#skills')}
             className="mobile-nav-item"
             onClick={(event) => handleSectionClick(event, 'skills')}
           >
             <span>Skills</span>
           </a>
           <a
-            href="/#resume"
+            href={route('/#resume')}
             className="mobile-nav-item"
             onClick={(event) => handleSectionClick(event, 'resume')}
           >
             <span>Resume</span>
           </a>
           <a
-            href="/#contact"
+            href={route('/#contact')}
             className="mobile-nav-item"
             onClick={(event) => handleSectionClick(event, 'contact')}
           >
@@ -276,7 +287,7 @@ function NavBar() {
             className="mobile-nav-item mobile-nav-item--external"
           >
             <span>GitHub</span>
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
               <path d="M7 17L17 7M17 7H7M17 7V17" />
             </svg>
           </a>
