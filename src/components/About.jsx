@@ -124,7 +124,7 @@ function About() {
             My name is <strong>S. Sriram</strong>
           </h1>
 
-          <h2>Game Developer · XR Specialist</h2>
+          <h2>Game · XR Developer</h2>
 
           <p>
             I specialize in game mechanics, game concepts, and immersive
