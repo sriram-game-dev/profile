@@ -49,7 +49,7 @@ function Projects() {
         >
           <div className="category-card">
             <img
-              src={`${BASE_PATH}/projects/personal.jpg`}
+              src={`${BASE_PATH}/projects/sidequest.jpg`}
               alt="Sidequest Projects"
               onError={handleImgError}
             />

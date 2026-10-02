@@ -1,59 +1,72 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b1120" />
-      <stop offset="50%" stop-color="#0f172a" />
-      <stop offset="100%" stop-color="#1e293b" />
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#021c1e" />
+      <stop offset="50%" stop-color="#0f2b3c" />
+      <stop offset="100%" stop-color="#1e1b4b" />
     </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="45%" r="50%">
-      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.3" />
-      <stop offset="60%" stop-color="#10b981" stop-opacity="0.1" />
-      <stop offset="100%" stop-color="#0b1120" stop-opacity="0" />
+    <radialGradient id="sunGlow" cx="50%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.4" />
+      <stop offset="45%" stop-color="#10b981" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#021c1e" stop-opacity="0" />
     </radialGradient>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.4" />
-    </pattern>
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.6"/>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.75" />
     </filter>
   </defs>
 
-  <!-- Background -->
-  <rect width="800" height="500" fill="url(#bgGrad)" />
-  <rect width="800" height="500" fill="url(#glow)" />
-  <rect width="800" height="500" fill="url(#grid)" />
+  <rect width="1200" height="800" fill="url(#bg)" />
+  <rect width="1200" height="800" fill="url(#sunGlow)" />
 
-  <!-- Geometric Accent Lines -->
-  <line x1="0" y1="440" x2="800" y2="440" stroke="#334155" stroke-width="1" stroke-dasharray="4,8" />
-  <circle cx="400" cy="220" r="160" fill="none" stroke="#f59e0b" stroke-opacity="0.15" stroke-width="1.5" stroke-dasharray="6,6" />
-  <circle cx="400" cy="220" r="110" fill="none" stroke="#10b981" stroke-opacity="0.2" stroke-width="2" />
-
-  <!-- Main Icon & Illustration Container -->
-  <g transform="translate(400, 205)" filter="url(#shadow)">
-    
-  <g transform="translate(-40, -45)">
-    <circle cx="40" cy="18" r="10" fill="#fbbf24" stroke="#f59e0b" stroke-width="2.5" />
-    <path d="M 40 28 L 40 52 L 56 68 M 40 52 L 24 66 M 22 38 L 40 34 L 58 40" fill="none" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-    <line x1="5" y1="75" x2="75" y2="75" stroke="#3b82f6" stroke-width="3" stroke-dasharray="6,4" />
+  <!-- 2D Platformer Parallax Background Layers -->
+  <!-- Floating Sky Islands & Clouds -->
+  <g opacity="0.4">
+    <ellipse cx="200" cy="180" rx="90" ry="24" fill="#ffffff" />
+    <ellipse cx="1000" cy="220" rx="120" ry="30" fill="#ffffff" />
+    <!-- Distant Mountains -->
+    <polygon points="0,520 220,340 440,520" fill="#064e3b" />
+    <polygon points="350,520 620,290 890,520" fill="#047857" />
+    <polygon points="780,520 1020,330 1200,520" fill="#064e3b" />
   </g>
 
+  <!-- Foreground Pixelated / Vector Game Island & Character (Center) -->
+  <g transform="translate(600, 360)" filter="url(#shadow)">
+    <!-- Floating Grass Block Island -->
+    <polygon points="-240,110 240,110 180,240 -180,240" fill="#78350f" stroke="#92400e" stroke-width="4" />
+    <!-- Lush Grass Top Layer -->
+    <rect x="-240" y="90" width="480" height="35" rx="8" fill="#10b981" />
+    <path d="M -240 125 Q -210 145, -180 125 T -120 125 T -60 125 T 0 125 T 60 125 T 120 125 T 180 125 T 240 125" fill="#10b981" />
+
+    <!-- Animated Flying Character with Jetpack / Wings -->
+    <g transform="translate(-40, -40)">
+      <!-- Rocket / Jet Thruster Particles -->
+      <polygon points="-30,30 -50,60 -20,45" fill="#f59e0b" />
+      <polygon points="-25,30 -40,80 -15,55" fill="#ef4444" />
+      
+      <!-- Jetpack -->
+      <rect x="-35" y="-20" width="22" height="50" rx="8" fill="#475569" stroke="#94a3b8" stroke-width="2" />
+      <!-- Hero Body Capsule -->
+      <rect x="-15" y="-35" width="55" height="75" rx="26" fill="#3b82f6" stroke="#60a5fa" stroke-width="3" />
+      <!-- Pilot Goggles / Visor -->
+      <rect x="10" y="-24" width="34" height="20" rx="8" fill="#fde047" stroke="#ffffff" stroke-width="2" />
+      <!-- Flying Scarf / Cape trailing behind -->
+      <path d="M -15 -10 C -60 -30, -80 10, -130 -15" fill="none" stroke="#ef4444" stroke-width="12" stroke-linecap="round" />
+    </g>
+
+    <!-- Golden Collectible Coins Floating -->
+    <g transform="translate(140, -60)">
+      <circle cx="0" cy="0" r="22" fill="#f59e0b" stroke="#fde047" stroke-width="3" />
+      <text x="0" y="7" font-family="'Montserrat', sans-serif" font-size="18" font-weight="900" fill="#ffffff" text-anchor="middle">★</text>
+    </g>
+    <g transform="translate(190, -110)">
+      <circle cx="0" cy="0" r="16" fill="#f59e0b" stroke="#fde047" stroke-width="2.5" />
+      <text x="0" y="5" font-family="'Montserrat', sans-serif" font-size="13" font-weight="900" fill="#ffffff" text-anchor="middle">★</text>
+    </g>
   </g>
 
-  <!-- Tag / Badge -->
-  <g transform="translate(400, 320)">
-    <rect x="-90" y="-14" width="180" height="28" rx="14" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5" />
-    <text x="0" y="5" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="700" fill="#f59e0b" text-anchor="middle" letter-spacing="2.5">UNITY 2D · C# · GAMEPLAY</text>
+  <!-- Title Badge -->
+  <g transform="translate(600, 710)">
+    <rect x="-240" y="-30" width="480" height="52" rx="26" fill="#0f172a" fill-opacity="0.92" stroke="rgba(16, 185, 129, 0.4)" stroke-width="1.5" />
+    <text x="0" y="3" font-family="'Montserrat', sans-serif" font-size="18" font-weight="900" fill="#f8fafc" text-anchor="middle" letter-spacing="2">FLY AWAY · 2D RUNNER GAME</text>
   </g>
-
-  <!-- Title -->
-  <text x="400" y="375" font-family="'Inter', -apple-system, sans-serif" font-size="24" font-weight="800" fill="#f8fafc" text-anchor="middle" letter-spacing="-0.5">FLY AWAY</text>
-
-  <!-- Subtitle -->
-  <text x="400" y="405" font-family="'Inter', -apple-system, sans-serif" font-size="13" font-weight="500" fill="#94a3b8" text-anchor="middle" letter-spacing="0.5">2D Side-Scrolling Endless Runner Game</text>
-
-  <!-- Decorative Corner Accents -->
-  <path d="M 24 40 L 24 24 L 40 24" fill="none" stroke="#f59e0b" stroke-width="2.5" />
-  <path d="M 776 40 L 776 24 L 760 24" fill="none" stroke="#f59e0b" stroke-width="2.5" />
-  <path d="M 24 460 L 24 476 L 40 476" fill="none" stroke="#f59e0b" stroke-width="2.5" />
-  <path d="M 776 460 L 776 476 L 760 476" fill="none" stroke="#f59e0b" stroke-width="2.5" />
 </svg>

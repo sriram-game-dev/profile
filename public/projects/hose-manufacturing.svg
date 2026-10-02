@@ -1,61 +1,91 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b1120" />
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040914" />
       <stop offset="50%" stop-color="#0f172a" />
-      <stop offset="100%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#1e1e38" />
     </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="45%" r="50%">
-      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.3" />
-      <stop offset="60%" stop-color="#3b82f6" stop-opacity="0.1" />
-      <stop offset="100%" stop-color="#0b1120" stop-opacity="0" />
+    <radialGradient id="steamGlow" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3" />
+      <stop offset="60%" stop-color="#f59e0b" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#040914" stop-opacity="0" />
     </radialGradient>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.4" />
-    </pattern>
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.6"/>
+    <linearGradient id="chrome" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#475569" />
+      <stop offset="30%" stop-color="#94a3b8" />
+      <stop offset="70%" stop-color="#cbd5e1" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+    <linearGradient id="rubber" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.8" />
+    </filter>
+    <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#38bdf8" flood-opacity="0.6" />
     </filter>
   </defs>
 
-  <!-- Background -->
-  <rect width="800" height="500" fill="url(#bgGrad)" />
-  <rect width="800" height="500" fill="url(#glow)" />
-  <rect width="800" height="500" fill="url(#grid)" />
+  <rect width="1200" height="800" fill="url(#bg)" />
+  <rect width="1200" height="800" fill="url(#steamGlow)" />
 
-  <!-- Geometric Accent Lines -->
-  <line x1="0" y1="440" x2="800" y2="440" stroke="#334155" stroke-width="1" stroke-dasharray="4,8" />
-  <circle cx="400" cy="220" r="160" fill="none" stroke="#06b6d4" stroke-opacity="0.15" stroke-width="1.5" stroke-dasharray="6,6" />
-  <circle cx="400" cy="220" r="110" fill="none" stroke="#3b82f6" stroke-opacity="0.2" stroke-width="2" />
-
-  <!-- Main Icon & Illustration Container -->
-  <g transform="translate(400, 205)" filter="url(#shadow)">
-    
-  <g transform="translate(-45, -40)">
-    <path d="M 10 70 C 10 30, 40 15, 65 30 C 85 42, 60 75, 35 65" fill="none" stroke="#06b6d4" stroke-width="8" stroke-linecap="round" />
-    <circle cx="65" cy="30" r="14" fill="#1e293b" stroke="#06b6d4" stroke-width="3" />
-    <circle cx="35" cy="65" r="12" fill="#0891b2" />
-    <line x1="65" y1="20" x2="65" y2="40" stroke="#a5f3fc" stroke-width="3" stroke-linecap="round" />
-    <line x1="55" y1="30" x2="75" y2="30" stroke="#a5f3fc" stroke-width="3" stroke-linecap="round" />
+  <!-- Factory Assembly Conveyor Background -->
+  <g opacity="0.35">
+    <line x1="0" y1="620" x2="1200" y2="620" stroke="#38bdf8" stroke-width="2" stroke-dasharray="10,6" />
+    <line x1="0" y1="650" x2="1200" y2="650" stroke="#334155" stroke-width="6" />
+    <!-- Robotic arms silhouettes -->
+    <path d="M 120 650 L 170 480 L 260 440" fill="none" stroke="#475569" stroke-width="18" stroke-linecap="round" />
+    <circle cx="170" cy="480" r="14" fill="#38bdf8" />
+    <path d="M 1080 650 L 1030 460 L 930 420" fill="none" stroke="#475569" stroke-width="18" stroke-linecap="round" />
+    <circle cx="1030" cy="460" r="14" fill="#f59e0b" />
   </g>
 
+  <!-- Extrusion / Crimping Machine (Center) -->
+  <g transform="translate(600, 360)" filter="url(#shadow)">
+    <!-- Machine Base & Heavy Chassis -->
+    <rect x="-240" y="-120" width="480" height="260" rx="24" fill="#0f172a" stroke="#334155" stroke-width="4" />
+    <rect x="-210" y="-90" width="420" height="200" rx="16" fill="#1e293b" />
+
+    <!-- Industrial Braided Hose Coil curving across -->
+    <path d="M -380 90 C -200 130, -100 -60, 50 30 C 180 110, 260 20, 380 70" fill="none" stroke="url(#rubber)" stroke-width="46" stroke-linecap="round" />
+    <path d="M -380 90 C -200 130, -100 -60, 50 30 C 180 110, 260 20, 380 70" fill="none" stroke="#38bdf8" stroke-width="6" stroke-dasharray="12,12" opacity="0.8" />
+
+    <!-- High-Pressure Crimp Coupling (Metal Fitting) -->
+    <g transform="translate(-200, 95) rotate(-15)">
+      <rect x="-20" y="-35" width="40" height="70" rx="6" fill="url(#chrome)" stroke="#e2e8f0" stroke-width="2" />
+      <rect x="20" y="-28" width="30" height="56" rx="4" fill="url(#chrome)" />
+      <polygon points="50,-35 70,-20 70,20 50,35" fill="#f59e0b" />
+    </g>
+
+    <g transform="translate(240, 35) rotate(20)">
+      <rect x="-20" y="-35" width="40" height="70" rx="6" fill="url(#chrome)" stroke="#e2e8f0" stroke-width="2" />
+      <rect x="-50" y="-28" width="30" height="56" rx="4" fill="url(#chrome)" />
+      <polygon points="-70,-35 -50,-20 -50,20 -70,35" fill="#f59e0b" />
+    </g>
+
+    <!-- Industrial Pressure Gauge -->
+    <g transform="translate(0, -90)" filter="url(#cyanGlow)">
+      <circle cx="0" cy="0" r="50" fill="#0f172a" stroke="url(#chrome)" stroke-width="8" />
+      <circle cx="0" cy="0" r="42" fill="#ffffff" />
+      <!-- Dial needle -->
+      <line x1="0" y1="0" x2="22" y2="-22" stroke="#dc2626" stroke-width="3" stroke-linecap="round" />
+      <circle cx="0" cy="0" r="6" fill="#0f172a" />
+      <text x="0" y="24" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="900" fill="#0f172a" text-anchor="middle">BAR / PSI</text>
+    </g>
+
+    <!-- 5 Module Tags Row -->
+    <g transform="translate(0, 155)">
+      <rect x="-180" y="-14" width="360" height="28" rx="8" fill="#0b1329" stroke="#38bdf8" stroke-width="1.5" />
+      <text x="0" y="5" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" fill="#38bdf8" text-anchor="middle" letter-spacing="2">5 MANUFACTURING MODULES · VR</text>
+    </g>
   </g>
 
-  <!-- Tag / Badge -->
-  <g transform="translate(400, 320)">
-    <rect x="-90" y="-14" width="180" height="28" rx="14" fill="#1e293b" stroke="#06b6d4" stroke-width="1.5" />
-    <text x="0" y="5" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="700" fill="#06b6d4" text-anchor="middle" letter-spacing="2.5">VR · META QUEST · XR</text>
+  <!-- Title Badge -->
+  <g transform="translate(600, 710)">
+    <rect x="-280" y="-30" width="560" height="52" rx="26" fill="#0f172a" fill-opacity="0.92" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1.5" />
+    <text x="0" y="3" font-family="'Montserrat', sans-serif" font-size="18" font-weight="900" fill="#f8fafc" text-anchor="middle" letter-spacing="2">INDUSTRIAL HOSE VR TRAINING</text>
   </g>
-
-  <!-- Title -->
-  <text x="400" y="375" font-family="'Inter', -apple-system, sans-serif" font-size="24" font-weight="800" fill="#f8fafc" text-anchor="middle" letter-spacing="-0.5">HOSE MANUFACTURING VR</text>
-
-  <!-- Subtitle -->
-  <text x="400" y="405" font-family="'Inter', -apple-system, sans-serif" font-size="13" font-weight="500" fill="#94a3b8" text-anchor="middle" letter-spacing="0.5">Interactive 5-Module Industrial Workflow</text>
-
-  <!-- Decorative Corner Accents -->
-  <path d="M 24 40 L 24 24 L 40 24" fill="none" stroke="#06b6d4" stroke-width="2.5" />
-  <path d="M 776 40 L 776 24 L 760 24" fill="none" stroke="#06b6d4" stroke-width="2.5" />
-  <path d="M 24 460 L 24 476 L 40 476" fill="none" stroke="#06b6d4" stroke-width="2.5" />
-  <path d="M 776 460 L 776 476 L 760 476" fill="none" stroke="#06b6d4" stroke-width="2.5" />
 </svg>
