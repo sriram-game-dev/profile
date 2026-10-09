@@ -1,25 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="fac-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#050a14" />
       <stop offset="50%" stop-color="#0f172a" />
       <stop offset="100%" stop-color="#1e293b" />
     </linearGradient>
-    <radialGradient id="forgeGlow" cx="50%" cy="40%" r="55%">
+    <radialGradient id="fac-forgeGlow" cx="50%" cy="40%" r="55%">
       <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.3" />
       <stop offset="50%" stop-color="#f59e0b" stop-opacity="0.2" />
       <stop offset="100%" stop-color="#050a14" stop-opacity="0" />
     </radialGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <filter id="fac-shadow" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.8" />
     </filter>
   </defs>
 
-  <rect width="1200" height="800" fill="url(#bg)" />
-  <rect width="1200" height="800" fill="url(#forgeGlow)" />
+  <rect width="1200" height="800" fill="url(#fac-bg)" />
+  <rect width="1200" height="800" fill="url(#fac-forgeGlow)" />
 
   <!-- Factory Isometric Silhouette & Twin Robotic Arms -->
-  <g transform="translate(600, 360)" filter="url(#shadow)">
+  <g transform="translate(600, 360)" filter="url(#fac-shadow)">
     <!-- Central Digital Twin Hologram Floor Platform -->
     <ellipse cx="0" cy="140" rx="360" ry="120" fill="#0b1329" stroke="#3b82f6" stroke-width="3" stroke-dasharray="10,6" />
     <ellipse cx="0" cy="140" rx="220" ry="70" fill="none" stroke="#f59e0b" stroke-width="2" />

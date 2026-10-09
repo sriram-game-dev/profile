@@ -1,26 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="vrp-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#070b19" />
       <stop offset="50%" stop-color="#111827" />
       <stop offset="100%" stop-color="#1e1b4b" />
     </linearGradient>
-    <radialGradient id="paletteGlow" cx="50%" cy="40%" r="55%">
+    <radialGradient id="vrp-paletteGlow" cx="50%" cy="40%" r="55%">
       <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.35" />
       <stop offset="50%" stop-color="#ec4899" stop-opacity="0.2" />
       <stop offset="100%" stop-color="#070b19" stop-opacity="0" />
     </radialGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <filter id="vrp-shadow" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.8" />
       <feDropShadow dx="0" dy="0" stdDeviation="15" flood-color="#8b5cf6" flood-opacity="0.4" />
     </filter>
   </defs>
 
-  <rect width="1200" height="800" fill="url(#bg)" />
-  <rect width="1200" height="800" fill="url(#paletteGlow)" />
+  <rect width="1200" height="800" fill="url(#vrp-bg)" />
+  <rect width="1200" height="800" fill="url(#vrp-paletteGlow)" />
 
   <!-- 3D Spatial Canvas / Easel with Neon Splatters -->
-  <g transform="translate(600, 360)" filter="url(#shadow)">
+  <g transform="translate(600, 360)" filter="url(#vrp-shadow)">
     <!-- 3D Easel Canvas Floating in VR -->
     <rect x="-240" y="-180" width="480" height="360" rx="24" fill="#0f172a" stroke="#8b5cf6" stroke-width="4" />
     <rect x="-210" y="-150" width="420" height="300" rx="16" fill="#182032" />

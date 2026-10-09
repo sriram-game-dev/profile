@@ -1,25 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="wgl-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#050a1b" />
       <stop offset="50%" stop-color="#0a192f" />
       <stop offset="100%" stop-color="#142c4c" />
     </linearGradient>
-    <radialGradient id="browserGlow" cx="50%" cy="40%" r="55%">
+    <radialGradient id="wgl-browserGlow" cx="50%" cy="40%" r="55%">
       <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.35" />
       <stop offset="50%" stop-color="#10b981" stop-opacity="0.2" />
       <stop offset="100%" stop-color="#050a1b" stop-opacity="0" />
     </radialGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <filter id="wgl-shadow" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#000000" flood-opacity="0.8" />
     </filter>
   </defs>
 
-  <rect width="1200" height="800" fill="url(#bg)" />
-  <rect width="1200" height="800" fill="url(#browserGlow)" />
+  <rect width="1200" height="800" fill="url(#wgl-bg)" />
+  <rect width="1200" height="800" fill="url(#wgl-browserGlow)" />
 
   <!-- Web Browser Window with Real-time 3D Scene Running -->
-  <g transform="translate(600, 360)" filter="url(#shadow)">
+  <g transform="translate(600, 360)" filter="url(#wgl-shadow)">
     <!-- Browser Window Shell -->
     <rect x="-260" y="-180" width="520" height="360" rx="18" fill="#0f172a" stroke="#334155" stroke-width="3" />
     <!-- Browser Tab Bar -->
@@ -42,7 +42,7 @@
       <polygon points="0,-70 65,-30 0,10 -65,-30" fill="#0284c7" fill-opacity="0.5" stroke="#38bdf8" stroke-width="2.5" />
       <polygon points="0,10 65,-30 65,45 0,85" fill="#0369a1" fill-opacity="0.6" stroke="#38bdf8" stroke-width="2.5" />
       <polygon points="0,10 -65,-30 -65,45 0,85" fill="#0c4a6e" fill-opacity="0.7" stroke="#38bdf8" stroke-width="2.5" />
-      
+
       <!-- Real-time Light Shading Normal Vectors -->
       <circle cx="0" cy="10" r="6" fill="#facc15" />
       <line x1="0" y1="10" x2="35" y2="-40" stroke="#facc15" stroke-width="2" stroke-dasharray="3,3" />
