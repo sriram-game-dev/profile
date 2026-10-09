@@ -1,4 +1,4 @@
-﻿import { asset } from '../utils/asset.js';
+import { asset } from '../utils/asset.js';
 
 export const projects = [
 
@@ -359,36 +359,47 @@ export const personalProjects = [
   },
 
   {
-    title: 'VR INTERACTION LAB',
-    image: asset('/projects/vr-experience.jpg'),
+    title: 'THE BLITZ ARENA',
+    image: asset('/projects/blitz-arena.jpg'),
 
     description:
-      'Experimental VR laboratory exploring advanced spatial interactions, telekinesis physics, direct hand-tracking, and spatial UI mechanics.',
+      'Augmented reality target-practice mini-game for Android built in Unity with AR Foundation, featuring horizontal plane detection, tap-to-place anchoring, custom URP Shader Graph energy targets, and camera cannon mechanics.',
 
     overview: [
-      'Created an experimental VR sandbox to research and implement novel spatial interaction techniques.',
-      'Leveraged Unity and the XR Interaction Toolkit to test both direct manipulation and distance-based ray interactions.',
-      'Explored physical hand-presence mechanics, custom grab poses, and tactile collision reactions.',
-      'Developed reusable modular VR interaction components suitable for games and enterprise simulations.'
+      'Developed an augmented reality target-practice mini-game for Android using Unity and AR Foundation.',
+      'Implemented horizontal plane detection and tap-to-place mechanics using ARRaycastManager and ARAnchor.',
+      'Designed custom URP Shader Graph shaders featuring scrolling gradient noise, Fresnel rim lighting, and vertex displacement.',
+      'Programmed core game loops in C# including camera-cannon shooting, object pooling, target hits, and wave clearing.',
+      'Integrated bloom post-processing, particle explosions, muzzle flash, projectile trails, and audio effects.'
     ],
 
     feature: [
-      'Two-handed object manipulation with realistic momentum and joint physics.',
-      'Distance-based grab and gravity-pull telekinesis interaction mechanics.',
-      'Spatial 3D floating world-space user interfaces anchored to player hands and world coordinates.',
-      'Haptic feedback integration tailored to interaction states (hover, select, release).',
-      'Smooth locomotion, snap turning, and teleportation movement systems with comfort vignetting.'
+      'Horizontal plane detection and tap-to-place arena spawning via ARRaycastManager.',
+      'Surface pose locking with ARAnchor to ensure the game base remains fixed in the physical world.',
+      'Custom URP Unlit Shader Graph for energy targets with scrolling noise, HDR Fresnel rim glow, and vertex wobble.',
+      'Custom plane grid shader with procedural cyan cell tiling for surface visualization.',
+      'Phone camera cannon firing projectiles with continuous collision detection and object pooling.',
+      'Particle explosions, muzzle flash, projectile trails, and audio sound effects.',
+      'Complete wave game loop with score counter, hit validation, and wave clear restart states.'
     ],
 
     contribution: [
-      'Architected interaction state machines using Unity XR Interaction Toolkit and C#.',
-      'Built custom physics-based hand rigs with dynamic finger curling and socket snappers.',
-      'Optimized VR frame rates to maintain a steady 90 FPS on Meta Quest hardware.',
-      'Designed interactive sandbox levels with varied physical props, puzzles, and lever systems.'
+      'Architected and programmed the complete AR game in Unity using C# and AR Foundation.',
+      'Developed plane detection, surface raycasting, and placement anchor systems.',
+      'Authored custom Shader Graph materials for energy targets and AR surface grid visualizers.',
+      'Built high-performance object pooling for projectile spawning and recycling.',
+      'Configured Android URP pipeline, AR Background Renderer Feature, and mobile optimizations.'
     ],
 
-    technologies: 'UNITY · C# · VR · XR INTERACTION TOOLKIT · META QUEST',
-    link: '/projects/vr-experience'
+    technologies: 'UNITY · C# · AR FOUNDATION · ARCORE · URP · SHADER GRAPH · ANDROID',
+    link: '/projects/the-blitz-arena',
+    links: [
+      {
+        label: 'GitHub',
+        url: 'https://github.com/sriram-game-dev/The-Blitz-Arena.git',
+        type: 'github'
+      }
+    ]
   },
 
   {

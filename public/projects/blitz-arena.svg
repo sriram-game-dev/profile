@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="blitz-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050a16" />
+      <stop offset="50%" stop-color="#0a182e" />
+      <stop offset="100%" stop-color="#102a45" />
+    </linearGradient>
+    <radialGradient id="blitz-arenaGlow" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.35" />
+      <stop offset="45%" stop-color="#3b82f6" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#050a16" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="blitz-targetGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="1" />
+      <stop offset="60%" stop-color="#0284c7" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0369a1" stop-opacity="0" />
+    </radialGradient>
+    <filter id="blitz-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#000000" flood-opacity="0.8" />
+    </filter>
+    <filter id="blitz-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="16" flood-color="#06b6d4" flood-opacity="0.8" />
+      <feDropShadow dx="0" dy="0" stdDeviation="24" flood-color="#38bdf8" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#blitz-bg)" />
+  <rect width="1200" height="800" fill="url(#blitz-arenaGlow)" />
+
+  <!-- AR Scanning Plane Grid (Ground Floor) -->
+  <g opacity="0.45">
+    <polygon points="150,680 1050,680 920,440 280,440" fill="#0369a1" fill-opacity="0.15" stroke="#06b6d4" stroke-width="2" stroke-dasharray="12,8" />
+    <line x1="280" y1="440" x2="150" y2="680" stroke="#06b6d4" stroke-width="2" />
+    <line x1="440" y1="440" x2="375" y2="680" stroke="#06b6d4" stroke-width="1.5" stroke-dasharray="6,6" />
+    <line x1="600" y1="440" x2="600" y2="680" stroke="#06b6d4" stroke-width="2" />
+    <line x1="760" y1="440" x2="825" y2="680" stroke="#06b6d4" stroke-width="1.5" stroke-dasharray="6,6" />
+    <line x1="920" y1="440" x2="1050" y2="680" stroke="#06b6d4" stroke-width="2" />
+    <!-- Horizontal scan lines -->
+    <line x1="240" y1="500" x2="960" y2="500" stroke="#06b6d4" stroke-width="1.5" />
+    <line x1="200" y1="580" x2="1000" y2="580" stroke="#06b6d4" stroke-width="1.5" />
+  </g>
+
+  <!-- AR Game Base / Podium (Center Floor) -->
+  <g transform="translate(600, 520)" filter="url(#blitz-shadow)">
+    <!-- Base Platform Ellipse -->
+    <ellipse cx="0" cy="40" rx="260" ry="70" fill="#0f172a" stroke="#0284c7" stroke-width="4" />
+    <ellipse cx="0" cy="30" rx="220" ry="55" fill="#1e293b" stroke="#38bdf8" stroke-width="2" />
+    <ellipse cx="0" cy="20" rx="160" ry="40" fill="#0b1329" stroke="#06b6d4" stroke-width="2" stroke-dasharray="8,6" />
+    <!-- Tech Center Core -->
+    <ellipse cx="0" cy="15" rx="70" ry="20" fill="#0284c7" fill-opacity="0.6" stroke="#22d3ee" stroke-width="2" />
+  </g>
+
+  <!-- 3 Floating Energy Targets (Volatile Energy Spheres with Ripple Waves) -->
+  <!-- Target 1 (Left) -->
+  <g transform="translate(400, 310)" filter="url(#blitz-glow)">
+    <circle cx="0" cy="0" r="42" fill="url(#blitz-targetGlow)" stroke="#67e8f9" stroke-width="3" />
+    <!-- Inner Energy Noise Rings -->
+    <ellipse cx="0" cy="0" rx="52" ry="24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-dasharray="8,6" opacity="0.8" transform="rotate(-25)" />
+    <ellipse cx="0" cy="0" rx="46" ry="18" fill="none" stroke="#38bdf8" stroke-width="1.5" transform="rotate(35)" />
+    <circle cx="0" cy="0" r="14" fill="#ffffff" opacity="0.9" />
+    <!-- Target Health/Score Indicator -->
+    <rect x="-24" y="-62" width="48" height="16" rx="4" fill="#0f172a" stroke="#22d3ee" stroke-width="1" />
+    <text x="0" y="-50" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="900" fill="#22d3ee" text-anchor="middle">+10</text>
+  </g>
+
+  <!-- Target 2 (Center Hero Target) -->
+  <g transform="translate(600, 240)" filter="url(#blitz-glow)">
+    <circle cx="0" cy="0" r="54" fill="url(#blitz-targetGlow)" stroke="#a5f3fc" stroke-width="4" />
+    <!-- Fresnels / Glowing Rim waves -->
+    <ellipse cx="0" cy="0" rx="68" ry="30" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="10,6" opacity="0.9" transform="rotate(15)" />
+    <ellipse cx="0" cy="0" rx="60" ry="24" fill="none" stroke="#06b6d4" stroke-width="2" transform="rotate(-40)" />
+    <circle cx="0" cy="0" r="18" fill="#ffffff" opacity="0.95" />
+    <!-- Target Tag -->
+    <rect x="-32" y="-76" width="64" height="18" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="0" y="-63" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="900" fill="#38bdf8" text-anchor="middle">TARGET 2</text>
+  </g>
+
+  <!-- Target 3 (Right) -->
+  <g transform="translate(800, 310)" filter="url(#blitz-glow)">
+    <circle cx="0" cy="0" r="42" fill="url(#blitz-targetGlow)" stroke="#67e8f9" stroke-width="3" />
+    <ellipse cx="0" cy="0" rx="52" ry="24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-dasharray="8,6" opacity="0.8" transform="rotate(30)" />
+    <circle cx="0" cy="0" r="14" fill="#ffffff" opacity="0.9" />
+    <!-- Score -->
+    <rect x="-24" y="-62" width="48" height="16" rx="4" fill="#0f172a" stroke="#22d3ee" stroke-width="1" />
+    <text x="0" y="-50" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="900" fill="#22d3ee" text-anchor="middle">+10</text>
+  </g>
+
+  <!-- AR Crosshair & Projectile Trajectory from Camera Cannon -->
+  <g transform="translate(600, 430)">
+    <!-- Laser Trajectory Line -->
+    <line x1="0" y1="260" x2="0" y2="-120" stroke="#f43f5e" stroke-width="3" stroke-dasharray="10,6" opacity="0.8" />
+    <!-- Muzzle Flash & Projectile -->
+    <circle cx="0" cy="180" r="12" fill="#fbbf24" filter="url(#blitz-glow)" />
+    <circle cx="0" cy="180" r="6" fill="#ffffff" />
+    <!-- AR Targeting Reticle -->
+    <circle cx="0" cy="-120" r="30" fill="none" stroke="#22d3ee" stroke-width="2" opacity="0.8" />
+    <circle cx="0" cy="-120" r="6" fill="#f43f5e" />
+    <line x1="-40" y1="-120" x2="-14" y2="-120" stroke="#22d3ee" stroke-width="2" />
+    <line x1="14" y1="-120" x2="40" y2="-120" stroke="#22d3ee" stroke-width="2" />
+    <line x1="0" y1="-160" x2="0" y2="-134" stroke="#22d3ee" stroke-width="2" />
+    <line x1="0" y1="-106" x2="0" y2="-80" stroke="#22d3ee" stroke-width="2" />
+  </g>
+
+  <!-- HUD: Score & Wave Counter UI -->
+  <g transform="translate(50, 45)">
+    <rect x="0" y="0" width="200" height="60" rx="12" fill="#0f172a" fill-opacity="0.9" stroke="#06b6d4" stroke-width="2" />
+    <text x="20" y="24" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#94a3b8">SCORE</text>
+    <text x="20" y="48" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="900" fill="#38bdf8">0030 PTS</text>
+  </g>
+  <g transform="translate(950, 45)">
+    <rect x="0" y="0" width="200" height="60" rx="12" fill="#0f172a" fill-opacity="0.9" stroke="#22c55e" stroke-width="2" />
+    <text x="20" y="24" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#94a3b8">STATUS</text>
+    <text x="20" y="48" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="900" fill="#4ade80">WAVE CLEARED</text>
+  </g>
+
+  <!-- Title Badge (Bottom) -->
+  <g transform="translate(600, 715)">
+    <rect x="-240" y="-30" width="480" height="52" rx="26" fill="#0f172a" fill-opacity="0.92" stroke="rgba(6, 182, 212, 0.4)" stroke-width="1.5" />
+    <text x="0" y="3" font-family="'Montserrat', sans-serif" font-size="18" font-weight="900" fill="#f8fafc" text-anchor="middle" letter-spacing="2">THE BLITZ ARENA · AR</text>
+  </g>
+</svg>
