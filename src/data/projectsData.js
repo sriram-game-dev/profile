@@ -1,4 +1,4 @@
-import { asset } from '../utils/asset.js';
+﻿import { asset } from '../utils/asset.js';
 
 export const projects = [
 
@@ -343,7 +343,19 @@ export const personalProjects = [
     ],
 
     technologies: 'UNITY 2D · C# · GAMEPLAY PROGRAMMING · SPRITE ANIMATION',
-    link: '/projects/game-project'
+    link: '/projects/game-project',
+    links: [
+      {
+        label: 'itch.io',
+        url: 'https://sriram-game-dev.itch.io/fly-away',
+        type: 'itch'
+      },
+      {
+        label: 'GitHub',
+        url: 'https://github.com/sriram-game-dev/Fly-Away',
+        type: 'github'
+      }
+    ]
   },
 
   {

@@ -142,6 +142,68 @@
 
 
 /* ========================================
+   PLATFORM LINKS (ITCH.IO, GITHUB, ETC.)
+======================================== */
+
+.project-platform-links {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin: -2px 0 18px 0;
+  padding: 6px 14px;
+
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 8px;
+}
+
+.platform-link-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.platform-divider {
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 300;
+  opacity: 0.6;
+}
+
+.project-platform-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #e2e8f0;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: all 0.2s ease;
+}
+
+.project-platform-link:hover {
+  color: #38bdf8;
+  transform: translateY(-1px);
+}
+
+.platform-icon {
+  display: inline-block;
+  vertical-align: middle;
+  color: #cbd5e1;
+  transition: color 0.2s ease;
+}
+
+.project-platform-link:hover .platform-icon {
+  color: #38bdf8;
+}
+
+
+/* ========================================
    BULLET POINTS
 ======================================== */
 
