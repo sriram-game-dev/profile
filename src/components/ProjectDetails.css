@@ -21,20 +21,21 @@
    OVERRIDE GLOBAL SECTION STYLES
 ======================================== */
 
-.project-details-page > section {
+.project-details-page section {
   display: flex;
   flex-direction: column;
 
-  align-items: flex-start !important;
+  align-items: flex-start;
 
   text-align: left !important;
 }
 
 
 /* ========================================
-   PROJECT IMAGE
+   PROJECT IMAGE (CENTERED HERO SHOWCASE)
 ======================================== */
 
+.project-details-page section.project-details-image,
 .project-details-image {
   position: relative;
   width: 100%;
@@ -49,8 +50,10 @@
   border-bottom: 1px solid rgba(139, 92, 246, 0.2);
 
   display: flex !important;
+  flex-direction: row !important;
   align-items: center !important;
   justify-content: center !important;
+  text-align: center !important;
 }
 
 
@@ -88,7 +91,7 @@
 }
 
 
-/* Main artwork: always fully visible without any cropping */
+/* Main artwork: always fully visible without any cropping, strictly centered */
 .project-details-main-img {
   position: relative;
   z-index: 3;
@@ -98,6 +101,7 @@
   height: 100%;
   max-height: 100%;
 
+  margin: 0 auto !important;
   display: block;
 
   object-fit: contain;
