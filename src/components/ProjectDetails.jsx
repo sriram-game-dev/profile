@@ -44,16 +44,28 @@ function ProjectDetails({ project }) {
 
         <section className="project-details-image">
 
+          {/* Ambient blurred backdrop for seamless filling of wide/square images */}
+          <div
+            className="project-details-image-backdrop"
+            style={{ backgroundImage: `url(${project.image})` }}
+            aria-hidden="true"
+          />
+
           <img
             src={project.image}
             alt={project.title}
+            className="project-details-main-img"
             onError={(e) => {
               if (!e.currentTarget.dataset.errored && project.image.endsWith('.jpg')) {
                 e.currentTarget.dataset.errored = 'true';
-                e.currentTarget.src = project.image.replace('.jpg', '.svg');
+                const fallback = project.image.replace('.jpg', '.svg');
+                e.currentTarget.src = fallback;
+                const backdrop = e.currentTarget.parentElement?.querySelector('.project-details-image-backdrop');
+                if (backdrop) {
+                  backdrop.style.backgroundImage = `url(${fallback})`;
+                }
               }
             }}
-
           />
 
         </section>
