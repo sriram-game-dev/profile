@@ -1,4 +1,4 @@
-import { asset } from '../utils/asset.js';
+﻿import { asset } from '../utils/asset.js';
 
 export const projects = [
 
@@ -199,78 +199,6 @@ export const projects = [
   },
 
   {
-    title: 'VR PAINT',
-    image: asset('/projects/vr-paint.jpg'),
-
-    description: 'Interactive VR painting experience developed using Unity.',
-
-    overview: [
-      'Developed an interactive VR painting experience using Unity and C#.',
-      'Created an immersive virtual environment where users can interact with painting tools and surfaces.',
-      'Designed the experience around intuitive VR interactions to make painting accessible in a virtual environment.',
-      'Integrated interactive objects and painting elements to support the overall gameplay experience.'
-    ],
-
-    feature: [
-      'Implemented VR-based object interaction and controller input systems.',
-      'Developed painting mechanics for interacting with virtual surfaces.',
-      'Created interactive painting tools and environment elements.',
-      'Implemented gameplay logic to control painting interactions and user actions.',
-      'Designed interactive UI elements required for the painting experience.',
-      'Integrated animations and visual feedback to improve interaction clarity.',
-      'Optimized the experience for smooth interaction on Meta Quest.'
-    ],
-
-    contribution: [
-      'Developed the core VR interaction systems using Unity and C#.',
-      'Implemented painting mechanics and interactive painting elements.',
-      'Created environment elements and interactive objects for the virtual experience.',
-      'Developed gameplay logic to manage user interactions and painting activities.',
-      'Integrated UI and feedback systems for improved usability.',
-      'Tested and optimized interactions for Meta Quest VR devices.'
-    ],
-
-    technologies: 'UNITY · C# · XR · META QUEST',
-    link: '/projects/vr-paint'
-  },
-
-  {
-    title: 'F1 SHOWROOM',
-    image: asset('/projects/f1-showroom.jpg'),
-
-    description: 'Interactive virtual showroom prototype developed using Unity.',
-
-    overview: [
-      'Developed an interactive virtual showroom prototype using Unity and C#.',
-      'Created a detailed F1-inspired environment for exploring vehicles and showroom elements.',
-      'Designed the experience to allow users to explore and interact with different elements within the virtual environment.',
-      'Integrated environmental assets, interactive objects, and navigation systems to create an engaging showroom experience.'
-    ],
-
-    feature: [
-      'Developed interactive showroom elements and 3D object interactions.',
-      'Implemented user navigation and interaction systems.',
-      'Created gameplay logic for interactive showroom features.',
-      'Integrated environmental assets and scene elements.',
-      'Implemented UI elements to support navigation and user interaction.',
-      'Added animations and interactive events to enhance the showroom experience.',
-      'Optimized scene elements and interactions for a smooth real-time experience.'
-    ],
-
-    contribution: [
-      'Developed the virtual showroom environment using Unity.',
-      'Implemented interactive elements and object interactions.',
-      'Developed gameplay logic for showroom interactions.',
-      'Integrated 3D assets and environmental elements into the scene.',
-      'Implemented user navigation and interaction systems.',
-      'Created supporting UI and interactive feedback elements.'
-    ],
-
-    technologies: 'UNITY · C# · XR',
-    link: '/projects/f1-showroom'
-  },
-
-  {
     title: 'FACTORY PROTOTYPE',
     image: asset('/projects/factory-prototype.jpg'),
 
@@ -403,67 +331,75 @@ export const personalProjects = [
   },
 
   {
-    title: 'AUGMENTED REALITY LAB',
-    image: asset('/projects/ar-project.jpg'),
+    title: 'VR PAINT',
+    image: asset('/projects/vr-paint.jpg'),
 
-    description:
-      'Mobile AR application exploring real-time horizontal/vertical plane detection, surface anchoring, and interactive gesture-based 3D object manipulation.',
+    description: 'Interactive VR painting experience developed using Unity.',
 
     overview: [
-      'Developed an augmented reality interactive application exploring real-world environment scanning and object placement.',
-      'Implemented plane detection to identify floor, tabletop, and wall surfaces using camera passthrough.',
-      'Created touch gesture algorithms for scaling, rotating, and translating virtual 3D models seamlessly in physical space.',
-      'Integrated real-time lighting estimation to realistically match virtual asset shadows with physical surroundings.'
+      'Developed an interactive VR painting experience using Unity and C#.',
+      'Created an immersive virtual environment where users can interact with painting tools and surfaces.',
+      'Designed the experience around intuitive VR interactions to make painting accessible in a virtual environment.',
+      'Integrated interactive objects and painting elements to support the overall gameplay experience.'
     ],
 
     feature: [
-      'Real-time horizontal and vertical plane detection with visual mesh indicators.',
-      'One-tap surface anchoring and raycast hit testing for precise object spawning.',
-      'Multi-touch gesture controls for 360-degree rotation, pinch-to-scale, and drag relocation.',
-      'Environmental lighting estimation and dynamic soft real-time shadows.',
-      'Clean mobile UI overlay displaying tracking status, surface guidance, and object selectors.'
+      'Implemented VR-based object interaction and controller input systems.',
+      'Developed painting mechanics for interacting with virtual surfaces.',
+      'Created interactive painting tools and environment elements.',
+      'Implemented gameplay logic to control painting interactions and user actions.',
+      'Designed interactive UI elements required for the painting experience.',
+      'Integrated animations and visual feedback to improve interaction clarity.',
+      'Optimized the experience for smooth interaction on Meta Quest.'
     ],
 
     contribution: [
-      'Programmed AR raycasting, plane detection managers, and gesture recognition in Unity C#.',
-      'Implemented smooth lerp positioning and rotation constraints to prevent object drifting.',
-      'Optimized 3D asset draw calls and materials for smooth mobile AR performance.'
+      'Developed the core VR interaction systems using Unity and C#.',
+      'Implemented painting mechanics and interactive painting elements.',
+      'Created environment elements and interactive objects for the virtual experience.',
+      'Developed gameplay logic to manage user interactions and painting activities.',
+      'Integrated UI and feedback systems for improved usability.',
+      'Tested and optimized interactions for Meta Quest VR devices.'
     ],
 
-    technologies: 'UNITY · C# · AR · MOBILE PASSTHROUGH · GESTURE RECOGNITION',
-    link: '/projects/ar-project'
+    technologies: 'UNITY · C# · XR · META QUEST',
+    link: '/projects/vr-paint'
   },
 
   {
-    title: 'WEBGL 3D INTERACTIVE',
-    image: asset('/projects/webgl-project.jpg'),
+    title: 'F1 SHOWROOM',
+    image: asset('/projects/f1-showroom.jpg'),
 
-    description:
-      'High-performance browser-based 3D interactive application optimized with Unity WebGL, lightweight shaders, and responsive canvas scaling.',
+    description: 'Interactive virtual showroom prototype developed using Unity.',
 
     overview: [
-      'Developed an interactive 3D WebGL application designed to deliver real-time graphics smoothly in standard web browsers.',
-      'Focused heavily on WebGL build optimization, asset compression, and memory footprint minimization.',
-      'Engineered responsive canvas resizing and touch/mouse dual input handling across desktop and mobile browsers.',
-      'Demonstrated lightweight real-time shaders and low-overhead UI workflows for instant web loading.'
+      'Developed an interactive virtual showroom prototype using Unity and C#.',
+      'Created a detailed F1-inspired environment for exploring vehicles and showroom elements.',
+      'Designed the experience to allow users to explore and interact with different elements within the virtual environment.',
+      'Integrated environmental assets, interactive objects, and navigation systems to create an engaging showroom experience.'
     ],
 
     feature: [
-      'Direct browser execution with zero install requirement via WebGL 2.0 / HTML5 canvas.',
-      'Asset bundle streaming and Brotli/Gzip compression for rapid initial load times.',
-      'Interactive 3D orbit camera controls with inertia damping and zoom limits.',
-      'Dynamic real-time material switches and customizable lighting presets.',
-      'Real-time frame-rate (FPS) counter and memory monitoring overlay.'
+      'Developed interactive showroom elements and 3D object interactions.',
+      'Implemented user navigation and interaction systems.',
+      'Created gameplay logic for interactive showroom features.',
+      'Integrated environmental assets and scene elements.',
+      'Implemented UI elements to support navigation and user interaction.',
+      'Added animations and interactive events to enhance the showroom experience.',
+      'Optimized scene elements and interactions for a smooth real-time experience.'
     ],
 
     contribution: [
-      'Built the entire WebGL application pipeline, C# interaction controllers, and camera orbit logic.',
-      'Tuned Unity WebGL build configurations, player settings, and WebAssembly memory heap allocations.',
-      'Customized HTML5 template with loading progress bar and responsive fullscreen toggling.',
-      'Profiled and achieved stable 60 FPS performance across major web browsers (Chrome, Firefox, Safari, Edge).'
+      'Developed the virtual showroom environment using Unity.',
+      'Implemented interactive elements and object interactions.',
+      'Developed gameplay logic for showroom interactions.',
+      'Integrated 3D assets and environmental elements into the scene.',
+      'Implemented user navigation and interaction systems.',
+      'Created supporting UI and interactive feedback elements.'
     ],
 
-    technologies: 'UNITY · C# · WEBGL · WASM · HTML5 · REAL-TIME 3D',
-    link: '/projects/webgl-project'
+    technologies: 'UNITY · C# · XR',
+    link: '/projects/f1-showroom'
   }
+
 ];
