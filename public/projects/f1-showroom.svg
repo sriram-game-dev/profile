@@ -68,10 +68,4 @@
     <!-- Showroom Hologram Telemetry Rings -->
     <ellipse cx="0" cy="40" rx="300" ry="120" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="8,6" opacity="0.5" />
   </g>
-
-  <!-- Title Badge -->
-  <g transform="translate(600, 710)">
-    <rect x="-220" y="-30" width="440" height="52" rx="26" fill="#0f172a" fill-opacity="0.92" stroke="rgba(239, 68, 68, 0.4)" stroke-width="1.5" />
-    <text x="0" y="3" font-family="'Montserrat', sans-serif" font-size="18" font-weight="900" fill="#f8fafc" text-anchor="middle" letter-spacing="2">F1 SHOWROOM PROTOTYPE</text>
-  </g>
 </svg>

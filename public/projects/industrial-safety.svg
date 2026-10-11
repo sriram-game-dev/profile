@@ -64,10 +64,4 @@
       <polygon points="2,-4 -8,12 0,12 -2,24 8,8 0,8" fill="#b45309" />
     </g>
   </g>
-
-  <!-- Title Badge -->
-  <g transform="translate(600, 710)">
-    <rect x="-290" y="-30" width="580" height="52" rx="26" fill="#0f172a" fill-opacity="0.92" stroke="rgba(234, 179, 8, 0.4)" stroke-width="1.5" />
-    <text x="0" y="3" font-family="'Montserrat', sans-serif" font-size="18" font-weight="900" fill="#f8fafc" text-anchor="middle" letter-spacing="2">INDUSTRIAL LOTO &amp; SERVICES VR</text>
-  </g>
 </svg>
