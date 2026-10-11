@@ -331,7 +331,7 @@ export const personalProjects = [
   },
 
   {
-    title: 'VR PAINT',
+    title: 'Paint My Home VR',
     image: asset('/projects/vr-paint.jpg'),
 
     description: 'Interactive VR painting experience developed using Unity.',
