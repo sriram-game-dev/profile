@@ -1,4 +1,4 @@
-import { asset } from '../utils/asset.js';
+﻿import { asset } from '../utils/asset.js';
 
 export const projects = [
 
@@ -198,42 +198,6 @@ export const projects = [
     link: '/projects/industrial-safety'
   },
 
-  {
-    title: 'FACTORY PROTOTYPE',
-    image: asset('/projects/factory-prototype.jpg'),
-
-    description: 'Industrial VR experience developed for interactive environments.',
-
-    overview: [
-      'Developed an industrial VR prototype using Unity and C#.',
-      'Created a virtual factory environment for immersive exploration and interaction.',
-      'Designed interactive industrial elements to simulate a realistic workplace environment.',
-      'Integrated environmental assets and interactive systems to demonstrate potential industrial VR applications.'
-    ],
-
-    feature: [
-      'Developed interactive VR object and equipment interactions.',
-      'Implemented user navigation and movement systems within the factory environment.',
-      'Created gameplay logic for interactive industrial elements.',
-      'Integrated 3D environment assets and factory components.',
-      'Implemented interaction feedback for user actions.',
-      'Created event-driven interactions between objects and gameplay systems.',
-      'Optimized the environment and VR interactions for real-time performance.'
-    ],
-
-    contribution: [
-      'Developed the virtual factory environment using Unity.',
-      'Implemented VR interaction systems for industrial objects and equipment.',
-      'Developed gameplay logic for interactive factory elements.',
-      'Integrated and positioned 3D environment assets.',
-      'Implemented user navigation and interaction systems.',
-      'Created event-based interactions and supporting gameplay systems.',
-      'Optimized the VR environment for a smooth user experience.'
-    ],
-
-    technologies: 'UNITY · C# · VR',
-    link: '/projects/factory-prototype'
-  }
 ];
 
 export const personalProjects = [
