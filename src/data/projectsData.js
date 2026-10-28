@@ -1,10 +1,24 @@
-﻿import { asset } from '../utils/asset.js';
+import { asset } from '../utils/asset.js';
 
 export const projects = [
 
   {
+    id: 'loto-vr',
     title: 'LOTO VR Training',
     image: asset('/projects/loto-vr.jpg'),
+    video: null, // TODO: Add 5-10s looping MP4 clip to public/videos/loto-vr.mp4
+    featured: true,
+    platforms: ['Meta Quest', 'VR'],
+    techList: ['Unity', 'C#', 'Meta SDK'],
+    type: 'Training Simulation',
+
+    caseStudy: {
+      problem: 'High-voltage industrial equipment and pressurized valves present extreme physical hazards during on-site Lockout/Tagout (LOTO) training.',
+      role: 'Core VR Interaction Developer & Gameplay Programmer',
+      tech: 'Unity, C#, Meta SDK Interaction Toolkit, Meta Quest',
+      challenge: 'Ensuring strict sequential verification of mechanical lockouts and valve states while maintaining a rock-solid 72 FPS on standalone Meta Quest.',
+      result: 'Delivered an end-to-end interactive simulation from isolation to power restoration with multi-language guidance and zero workplace risk.'
+    },
 
     description:
       'Interactive VR-based industrial safety training application that simulates Lockout/Tagout procedures, equipment isolation, maintenance activities, and system restoration.',
@@ -45,8 +59,22 @@ export const projects = [
   },
 
   {
+    id: 'hose-manufacturing',
     title: 'Industrial Hose Manufacturing VR Training',
     image: asset('/projects/hose-manufacturing.jpg'),
+    video: null, // TODO: Add 5-10s looping MP4 clip to public/videos/hose-manufacturing.mp4
+    featured: false,
+    platforms: ['Meta Quest', 'VR'],
+    techList: ['Unity', 'C#', 'Meta SDK'],
+    type: 'Training Simulation',
+
+    caseStudy: {
+      problem: 'Industrial hose fabrication involves complex, specialized machinery (metal, rubber, beading, aerospace) requiring extensive hands-on procedural mastery.',
+      role: 'VR Interaction & Module Integration Engineer',
+      tech: 'Unity, C#, Meta Interaction Toolkit, Meta Quest',
+      challenge: 'Architecting five distinct production modules into a single cohesive, high-performance standalone VR application.',
+      result: 'Unified 5 specialized manufacturing pipelines into one streamlined virtual training curriculum with step-by-step progress tracking.'
+    },
 
     description:
       'Large-scale VR-based industrial training application covering five specialized Industrial Hose manufacturing modules.',
@@ -98,8 +126,22 @@ export const projects = [
   },
 
   {
+    id: 'ai-virtual-tryon',
     title: 'AI-Powered AR Virtual Try-On',
     image: asset('/projects/ai-virtual-tryon.jpg'),
+    video: null, // TODO: Add 5-10s looping MP4 clip to public/videos/ai-virtual-tryon.mp4
+    featured: false,
+    platforms: ['PC', 'Kiosk'],
+    techList: ['Unity', 'C#', 'AR', 'Google Gemini API'],
+    type: 'AR Experience',
+
+    caseStudy: {
+      problem: 'Event kiosks require zero-friction, highly engaging interactive experiences that blend real-time AR styling with responsive AI recommendations.',
+      role: 'UI & AR Interaction Systems Engineer',
+      tech: 'Unity, C#, AR, Google Gemini API',
+      challenge: 'Integrating real-time generative AI styling prompts with low-latency AR avatar rendering and multi-touch kiosk interactions.',
+      result: 'Deployed across multiple events and themes (Tamil cinema, holiday events, hair customization) with seamless live recommendations.'
+    },
 
     description:
       'AI-powered AR experiences developed for interactive PC kiosk applications, featuring outfit, accessory, and hairstyle customization.',
@@ -145,8 +187,22 @@ export const projects = [
   },
 
   {
+    id: 'industrial-safety',
     title: 'Industrial LOTO & Services VR Training',
     image: asset('/projects/industrial-safety.jpg'),
+    video: null, // TODO: Add 5-10s looping MP4 clip to public/videos/industrial-safety.mp4
+    featured: true,
+    platforms: ['Meta Quest', 'VR'],
+    techList: ['Unity', 'C#', 'Meta SDK'],
+    type: 'Training Simulation',
+
+    caseStudy: {
+      problem: 'Service maintenance on industrial transformers and complex machinery involves multi-department permit-to-work coordination and strict shutdown protocols.',
+      role: 'VR Gameplay Logic & Scenario Architect',
+      tech: 'Unity, C#, Meta SDK Interaction Toolkit, Meta Quest',
+      challenge: 'Connecting dynamic permit-to-work verification states with animated machinery operations and synchronized safety feedback loops.',
+      result: 'Simulated complete electrical isolation and valve lockout workflows with interactive feedback and multi-language support.'
+    },
 
     description:
       'Interactive VR-based industrial service training application featuring permit-to-work, Lockout/Tagout (LOTO), equipment isolation, maintenance, animation, and power restoration procedures.',
@@ -202,8 +258,22 @@ export const projects = [
 
 export const personalProjects = [
   {
+    id: 'fly-away',
     title: 'FLY AWAY',
     image: asset('/projects/game-project.jpg'),
+    video: null, // TODO: Add 5-10s looping MP4 clip to public/videos/fly-away.mp4
+    featured: true,
+    platforms: ['WebGL', 'PC', 'Android'],
+    techList: ['Unity 2D', 'C#', 'Object Pooling'],
+    type: 'Game',
+
+    caseStudy: {
+      problem: 'Fast-paced 2D mobile runner games suffer from frame stutters during continuous runtime obstacle instantiation and loose touch physics.',
+      role: 'Solo Game Designer & Gameplay Programmer',
+      tech: 'Unity 2D, C#, Sprite Animation, PlayerPrefs',
+      challenge: 'Achieving zero garbage-collection stutter through high-performance object pooling while tuning responsive one-touch glide physics.',
+      result: 'Published playable build on itch.io with procedural generation, parallax layers, audio system, and persistent high scores.'
+    },
 
     description:
       '2D side-scrolling endless runner game developed with Unity and C# featuring responsive controls, dynamic obstacles, and score tracking.',
@@ -251,8 +321,22 @@ export const personalProjects = [
   },
 
   {
+    id: 'the-blitz-arena',
     title: 'THE BLITZ ARENA',
     image: asset('/projects/blitz-arena.jpg'),
+    video: null, // TODO: Add 5-10s looping MP4 clip to public/videos/the-blitz-arena.mp4
+    featured: true,
+    platforms: ['Android', 'ARCore'],
+    techList: ['Unity', 'C#', 'AR Foundation', 'Shader Graph', 'URP'],
+    type: 'Game',
+
+    caseStudy: {
+      problem: 'Mobile AR target games often suffer from surface drift and lack visual punch due to generic unlit mobile shaders.',
+      role: 'AR Game Architect & Shader Author',
+      tech: 'Unity, C#, AR Foundation, ARCore, URP Shader Graph',
+      challenge: 'Authoring custom scrolling noise and HDR Fresnel rim shaders in URP while maintaining 60 FPS alongside live camera passthrough.',
+      result: 'Engineered plane detection, persistent ARAnchor pose locking, custom projectile object pooling, and published GitHub repository.'
+    },
 
     description:
       'Augmented reality target-practice mini-game for Android built in Unity with AR Foundation, featuring horizontal plane detection, tap-to-place anchoring, custom URP Shader Graph energy targets, and camera cannon mechanics.',
@@ -295,8 +379,22 @@ export const personalProjects = [
   },
 
   {
+    id: 'vr-paint',
     title: 'Paint My Home VR',
     image: asset('/projects/vr-paint.jpg'),
+    video: null, // TODO: Add 5-10s looping MP4 clip to public/videos/vr-paint.mp4
+    featured: false,
+    platforms: ['Meta Quest', 'VR'],
+    techList: ['Unity', 'C#', 'XR', 'Meta Quest'],
+    type: 'Virtual Showroom',
+
+    caseStudy: {
+      problem: 'Home owners and designers struggle to visualize dynamic interior color palettes and furniture materials in static 2D floor plans.',
+      role: 'VR Interaction Programmer',
+      tech: 'Unity, C#, Meta Quest XR SDK',
+      challenge: 'Creating intuitive spatial color-picker tools and surface-paint shaders that update dynamically without baking delays.',
+      result: 'Delivered an immersive room-scale VR experience enabling real-time paint testing and layout inspection on Meta Quest.'
+    },
 
     description: 'Interactive VR painting experience developed using Unity.',
 
@@ -331,8 +429,22 @@ export const personalProjects = [
   },
 
   {
+    id: 'f1-showroom',
     title: 'F1 SHOWROOM',
     image: asset('/projects/f1-showroom.jpg'),
+    video: null, // TODO: Add 5-10s looping MP4 clip to public/videos/f1-showroom.mp4
+    featured: false,
+    platforms: ['PC', 'VR', 'XR'],
+    techList: ['Unity', 'C#', 'XR'],
+    type: 'Virtual Showroom',
+
+    caseStudy: {
+      problem: 'Motorsport showcases require interactive inspection of high-poly racing vehicles with realistic lighting, materials, and part breakdowns.',
+      role: 'Prototype & Systems Developer',
+      tech: 'Unity, C#, XR',
+      challenge: 'Balancing detailed 3D vehicle polycounts with interactive orbital camera navigation and animated sub-assembly inspections.',
+      result: 'Created a high-fidelity interactive showroom prototype featuring detailed 3D vehicle inspection and smooth navigation.'
+    },
 
     description: 'Interactive virtual showroom prototype developed using Unity.',
 
@@ -367,3 +479,5 @@ export const personalProjects = [
   }
 
 ];
+
+export const allProjects = [...projects, ...personalProjects];
