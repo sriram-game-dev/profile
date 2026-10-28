@@ -3240,11 +3240,45 @@ footer {
   }
 
   .home h1 {
-    font-size: clamp(3.5rem, 18vw, 6rem);
+    font-size: clamp(2.2rem, 11vw, 4.5rem);
   }
 
   .home-description {
     font-size: 1rem;
+  }
+
+  /* Projects Section Mobile */
+  #projects.projects-section {
+    padding: 80px 20px !important;
+  }
+
+  #projects .projects-title {
+    margin: 0 0 40px !important;
+  }
+
+  #projects .projects-title::after {
+    width: 140px !important;
+    margin-top: 15px !important;
+  }
+
+  #projects .project-categories {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  #projects .project-category {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  #projects .category-card {
+    height: 220px !important;
+  }
+
+  #projects .category-card span {
+    font-size: 18px !important;
+    padding: 8px 18px !important;
+    letter-spacing: 0.08em !important;
   }
 
 
@@ -3456,19 +3490,40 @@ footer {
   }
 
   main {
-    padding: 0 20px;
+    padding: 0 16px;
+  }
+
+  .home h1 {
+    font-size: clamp(1.8rem, 10vw, 2.8rem);
+  }
+
+  #projects.projects-section {
+    padding: 60px 16px !important;
+  }
+
+  #projects .category-card {
+    height: 180px !important;
+  }
+
+  #projects .category-card span {
+    font-size: 15px !important;
+    padding: 6px 14px !important;
   }
 
   .experience {
-    padding: 80px 0;
+    padding: 60px 0;
   }
 
   .experience-timeline {
-    padding-left: 30px;
+    padding-left: 16px;
   }
 
   .experience-item {
-    padding-left: 30px;
+    padding-left: 16px;
+  }
+
+  .experience-details {
+    padding: 20px 16px !important;
   }
 
   .experience-details h1 {
