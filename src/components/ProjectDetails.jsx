@@ -1,6 +1,7 @@
 import NavBar from './NavBar';
 import './ProjectDetails.css';
 import { navigateTo } from '../utils/asset';
+import { projects } from '../data/projectsData';
 
 function ProjectDetails({ project }) {
 
@@ -9,16 +10,7 @@ function ProjectDetails({ project }) {
       window.history.back();
     } else {
       // Fallback if accessed directly via URL
-      const isProfessional = [
-        '/projects/loto-vr',
-        '/projects/hose-manufacturing',
-        '/projects/ai-virtual-tryon',
-        '/projects/industrial-safety',
-        '/projects/vr-paint',
-        '/projects/f1-showroom',
-        '/projects/factory-prototype'
-      ].includes(project.link);
-
+      const isProfessional = projects.some((p) => p.link === project.link);
       const target = isProfessional ? '/professional' : '/personal';
       navigateTo(target);
     }
@@ -196,8 +188,10 @@ function ProjectDetails({ project }) {
           {/* BACK BUTTON */}
 
           <button
+            type="button"
             className="project-back-button"
             onClick={handleBack}
+            aria-label="Back to projects"
           >
             ← Back to Projects
           </button>
