@@ -28,6 +28,7 @@ function App() {
     normalizePath(window.location.pathname)
   );
   const [activeAudience, setActiveAudience] = useState('all');
+  const [skillFilter, setSkillFilter] = useState('');
 
   useScrollReveal(path);
 
@@ -157,9 +158,17 @@ function App() {
           <Projects
             activeAudience={activeAudience}
             onSelectAudience={setActiveAudience}
+            skillFilter={skillFilter}
+            onClearSkillFilter={() => setSkillFilter('')}
           />
           <PlayableDemo />
-          <Skills />
+          <Skills
+            activeSkill={skillFilter}
+            onSelectSkill={(skill) => {
+              setSkillFilter(skill);
+              document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          />
           <Resume />
           <Contact />
         </main>

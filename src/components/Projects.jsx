@@ -8,7 +8,12 @@ const PLATFORMS = ['All', 'Meta Quest', 'Android', 'PC', 'WebGL'];
 const TECHS = ['All', 'Unity', 'C#', 'Meta SDK', 'AR Foundation', 'Shader Graph'];
 const TYPES = ['All', 'Training Simulation', 'Game', 'AR Experience', 'Virtual Showroom'];
 
-function Projects({ activeAudience = 'all', onSelectAudience = () => {} }) {
+function Projects({
+  activeAudience = 'all',
+  onSelectAudience = () => {},
+  skillFilter = '',
+  onClearSkillFilter = () => {}
+}) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedPlatform, setSelectedPlatform] = useState('All');
   const [selectedTech, setSelectedTech] = useState('All');
@@ -24,6 +29,15 @@ function Projects({ activeAudience = 'all', onSelectAudience = () => {} }) {
   // Reordering & filtering pipeline
   const filteredProjects = useMemo(() => {
     return allProjects.filter((p) => {
+      // Direct skill filter from Skills section click
+      if (skillFilter) {
+        const sf = skillFilter.toLowerCase();
+        const matchesSkill = p.technologies?.toLowerCase().includes(sf) ||
+          p.techList?.some((t) => t.toLowerCase().includes(sf)) ||
+          p.platforms?.some((plat) => plat.toLowerCase().includes(sf));
+        if (!matchesSkill) return false;
+      }
+
       // Search matching
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase();
@@ -71,13 +85,14 @@ function Projects({ activeAudience = 'all', onSelectAudience = () => {} }) {
       if (!a.featured && b.featured) return 1;
       return 0;
     });
-  }, [searchQuery, selectedPlatform, selectedTech, selectedType, activeAudience]);
+  }, [searchQuery, selectedPlatform, selectedTech, selectedType, activeAudience, skillFilter]);
 
   const handleResetFilters = () => {
     setSearchQuery('');
     setSelectedPlatform('All');
     setSelectedTech('All');
     setSelectedType('All');
+    if (skillFilter) onClearSkillFilter();
     if (activeAudience !== 'all') {
       onSelectAudience('all');
     }
@@ -103,6 +118,22 @@ function Projects({ activeAudience = 'all', onSelectAudience = () => {} }) {
             aria-label="Show all projects"
           >
             ✕ Show All Projects
+          </button>
+        </div>
+      )}
+
+      {/* ACTIVE SKILL FILTER BANNER */}
+      {skillFilter && (
+        <div className="active-audience-banner active-skill-banner reveal-on-scroll">
+          <span className="banner-prefix">Skill Highlight:</span>
+          <strong>Filtered to projects using &ldquo;{skillFilter}&rdquo;</strong>
+          <button
+            type="button"
+            className="banner-reset-btn"
+            onClick={onClearSkillFilter}
+            aria-label="Clear skill filter"
+          >
+            ✕ Clear Skill
           </button>
         </div>
       )}
