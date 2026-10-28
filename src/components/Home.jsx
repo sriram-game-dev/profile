@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { route } from "../utils/asset";
+import HeroCanvasToy from "./HeroCanvasToy";
 
 function Home() {
   const [text, setText] = useState("A Gamer.");
@@ -61,6 +62,15 @@ function Home() {
 
   return (
     <section className="home" id="home">
+      <HeroCanvasToy />
+
+      <div className="hero-status-badge" role="status" aria-live="polite">
+        <span className="status-dot">
+          <span className="status-dot-ping"></span>
+          <span className="status-dot-core"></span>
+        </span>
+        <span className="status-badge-text">Available for Work · Full-time &amp; Contracts</span>
+      </div>
 
       <span className="home-label">
         <span className="syntax-keyword">const</span> role = <span className="syntax-string">&quot;Game &amp; XR Dev&quot;</span>;
