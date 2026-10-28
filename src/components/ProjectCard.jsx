@@ -124,3 +124,4 @@ function ProjectCard({ project, onOpenCaseStudy }) {
 }
 
 export default ProjectCard;
+

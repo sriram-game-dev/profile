@@ -353,3 +353,4 @@ function HeroCanvasToy() {
 }
 
 export default HeroCanvasToy;
+

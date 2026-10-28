@@ -38,3 +38,4 @@ export function useScrollReveal(dependency) {
     return () => observer.disconnect();
   }, [dependency]);
 }
+
