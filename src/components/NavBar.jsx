@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
 import { normalizePath, route } from '../utils/asset';
 
-function NavBar({ onOpenCommandPalette = () => {} }) {
+function NavBar({
+  onOpenCommandPalette = () => {},
+  theme = 'dark',
+  onToggleTheme = () => {}
+}) {
   const [showGoTop, setShowGoTop] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -197,6 +201,16 @@ function NavBar({ onOpenCommandPalette = () => {} }) {
         <div className="navbar-right">
           <button
             type="button"
+            className="nav-theme-toggle"
+            onClick={onToggleTheme}
+            aria-label={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
+            title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
+          >
+            <span aria-hidden="true">{theme === 'dark' ? '☀️' : '🌙'}</span>
+          </button>
+
+          <button
+            type="button"
             className="nav-cmd-k-btn"
             onClick={onOpenCommandPalette}
             aria-label="Open command palette (Ctrl+K or Cmd+K)"
@@ -302,6 +316,17 @@ function NavBar({ onOpenCommandPalette = () => {} }) {
               <path d="M7 17L17 7M17 7H7M17 7V17" />
             </svg>
           </a>
+
+          <div className="mobile-theme-row">
+            <button
+              type="button"
+              className="mobile-theme-btn"
+              onClick={onToggleTheme}
+            >
+              <span>{theme === 'dark' ? '☀️' : '🌙'}</span>
+              <span>{theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}</span>
+            </button>
+          </div>
 
           <div className="mobile-cta-wrapper">
             <button

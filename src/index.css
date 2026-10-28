@@ -36,6 +36,109 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Light Mode Theme Tokens */
+:root[data-theme="light"],
+[data-theme="light"] {
+  --bg-dark: #f8fafc;
+  --bg-card: rgba(255, 255, 255, 0.92);
+  --bg-card-hover: rgba(241, 245, 249, 0.98);
+  --bg-glass: rgba(255, 255, 255, 0.88);
+
+  --text-main: #0f172a;
+  --text-muted: #334155;
+  --text-dim: #64748b;
+  --border-subtle: rgba(15, 23, 42, 0.12);
+  --border-glass: rgba(15, 23, 42, 0.16);
+}
+
+[data-theme="light"] body {
+  background-color: #f8fafc;
+  background-image:
+    radial-gradient(ellipse 65% 50% at 90% -5%, rgba(245, 158, 11, 0.1) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 55% at 5% 15%, rgba(139, 92, 246, 0.12) 0%, transparent 70%),
+    radial-gradient(circle 700px at 70% 55%, rgba(139, 92, 246, 0.06) 0%, transparent 75%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120' opacity='0.03'%3E%3Cpolygon points='0,0 60,0 30,50' fill='none' stroke='%230f172a' stroke-width='0.8'/%3E%3Cpolygon points='60,0 120,0 90,50' fill='none' stroke='%230f172a' stroke-width='0.8'/%3E%3Cpolygon points='0,0 30,50 0,100' fill='none' stroke='%230f172a' stroke-width='0.8'/%3E%3Cpolygon points='30,50 60,0 90,50' fill='none' stroke='%230f172a' stroke-width='0.8'/%3E%3Cpolygon points='90,50 120,0 120,100' fill='none' stroke='%230f172a' stroke-width='0.8'/%3E%3Cpolygon points='30,50 90,50 60,100' fill='none' stroke='%230f172a' stroke-width='0.8'/%3E%3Cpolygon points='0,100 30,50 60,100' fill='none' stroke='%230f172a' stroke-width='0.8'/%3E%3Cpolygon points='60,100 90,50 120,100' fill='none' stroke='%230f172a' stroke-width='0.8'/%3E%3Cpolygon points='0,100 60,100 30,120' fill='none' stroke='%230f172a' stroke-width='0.8'/%3E%3Cpolygon points='60,100 120,100 90,120' fill='none' stroke='%230f172a' stroke-width='0.8'/%3E%3C/svg%3E");
+  color: var(--text-main);
+}
+
+[data-theme="light"] .navbar {
+  background: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+[data-theme="light"] .navbar--scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .brand-name {
+  color: #0f172a;
+}
+
+[data-theme="light"] .nav-item {
+  color: #334155;
+}
+
+[data-theme="light"] .project-card-interactive,
+[data-theme="light"] .hero-status-pill,
+[data-theme="light"] .contact-stepper-card,
+[data-theme="light"] .cmd-palette-modal,
+[data-theme="light"] .skills-interactive-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(139, 92, 246, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="light"] .interactive-card-title,
+[data-theme="light"] .step-title,
+[data-theme="light"] .cmd-palette-input {
+  color: #0f172a;
+}
+
+[data-theme="light"] .interactive-card-summary,
+[data-theme="light"] .step-desc {
+  color: #475569;
+}
+
+[data-theme="light"] .stepper-input,
+[data-theme="light"] .stepper-textarea {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+[data-theme="light"] .intent-card {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+[data-theme="light"] .intent-name {
+  color: #0f172a;
+}
+
+[data-theme="light"] .intent-card.selected {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: #f59e0b;
+}
+
+[data-theme="light"] .drawer-sheet {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+[data-theme="light"] .drawer-header {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+[data-theme="light"] .pillar-block {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+[data-theme="light"] .pillar-block p {
+  color: #334155;
+}
+
 body {
   margin: 0;
   padding: 0;

@@ -20,6 +20,7 @@ import { projects, personalProjects } from './data/projectsData';
 import { normalizePath, navigateTo } from './utils/asset';
 import ScrollProgressBar from './components/ScrollProgressBar';
 import CommandPalette from './components/CommandPalette';
+import KonamiEasterEgg from './components/KonamiEasterEgg';
 import { useScrollReveal } from './utils/useScrollReveal';
 
 
@@ -31,8 +32,29 @@ function App() {
   const [activeAudience, setActiveAudience] = useState('all');
   const [skillFilter, setSkillFilter] = useState('');
   const [cmdPaletteOpen, setCmdPaletteOpen] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    try {
+      return localStorage.getItem('portfolio-theme') || 'dark';
+    } catch {
+      return 'dark';
+    }
+  });
 
   useScrollReveal(path);
+
+  // Apply theme to document root
+  useEffect(() => {
+    try {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('portfolio-theme', theme);
+    } catch {
+      // ignore in sandboxed / private storage environments
+    }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
 
   // Global Ctrl+K / Cmd+K listener
   useEffect(() => {
@@ -101,13 +123,20 @@ function App() {
     return (
       <>
         <ScrollProgressBar />
-        <NavBar onOpenCommandPalette={() => setCmdPaletteOpen(true)} />
+        <NavBar
+          onOpenCommandPalette={() => setCmdPaletteOpen(true)}
+          theme={theme}
+          onToggleTheme={toggleTheme}
+        />
         <ProfessionalProjects />
         <Footer />
-        <CommandPalette
-          isOpen={cmdPaletteOpen}
-          onClose={() => setCmdPaletteOpen(false)}
-        />
+        {cmdPaletteOpen && (
+          <CommandPalette
+            isOpen={cmdPaletteOpen}
+            onClose={() => setCmdPaletteOpen(false)}
+          />
+        )}
+        <KonamiEasterEgg />
       </>
     );
   }
@@ -121,13 +150,20 @@ function App() {
     return (
       <>
         <ScrollProgressBar />
-        <NavBar onOpenCommandPalette={() => setCmdPaletteOpen(true)} />
+        <NavBar
+          onOpenCommandPalette={() => setCmdPaletteOpen(true)}
+          theme={theme}
+          onToggleTheme={toggleTheme}
+        />
         <PersonalProjects />
         <Footer />
-        <CommandPalette
-          isOpen={cmdPaletteOpen}
-          onClose={() => setCmdPaletteOpen(false)}
-        />
+        {cmdPaletteOpen && (
+          <CommandPalette
+            isOpen={cmdPaletteOpen}
+            onClose={() => setCmdPaletteOpen(false)}
+          />
+        )}
+        <KonamiEasterEgg />
       </>
     );
   }
@@ -151,15 +187,22 @@ function App() {
     return (
       <>
         <ScrollProgressBar />
-        <NavBar onOpenCommandPalette={() => setCmdPaletteOpen(true)} />
+        <NavBar
+          onOpenCommandPalette={() => setCmdPaletteOpen(true)}
+          theme={theme}
+          onToggleTheme={toggleTheme}
+        />
         <ProjectDetails
           project={project}
         />
         <Footer />
-        <CommandPalette
-          isOpen={cmdPaletteOpen}
-          onClose={() => setCmdPaletteOpen(false)}
-        />
+        {cmdPaletteOpen && (
+          <CommandPalette
+            isOpen={cmdPaletteOpen}
+            onClose={() => setCmdPaletteOpen(false)}
+          />
+        )}
+        <KonamiEasterEgg />
       </>
     );
   }
@@ -173,7 +216,11 @@ function App() {
     return (
       <>
         <ScrollProgressBar />
-        <NavBar onOpenCommandPalette={() => setCmdPaletteOpen(true)} />
+        <NavBar
+          onOpenCommandPalette={() => setCmdPaletteOpen(true)}
+          theme={theme}
+          onToggleTheme={toggleTheme}
+        />
 
         <main>
           <Home
@@ -201,10 +248,13 @@ function App() {
         </main>
 
         <Footer />
-        <CommandPalette
-          isOpen={cmdPaletteOpen}
-          onClose={() => setCmdPaletteOpen(false)}
-        />
+        {cmdPaletteOpen && (
+          <CommandPalette
+            isOpen={cmdPaletteOpen}
+            onClose={() => setCmdPaletteOpen(false)}
+          />
+        )}
+        <KonamiEasterEgg />
       </>
     );
   }
@@ -217,7 +267,11 @@ function App() {
   return (
     <>
       <ScrollProgressBar />
-      <NavBar onOpenCommandPalette={() => setCmdPaletteOpen(true)} />
+      <NavBar
+        onOpenCommandPalette={() => setCmdPaletteOpen(true)}
+        theme={theme}
+        onToggleTheme={toggleTheme}
+      />
 
       <main
         className="not-found-page"
@@ -284,6 +338,7 @@ function App() {
           onClose={() => setCmdPaletteOpen(false)}
         />
       )}
+      <KonamiEasterEgg />
     </>
   );
 }
