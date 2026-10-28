@@ -20,9 +20,9 @@ function Projects() {
   return (
     <section id="projects" className="projects-section">
 
-      <h2 className="projects-title">MY WORK</h2>
+      <h2 className="projects-title reveal-on-scroll">MY WORK</h2>
 
-      <div className="project-categories">
+      <div className="project-categories reveal-on-scroll reveal-delay-1">
 
         {/* PROFESSIONAL */}
         <a

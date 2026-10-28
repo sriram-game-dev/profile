@@ -17,6 +17,8 @@ import PersonalProjects from './components/PersonalProjects';
 import ProjectDetails from './components/ProjectDetails';
 import { projects, personalProjects } from './data/projectsData';
 import { normalizePath, navigateTo } from './utils/asset';
+import ScrollProgressBar from './components/ScrollProgressBar';
+import { useScrollReveal } from './utils/useScrollReveal';
 
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
   const [path, setPath] = useState(
     normalizePath(window.location.pathname)
   );
+
+  useScrollReveal(path);
 
 
   // ========================================
@@ -79,6 +83,7 @@ function App() {
   if (path === '/professional') {
     return (
       <>
+        <ScrollProgressBar />
         <NavBar />
         <ProfessionalProjects />
         <Footer />
@@ -94,6 +99,7 @@ function App() {
   if (path === '/personal') {
     return (
       <>
+        <ScrollProgressBar />
         <NavBar />
         <PersonalProjects />
         <Footer />
@@ -119,6 +125,7 @@ function App() {
   if (project) {
     return (
       <>
+        <ScrollProgressBar />
         <ProjectDetails
           project={project}
         />
@@ -135,6 +142,7 @@ function App() {
   if (path === '/' || path === '') {
     return (
       <>
+        <ScrollProgressBar />
         <NavBar />
 
         <main>
@@ -159,6 +167,7 @@ function App() {
 
   return (
     <>
+      <ScrollProgressBar />
       <NavBar />
 
       <main

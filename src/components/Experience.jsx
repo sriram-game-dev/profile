@@ -36,7 +36,7 @@ function Experience() {
     <section id="experience" className="experience backstory-section">
 
       {/* SECTION HEADER (GERLOGU STYLE) */}
-      <div className="experience-header">
+      <div className="experience-header reveal-on-scroll">
         <span className="section-label">CAREER &amp; JOURNEY</span>
         <h2 className="experience-heading">My Backstory</h2>
         <div className="experience-header-line"></div>
@@ -45,7 +45,7 @@ function Experience() {
 
 
       {/* TIMELINE CONTAINER */}
-      <div className="experience-content">
+      <div className="experience-content reveal-on-scroll reveal-delay-1">
 
         <div className="experience-timeline">
 

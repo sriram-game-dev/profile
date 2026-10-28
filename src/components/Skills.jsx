@@ -4,12 +4,12 @@ function Skills() {
 
       <span className="section-label">SYSTEM ARCHITECTURE</span>
 
-      <div className="skills-header">
+      <div className="skills-header reveal-on-scroll">
         <h2>MY TOOLKIT</h2>
         <div className="experience-header-line"></div>
       </div>
 
-      <div className="skills-grid">
+      <div className="skills-grid reveal-on-scroll reveal-delay-1">
 
         <div className="skill-group">
           <span className="skill-label">ENGINE</span>

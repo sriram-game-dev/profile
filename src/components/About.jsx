@@ -79,7 +79,7 @@ function About() {
   return (
     <section id="about" className="about">
 
-      <div className="about-layout">
+      <div className="about-layout reveal-on-scroll">
 
         {/* LEFT SIDE - VISUALS */}
         <div className="about-highlights">

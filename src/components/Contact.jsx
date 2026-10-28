@@ -43,7 +43,7 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="contact">
+    <section id="contact" className="contact reveal-on-scroll">
 
       <span className="section-label">GET IN TOUCH</span>
 
