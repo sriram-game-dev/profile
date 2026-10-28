@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import ContactStepper from './ContactStepper';
 
 function Contact() {
   const [copyStatus, setCopyStatus] = useState('idle'); // 'idle' | 'copied' | 'error'
@@ -53,6 +54,9 @@ function Contact() {
         Whether you have an XR simulation project to build, a game developer role to fill,
         or want to discuss immersive technology — my inbox is always open.
       </p>
+
+      {/* Interactive Mission Stepper */}
+      <ContactStepper />
 
       {/* Direct Contact Card */}
       <div
