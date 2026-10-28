@@ -1,9 +1,68 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { route } from "../utils/asset";
 
 function Experience() {
 
   const [popup, setPopup] = useState(null);
+  const timelineRef = useRef(null);
+  const beamRef = useRef(null);
+  const sparkRef = useRef(null);
+  const itemRefs = useRef([]);
+
+  // Scroll-driven energy beam animation
+  useEffect(() => {
+    let ticking = false;
+
+    const updateBeam = () => {
+      if (!timelineRef.current) return;
+      const rect = timelineRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Trigger line at 65% of viewport height
+      const triggerY = windowHeight * 0.65;
+      const startY = rect.top;
+      const totalHeight = rect.height;
+
+      // Calculate progress fraction [0, 1]
+      const distance = triggerY - startY;
+      const progress = Math.min(Math.max(distance / totalHeight, 0), 1);
+
+      if (beamRef.current) {
+        beamRef.current.style.height = `${progress * 100}%`;
+      }
+      if (sparkRef.current) {
+        sparkRef.current.style.top = `${progress * 100}%`;
+        sparkRef.current.style.opacity = (progress > 0.01 && progress < 0.99) ? "1" : "0";
+      }
+
+      // Check each milestone item to energize
+      itemRefs.current.forEach((el) => {
+        if (!el) return;
+        const itemRect = el.getBoundingClientRect();
+        const isPassed = triggerY >= itemRect.top + 30;
+        el.classList.toggle("node-energized", isPassed);
+      });
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateBeam();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+    updateBeam();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
 
   const handleOpenPopup = (type) => {
     setPopup(type);
@@ -47,18 +106,27 @@ function Experience() {
       {/* TIMELINE CONTAINER */}
       <div className="experience-content reveal-on-scroll reveal-delay-1">
 
-        <div className="experience-timeline">
+        <div className="experience-timeline" ref={timelineRef}>
 
-          {/* Glowing central timeline axis */}
-          <div className="experience-line"></div>
+          {/* Static track */}
+          <div className="experience-line experience-line-track" aria-hidden="true"></div>
+
+          {/* Glowing dynamic scroll beam */}
+          <div className="experience-line-beam" ref={beamRef} aria-hidden="true">
+            <div className="experience-beam-spark" ref={sparkRef}></div>
+          </div>
 
           {/* ========================================
               ENTRY 1 - JUNIOR ENGINEER (XR DEV)
           ======================================== */}
-          <div className="experience-item experience-right">
+          <div
+            className="experience-item experience-right"
+            ref={(el) => { itemRefs.current[0] = el; }}
+          >
 
             <div className="experience-dot" aria-hidden="true">
               <span className="dot-pulse"></span>
+              <span className="dot-energy-ring"></span>
             </div>
 
             <div className="experience-details backstory-card">
@@ -112,10 +180,14 @@ function Experience() {
           {/* ========================================
               ENTRY 2 - INDEPENDENT GAME DEVELOPER
           ======================================== */}
-          <div className="experience-item experience-left">
+          <div
+            className="experience-item experience-left"
+            ref={(el) => { itemRefs.current[1] = el; }}
+          >
 
             <div className="experience-dot" aria-hidden="true">
               <span className="dot-pulse"></span>
+              <span className="dot-energy-ring"></span>
             </div>
 
             <div className="experience-details backstory-card">

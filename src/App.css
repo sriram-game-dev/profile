@@ -77,6 +77,13 @@ body {
   .scroll-progress-bar {
     transition: none !important;
   }
+  .experience-line-beam {
+    height: 100% !important;
+    transition: none !important;
+  }
+  .experience-beam-spark {
+    display: none !important;
+  }
 }
 
 a {
@@ -3674,16 +3681,56 @@ section {
   gap: 55px;
 }
 
-/* Central glowing vertical timeline axis */
+/* Central vertical timeline track (rail) */
 .experience-line {
   position: absolute;
   left: 50%;
   top: 15px;
   bottom: 15px;
   width: 2px;
-  background: linear-gradient(180deg, #f59e0b 0%, #8b5cf6 50%, rgba(139, 92, 246, 0.15) 100%);
+  background: rgba(148, 163, 184, 0.12);
   transform: translateX(-50%);
-  box-shadow: 0 0 10px rgba(139, 92, 246, 0.4);
+  border-radius: 9999px;
+  z-index: 1;
+}
+
+.experience-line-track {
+  background: rgba(148, 163, 184, 0.15);
+  box-shadow: none;
+}
+
+/* Scroll-driven energetic neon beam */
+.experience-line-beam {
+  position: absolute;
+  left: 50%;
+  top: 15px;
+  width: 3px;
+  height: 0%;
+  background: linear-gradient(180deg, #f59e0b 0%, #fbbf24 35%, #8b5cf6 75%, #a855f7 100%);
+  transform: translateX(-50%);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.9), 0 0 24px rgba(139, 92, 246, 0.7);
+  z-index: 2;
+  border-radius: 9999px;
+  pointer-events: none;
+  will-change: height;
+  transition: height 0.08s ease-out;
+}
+
+/* Traveling photon spark at the leading edge of the beam */
+.experience-beam-spark {
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 10px #ffffff, 0 0 20px #f59e0b, 0 0 35px #8b5cf6;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  z-index: 4;
 }
 
 /* Timeline Item - Structured Flex Flow */
@@ -3691,6 +3738,7 @@ section {
   position: relative;
   width: 50%;
   display: flex;
+  transition: transform 0.3s ease;
 }
 
 /* Right side item */
@@ -3716,22 +3764,75 @@ section {
   width: 18px;
   height: 18px;
   background: #0f172a;
-  border: 3px solid #f59e0b;
-  box-shadow: 0 0 14px rgba(245, 158, 11, 0.8);
+  border: 3px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
   border-radius: 50%;
   z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .dot-pulse {
   width: 6px;
   height: 6px;
-  background-color: #f59e0b;
+  background-color: #64748b;
   border-radius: 50%;
-  animation: pulseGreen 2s infinite ease-in-out;
+  transition: background-color 0.35s ease;
+}
+
+.dot-energy-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  pointer-events: none;
+  transition: all 0.35s ease;
+}
+
+/* Energized / Active Milestone State (When Beam Passes Node) */
+.experience-item.node-energized .experience-dot {
+  border-color: #f59e0b;
+  background: rgba(15, 23, 42, 0.95);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.95), inset 0 0 8px rgba(245, 158, 11, 0.5);
+  transform: scale(1.18);
+}
+
+.experience-right.node-energized .experience-dot {
+  left: 0;
+  transform: translateX(-50%) scale(1.18);
+}
+
+.experience-left.node-energized .experience-dot {
+  right: 0;
+  transform: translateX(50%) scale(1.18);
+}
+
+.experience-item.node-energized .dot-pulse {
+  background-color: #f59e0b;
+  animation: pulseGreen 1.8s infinite ease-in-out;
+}
+
+.experience-item.node-energized .dot-energy-ring {
+  border-color: rgba(245, 158, 11, 0.6);
+  animation: energyRingPulse 2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}
+
+@keyframes energyRingPulse {
+  0% { transform: scale(0.9); opacity: 0.9; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+.experience-item.node-energized .backstory-card {
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4), 0 0 25px rgba(245, 158, 11, 0.08);
+}
+
+.experience-item.node-energized .backstory-role-tag {
+  background: rgba(245, 158, 11, 0.18);
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #f59e0b;
 }
 
 .experience-item:hover .experience-dot {
@@ -3963,10 +4064,15 @@ section {
     padding-left: 35px;
   }
 
-  /* Shift line to the left edge */
-  .experience-line {
+  /* Shift line and beam to the left edge */
+  .experience-line,
+  .experience-line-beam {
     left: 0;
     transform: none;
+  }
+
+  .experience-beam-spark {
+    left: 0;
   }
 
   /* Both cards take full width */
@@ -3984,6 +4090,13 @@ section {
     left: -35px;
     right: auto;
     transform: translateX(-50%);
+  }
+
+  .experience-right.node-energized .experience-dot,
+  .experience-left.node-energized .experience-dot {
+    left: -35px;
+    right: auto;
+    transform: translateX(-50%) scale(1.18);
   }
 
   .experience-item.experience-right:hover .experience-dot,
@@ -5251,15 +5364,20 @@ footer {
   }
 
 
-  /* Timeline line */
+  /* Timeline line & beam */
 
-  .experience-line {
+  .experience-line,
+  .experience-line-beam {
     left: 0;
 
     top: 0;
     bottom: 0;
 
     transform: none;
+  }
+
+  .experience-beam-spark {
+    left: 0;
   }
 
 
