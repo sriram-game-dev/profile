@@ -8,6 +8,33 @@ function About() {
   const cardRef = useRef(null);
   const animated = useRef(false);
 
+  const handleOpenPopup = (type) => {
+    setPopup(type);
+    document.body.style.overflow = "hidden";
+  };
+
+  const handleClosePopup = () => {
+    setPopup(null);
+    document.body.style.overflow = "unset";
+  };
+
+  useEffect(() => {
+    if (!popup) return;
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        handleClosePopup();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [popup]);
+
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, []);
+
   const handleImageError = (e) => {
     if (!e.currentTarget.dataset.errored) {
       e.currentTarget.dataset.errored = 'true';
@@ -21,6 +48,7 @@ function About() {
   useEffect(() => {
     const target = 20;
     const duration = 1500;
+    let rafId;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !animated.current) {
@@ -32,15 +60,20 @@ function About() {
             // ease-out cubic
             const eased = 1 - Math.pow(1 - progress, 3);
             setCount(Math.floor(eased * target));
-            if (progress < 1) requestAnimationFrame(tick);
+            if (progress < 1) {
+              rafId = requestAnimationFrame(tick);
+            }
           };
-          requestAnimationFrame(tick);
+          rafId = requestAnimationFrame(tick);
         }
       },
       { threshold: 0.4 }
     );
     if (cardRef.current) observer.observe(cardRef.current);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (
@@ -84,11 +117,11 @@ function About() {
             role="button"
             tabIndex={0}
             aria-label="Open certifications and courses popup"
-            onClick={() => setPopup("certifications")}
+            onClick={() => handleOpenPopup("certifications")}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
                 e.preventDefault();
-                setPopup("certifications");
+                handleOpenPopup("certifications");
               }
             }}
           >
@@ -111,11 +144,11 @@ function About() {
             role="button"
             tabIndex={0}
             aria-label="Open achievements popup"
-            onClick={() => setPopup("achievements")}
+            onClick={() => handleOpenPopup("achievements")}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
                 e.preventDefault();
-                setPopup("achievements");
+                handleOpenPopup("achievements");
               }
             }}
           >
@@ -148,11 +181,11 @@ function About() {
             Hello there,
           </p>
 
-          <h1>
+          <h2 className="about-name-heading">
             My name is <strong>S. Sriram</strong>
-          </h1>
+          </h2>
 
-          <h2>Game · XR Developer</h2>
+          <p className="about-subheading">Game · XR Developer</p>
 
           <p>
             I specialize in game mechanics, game concepts, and immersive
@@ -180,7 +213,10 @@ function About() {
       {popup === "certifications" && (
         <div
           className="about-popup-overlay"
-          onClick={() => setPopup(null)}
+          onClick={handleClosePopup}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Certifications and courses"
         >
 
           <div
@@ -190,8 +226,9 @@ function About() {
 
             {/* CLOSE BUTTON */}
             <button
+              type="button"
               className="about-popup-close"
-              onClick={() => setPopup(null)}
+              onClick={handleClosePopup}
               aria-label="Close certifications and courses"
             >
               ×
@@ -498,7 +535,10 @@ function About() {
       {popup === "achievements" && (
         <div
           className="about-popup-overlay"
-          onClick={() => setPopup(null)}
+          onClick={handleClosePopup}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Achievements"
         >
 
           <div
@@ -507,8 +547,9 @@ function About() {
           >
 
             <button
+              type="button"
               className="about-popup-close"
-              onClick={() => setPopup(null)}
+              onClick={handleClosePopup}
               aria-label="Close achievements"
             >
               ×

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { route } from "../utils/asset";
 
 function Experience() {
@@ -15,13 +15,30 @@ function Experience() {
     document.body.style.overflow = "unset";
   };
 
+  useEffect(() => {
+    if (!popup) return;
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        handleClosePopup();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [popup]);
+
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, []);
+
   return (
     <section id="experience" className="experience backstory-section">
 
       {/* SECTION HEADER (GERLOGU STYLE) */}
       <div className="experience-header">
         <span className="section-label">CAREER &amp; JOURNEY</span>
-        <h1>My Backstory</h1>
+        <h2 className="experience-heading">My Backstory</h2>
         <div className="experience-header-line"></div>
       </div>
 
@@ -157,10 +174,17 @@ function Experience() {
           POPUP 1: WORK EXPERIENCE MODAL
       ======================================== */}
       {popup === "work" && (
-        <div className="experience-popup-overlay" onClick={handleClosePopup}>
+        <div
+          className="experience-popup-overlay"
+          onClick={handleClosePopup}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Junior Engineer XR Development experience"
+        >
           <div className="experience-popup" onClick={(e) => e.stopPropagation()}>
 
             <button
+              type="button"
               className="experience-popup-close"
               onClick={handleClosePopup}
               aria-label="Close work experience"
@@ -220,10 +244,17 @@ function Experience() {
           POPUP 2: PERSONAL PROJECTS & PROTOTYPING
       ======================================== */}
       {popup === "personal" && (
-        <div className="experience-popup-overlay" onClick={handleClosePopup}>
+        <div
+          className="experience-popup-overlay"
+          onClick={handleClosePopup}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Independent Game Developer background"
+        >
           <div className="experience-popup" onClick={(e) => e.stopPropagation()}>
 
             <button
+              type="button"
               className="experience-popup-close"
               onClick={handleClosePopup}
               aria-label="Close personal projects"

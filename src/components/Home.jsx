@@ -19,6 +19,7 @@ function Home() {
   useEffect(() => {
     if (phase === "backspace") {
       let current = "A Gamer.";
+      let delayTimer;
 
       const timer = setInterval(() => {
         current = current.slice(0, -1);
@@ -27,13 +28,16 @@ function Home() {
         if (current === "A ") {
           clearInterval(timer);
 
-          setTimeout(() => {
+          delayTimer = setTimeout(() => {
             setPhase("typing");
           }, 1000);
         }
       }, 80);
 
-      return () => clearInterval(timer);
+      return () => {
+        clearInterval(timer);
+        if (delayTimer) clearTimeout(delayTimer);
+      };
     }
 
     if (phase === "typing") {

@@ -1,11 +1,19 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 function Contact() {
   const [copyStatus, setCopyStatus] = useState('idle'); // 'idle' | 'copied' | 'error'
+  const timerRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
 
   const email = 'sriramsridhar29@gmail.com';
 
   const handleCopy = async () => {
+    if (timerRef.current) clearTimeout(timerRef.current);
     try {
       if (navigator.clipboard && window.isSecureContext) {
         await navigator.clipboard.writeText(email);
@@ -27,10 +35,10 @@ function Contact() {
           throw new Error('execCommand copy failed');
         }
       }
-      setTimeout(() => setCopyStatus('idle'), 2500);
+      timerRef.current = setTimeout(() => setCopyStatus('idle'), 2500);
     } catch {
       setCopyStatus('error');
-      setTimeout(() => setCopyStatus('idle'), 3000);
+      timerRef.current = setTimeout(() => setCopyStatus('idle'), 3000);
     }
   };
 
