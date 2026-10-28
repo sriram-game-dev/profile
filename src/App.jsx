@@ -16,7 +16,7 @@ import ProfessionalProjects from './components/ProfessionalProjects';
 import PersonalProjects from './components/PersonalProjects';
 import ProjectDetails from './components/ProjectDetails';
 import { projects, personalProjects } from './data/projectsData';
-import { normalizePath } from './utils/asset';
+import { normalizePath, navigateTo } from './utils/asset';
 
 
 function App() {
@@ -132,26 +132,91 @@ function App() {
   // MAIN PORTFOLIO
   // ========================================
 
+  if (path === '/' || path === '') {
+    return (
+      <>
+        <NavBar />
+
+        <main>
+          <Home />
+          <About />
+          <Experience />
+          <Projects />
+          <Skills />
+          <Resume />
+          <Contact />
+        </main>
+
+        <Footer />
+      </>
+    );
+  }
+
+
+  // ========================================
+  // NOT FOUND (404) FALLBACK
+  // ========================================
+
   return (
     <>
       <NavBar />
 
-      <main>
+      <main
+        className="not-found-page"
+        style={{
+          minHeight: '70vh',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center',
+          padding: '120px 20px'
+        }}
+      >
+        <h1
+          style={{
+            fontSize: 'clamp(3rem, 8vw, 6rem)',
+            color: 'var(--amber-primary)',
+            margin: 0,
+            fontFamily: 'var(--font-mono)'
+          }}
+        >
+          404
+        </h1>
 
-        <Home />
+        <h2
+          style={{
+            fontSize: 'clamp(1.5rem, 4vw, 2.2rem)',
+            color: '#f8fafc',
+            margin: '15px 0'
+          }}
+        >
+          Scene Not Loaded
+        </h2>
 
-        <About />
+        <p
+          style={{
+            maxWidth: '480px',
+            color: '#94a3b8',
+            marginBottom: '30px',
+            fontSize: '1rem'
+          }}
+        >
+          The requested level or route does not exist or has been relocated in this build.
+        </p>
 
-        <Experience />
-
-        <Projects />
-
-        <Skills />
-
-        <Resume />
-
-        <Contact />
-
+        <button
+          type="button"
+          onClick={() => navigateTo('/')}
+          className="nav-game-button"
+          style={{
+            padding: '12px 28px',
+            fontSize: '1rem',
+            cursor: 'pointer'
+          }}
+        >
+          Return to Spawn Point
+        </button>
       </main>
 
       <Footer />
