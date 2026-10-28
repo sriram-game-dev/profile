@@ -1063,14 +1063,17 @@ section {
   position: absolute;
   top: 15px;
   right: 20px;
-  width: 35px;
-  height: 35px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0;
   border: none;
   background: transparent;
   color: #94a3b8;
   font-size: 2rem;
   line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   transition:
     color 0.2s ease,
@@ -2614,14 +2617,17 @@ section {
   position: absolute;
   top: 15px;
   right: 20px;
-  width: 35px;
-  height: 35px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0;
   border: none;
   background: transparent;
   color: #94a3b8;
   font-size: 2rem;
   line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   transition:
     color 0.2s ease,
