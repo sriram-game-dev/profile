@@ -3008,6 +3008,192 @@ section {
   transform: translateX(2px);
 }
 
+/* ========================================
+   FEATURE 7: COMMAND PALETTE (CTRL/CMD+K)
+======================================== */
+.nav-cmd-k-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 6px 11px;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  border-radius: 6px;
+  color: #cbd5e1;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-right: 6px;
+}
+
+.nav-cmd-k-btn:hover {
+  border-color: #f59e0b;
+  color: #f59e0b;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.25);
+  transform: translateY(-1px);
+}
+
+.cmd-k-symbol {
+  font-size: 0.85rem;
+}
+
+.cmd-palette-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(8px);
+  z-index: 100000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 100px 20px 20px;
+  animation: fadeInModal 0.2s ease forwards;
+}
+
+.cmd-palette-modal {
+  width: 100%;
+  max-width: 620px;
+  background: #0f172a;
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(139, 92, 246, 0.25);
+  display: flex;
+  flex-direction: column;
+  animation: scaleInPalette 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes scaleInPalette {
+  from {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.cmd-input-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(15, 23, 42, 0.95);
+}
+
+.cmd-search-icon {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.2rem;
+  color: #f59e0b;
+}
+
+.cmd-palette-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #f8fafc;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+}
+
+.cmd-esc-kbd {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #94a3b8;
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+
+.cmd-toast-banner {
+  padding: 10px 20px;
+  background: rgba(16, 185, 129, 0.18);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.35);
+  color: #34d399;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+.cmd-results-list {
+  max-height: 380px;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.cmd-result-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  color: #cbd5e1;
+  font-size: 0.92rem;
+}
+
+.cmd-result-item:hover,
+.cmd-result-item.selected {
+  background: rgba(139, 92, 246, 0.18);
+  color: #ffffff;
+}
+
+.cmd-result-item.selected {
+  border-left: 3px solid #f59e0b;
+}
+
+.cmd-item-icon {
+  font-size: 1.1rem;
+}
+
+.cmd-item-title {
+  flex: 1;
+  text-align: left;
+}
+
+.cmd-item-type {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.cmd-empty {
+  padding: 40px 20px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.cmd-palette-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 10px 20px;
+  background: rgba(11, 15, 25, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+.cmd-palette-footer kbd {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1px 5px;
+  border-radius: 3px;
+  color: #f8fafc;
+}
+
 /* Ambient glow accent for projects */
 #projects.projects-section::before {
   content: '';

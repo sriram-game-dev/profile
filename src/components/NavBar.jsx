@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { normalizePath, route } from '../utils/asset';
 
-function NavBar() {
+function NavBar({ onOpenCommandPalette = () => {} }) {
   const [showGoTop, setShowGoTop] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -195,6 +195,17 @@ function NavBar() {
 
         {/* RIGHT SIDE: TACTICAL GAME DEVELOPER CTA BUTTON & MOBILE TOGGLE */}
         <div className="navbar-right">
+          <button
+            type="button"
+            className="nav-cmd-k-btn"
+            onClick={onOpenCommandPalette}
+            aria-label="Open command palette (Ctrl+K or Cmd+K)"
+            title="Open Command Palette (Ctrl+K / Cmd+K)"
+          >
+            <span className="cmd-k-symbol">⌘</span>
+            <span className="cmd-k-key">K</span>
+          </button>
+
           <a
             href={route('/#projects')}
             onClick={(event) => handleSectionClick(event, 'projects')}

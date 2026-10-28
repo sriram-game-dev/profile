@@ -19,6 +19,7 @@ import ProjectDetails from './components/ProjectDetails';
 import { projects, personalProjects } from './data/projectsData';
 import { normalizePath, navigateTo } from './utils/asset';
 import ScrollProgressBar from './components/ScrollProgressBar';
+import CommandPalette from './components/CommandPalette';
 import { useScrollReveal } from './utils/useScrollReveal';
 
 
@@ -29,8 +30,21 @@ function App() {
   );
   const [activeAudience, setActiveAudience] = useState('all');
   const [skillFilter, setSkillFilter] = useState('');
+  const [cmdPaletteOpen, setCmdPaletteOpen] = useState(false);
 
   useScrollReveal(path);
+
+  // Global Ctrl+K / Cmd+K listener
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setCmdPaletteOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
 
   // ========================================
@@ -87,9 +101,13 @@ function App() {
     return (
       <>
         <ScrollProgressBar />
-        <NavBar />
+        <NavBar onOpenCommandPalette={() => setCmdPaletteOpen(true)} />
         <ProfessionalProjects />
         <Footer />
+        <CommandPalette
+          isOpen={cmdPaletteOpen}
+          onClose={() => setCmdPaletteOpen(false)}
+        />
       </>
     );
   }
@@ -103,9 +121,13 @@ function App() {
     return (
       <>
         <ScrollProgressBar />
-        <NavBar />
+        <NavBar onOpenCommandPalette={() => setCmdPaletteOpen(true)} />
         <PersonalProjects />
         <Footer />
+        <CommandPalette
+          isOpen={cmdPaletteOpen}
+          onClose={() => setCmdPaletteOpen(false)}
+        />
       </>
     );
   }
@@ -129,10 +151,15 @@ function App() {
     return (
       <>
         <ScrollProgressBar />
+        <NavBar onOpenCommandPalette={() => setCmdPaletteOpen(true)} />
         <ProjectDetails
           project={project}
         />
         <Footer />
+        <CommandPalette
+          isOpen={cmdPaletteOpen}
+          onClose={() => setCmdPaletteOpen(false)}
+        />
       </>
     );
   }
@@ -146,7 +173,7 @@ function App() {
     return (
       <>
         <ScrollProgressBar />
-        <NavBar />
+        <NavBar onOpenCommandPalette={() => setCmdPaletteOpen(true)} />
 
         <main>
           <Home
@@ -174,6 +201,10 @@ function App() {
         </main>
 
         <Footer />
+        <CommandPalette
+          isOpen={cmdPaletteOpen}
+          onClose={() => setCmdPaletteOpen(false)}
+        />
       </>
     );
   }
@@ -186,7 +217,7 @@ function App() {
   return (
     <>
       <ScrollProgressBar />
-      <NavBar />
+      <NavBar onOpenCommandPalette={() => setCmdPaletteOpen(true)} />
 
       <main
         className="not-found-page"
@@ -247,6 +278,12 @@ function App() {
       </main>
 
       <Footer />
+      {cmdPaletteOpen && (
+        <CommandPalette
+          isOpen={cmdPaletteOpen}
+          onClose={() => setCmdPaletteOpen(false)}
+        />
+      )}
     </>
   );
 }
