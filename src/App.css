@@ -823,6 +823,129 @@ section {
 }
 
 /* ========================================
+   AUDIENCE SWITCHER
+======================================== */
+.audience-switcher {
+  position: relative;
+  z-index: 2;
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.audience-switcher-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.audience-pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 680px;
+}
+
+.audience-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 9999px;
+  color: #cbd5e1;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.audience-pill:hover {
+  border-color: #8b5cf6;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(139, 92, 246, 0.25);
+}
+
+.audience-pill.active {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+  border-color: #f59e0b;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.35);
+}
+
+.audience-icon {
+  font-size: 0.95rem;
+}
+
+/* Projects Category Highlighting & Focus Banner */
+.active-audience-banner {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 8px 18px;
+  margin-bottom: 30px;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 9999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  color: #f8fafc;
+}
+
+.active-audience-banner .banner-prefix {
+  color: #f59e0b;
+}
+
+.banner-reset-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  color: #cbd5e1;
+  font-family: inherit;
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.banner-reset-btn:hover {
+  background: rgba(245, 158, 11, 0.2);
+  border-color: #f59e0b;
+  color: #ffffff;
+}
+
+.category-featured .category-card {
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.35) !important;
+}
+
+.category-focus-tag {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 4;
+  padding: 4px 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #0f172a;
+  background: #f59e0b;
+  border-radius: 9999px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* ========================================
    ABOUT
 ======================================== */
 

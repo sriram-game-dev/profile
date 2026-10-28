@@ -2,10 +2,23 @@ import { useEffect, useState } from "react";
 import { route } from "../utils/asset";
 import HeroCanvasToy from "./HeroCanvasToy";
 
-function Home() {
+const AUDIENCES = [
+  { id: 'all', label: 'All Projects', icon: '✦', role: 'Game & XR Dev', titleText: 'A Game Developer' },
+  { id: 'games', label: 'Games', icon: '🎮', role: 'Gameplay Programmer', titleText: 'A Game Developer' },
+  { id: 'xr', label: 'XR / VR', icon: '🥽', role: 'Spatial XR Engineer', titleText: 'An XR Developer' },
+  { id: 'industrial', label: 'Industrial Training', icon: '🏭', role: 'Simulation Engineer', titleText: 'A Simulation Specialist' }
+];
+
+function Home({ activeAudience = 'all', onSelectAudience = () => {} }) {
   const [text, setText] = useState("A Gamer.");
   const [phase, setPhase] = useState("intro");
   const [showCursor, setShowCursor] = useState(false);
+
+  const selectedAudience = AUDIENCES.find((a) => a.id === activeAudience) || AUDIENCES[0];
+
+  const displayText = (phase === "done" && activeAudience !== 'all')
+    ? selectedAudience.titleText
+    : text;
 
   useEffect(() => {
     // Wait for the bottom → center animation
@@ -73,13 +86,13 @@ function Home() {
       </div>
 
       <span className="home-label">
-        <span className="syntax-keyword">const</span> role = <span className="syntax-string">&quot;Game &amp; XR Dev&quot;</span>;
+        <span className="syntax-keyword">const</span> role = <span className="syntax-string">&quot;{selectedAudience.role}&quot;</span>;
       </span>
 
       <h1>SRIRAM S</h1>
 
       <p className="home-description">
-        <span className="syntax-fn">player</span>.<span className="syntax-keyword">identity</span> = <span className="syntax-string">&quot;{text.replace(/^A\s+/, '')}&quot;</span>
+        <span className="syntax-fn">player</span>.<span className="syntax-keyword">identity</span> = <span className="syntax-string">&quot;{displayText.replace(/^A\s+|^An\s+/, '')}&quot;</span>
         {showCursor && <span className="typing-cursor">_</span>}
       </p>
 
@@ -104,6 +117,26 @@ function Home() {
           <span>Connect</span>
           <span style={{ color: '#8b5cf6' }}>✦</span>
         </a>
+      </div>
+
+      {/* AUDIENCE SWITCHER */}
+      <div className="audience-switcher" role="radiogroup" aria-label="Audience focus filter">
+        <span className="audience-switcher-label">I&apos;m looking for:</span>
+        <div className="audience-pill-group">
+          {AUDIENCES.map((aud) => (
+            <button
+              key={aud.id}
+              type="button"
+              role="radio"
+              aria-checked={activeAudience === aud.id}
+              className={`audience-pill ${activeAudience === aud.id ? 'active' : ''}`}
+              onClick={() => onSelectAudience(aud.id)}
+            >
+              <span className="audience-icon" aria-hidden="true">{aud.icon}</span>
+              <span>{aud.label}</span>
+            </button>
+          ))}
+        </div>
       </div>
 
 

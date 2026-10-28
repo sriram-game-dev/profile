@@ -26,6 +26,7 @@ function App() {
   const [path, setPath] = useState(
     normalizePath(window.location.pathname)
   );
+  const [activeAudience, setActiveAudience] = useState('all');
 
   useScrollReveal(path);
 
@@ -146,10 +147,16 @@ function App() {
         <NavBar />
 
         <main>
-          <Home />
+          <Home
+            activeAudience={activeAudience}
+            onSelectAudience={setActiveAudience}
+          />
           <About />
           <Experience />
-          <Projects />
+          <Projects
+            activeAudience={activeAudience}
+            onSelectAudience={setActiveAudience}
+          />
           <Skills />
           <Resume />
           <Contact />
