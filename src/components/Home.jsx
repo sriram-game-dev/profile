@@ -5,6 +5,7 @@ import HeroCanvasToy from "./HeroCanvasToy";
 const FOCUS_AREAS = [
   { id: 'all', label: 'All Projects', icon: '✦' },
   { id: 'games', label: 'Games', icon: '🎮' },
+  { id: 'game-design', label: 'Game Design', icon: '🎲' },
   { id: 'xr', label: 'XR', icon: '🥽' },
   { id: 'industrial', label: 'Industrial Training', icon: '🏭' }
 ];

@@ -22,6 +22,7 @@ function Projects({
 
   const focusLabels = {
     games: 'Games & Gameplay Prototypes',
+    'game-design': 'Game Design, Mechanics & Systems Architecture',
     xr: 'Spatial Computing, AR & Meta Quest VR',
     industrial: 'Industrial Training Simulations & Enterprise LOTO'
   };
@@ -71,6 +72,14 @@ function Projects({
       // Audience focus filter
       if (activeAudience === 'games') {
         if (p.type !== 'Game') return false;
+      } else if (activeAudience === 'game-design') {
+        const isDesignProject =
+          p.type === 'Game' ||
+          p.caseStudy?.role?.toLowerCase().includes('designer') ||
+          p.technologies?.toLowerCase().includes('gameplay') ||
+          p.description?.toLowerCase().includes('mechanic') ||
+          p.feature?.some((f) => f.toLowerCase().includes('gameplay') || f.toLowerCase().includes('progression'));
+        if (!isDesignProject) return false;
       } else if (activeAudience === 'industrial') {
         if (p.type !== 'Training Simulation') return false;
       } else if (activeAudience === 'xr') {
