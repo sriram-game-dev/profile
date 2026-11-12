@@ -1,142 +1,164 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="100%" height="100%">
   <defs>
-    <linearGradient id="tsl-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="sl-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#040814" />
-      <stop offset="50%" stop-color="#081426" />
-      <stop offset="100%" stop-color="#081e2b" />
+      <stop offset="50%" stop-color="#071324" />
+      <stop offset="100%" stop-color="#071d2b" />
     </linearGradient>
-    <radialGradient id="tsl-glow" cx="50%" cy="40%" r="65%">
-      <stop offset="0%" stop-color="#10b981" stop-opacity="0.25" />
-      <stop offset="45%" stop-color="#f97316" stop-opacity="0.16" />
+    <radialGradient id="sl-aiGlow" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.32" />
+      <stop offset="50%" stop-color="#f97316" stop-opacity="0.14" />
       <stop offset="100%" stop-color="#040814" stop-opacity="0" />
     </radialGradient>
-    <linearGradient id="tsl-orange" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#fb923c" />
-      <stop offset="50%" stop-color="#f97316" />
-      <stop offset="100%" stop-color="#34d399" />
-    </linearGradient>
-    <linearGradient id="tsl-titleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="100%" stop-color="#e2e8f0" />
-    </linearGradient>
-    <filter id="tsl-shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <pattern id="sl-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="1" stroke-opacity="0.45" />
+    </pattern>
+    <filter id="sl-dropGlow" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.85" />
+      <feDropShadow dx="0" dy="0" stdDeviation="20" flood-color="#10b981" flood-opacity="0.35" />
+    </filter>
+    <filter id="sl-hudGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#10b981" flood-opacity="0.6" />
     </filter>
   </defs>
 
-  <!-- Background Base -->
-  <rect width="800" height="450" fill="url(#tsl-bg)" />
-  <rect width="800" height="450" fill="url(#tsl-glow)" />
+  <!-- Ambient Backdrop -->
+  <rect width="1000" height="600" fill="url(#sl-bg)" />
+  <rect width="1000" height="600" fill="url(#sl-aiGlow)" />
+  <rect width="1000" height="600" fill="url(#sl-grid)" />
 
-  <!-- Neural Network Mesh Pattern in Background -->
-  <g opacity="0.28">
-    <circle cx="200" cy="120" r="3" fill="#10b981" />
-    <circle cx="320" cy="90" r="4" fill="#34d399" />
-    <circle cx="480" cy="90" r="4" fill="#f97316" />
-    <circle cx="600" cy="120" r="3" fill="#fb923c" />
-    <circle cx="260" cy="180" r="3.5" fill="#38bdf8" />
-    <circle cx="540" cy="180" r="3.5" fill="#38bdf8" />
-    <line x1="200" y1="120" x2="320" y2="90" stroke="#10b981" stroke-width="1" />
-    <line x1="320" y1="90" x2="480" y2="90" stroke="#f97316" stroke-width="1" stroke-dasharray="4,3" />
-    <line x1="480" y1="90" x2="600" y2="120" stroke="#fb923c" stroke-width="1" />
-    <line x1="200" y1="120" x2="260" y2="180" stroke="#38bdf8" stroke-width="1" />
-    <line x1="600" y1="120" x2="540" y2="180" stroke="#38bdf8" stroke-width="1" />
-    <line x1="260" y1="180" x2="540" y2="180" stroke="#10b981" stroke-width="0.8" stroke-dasharray="6,4" />
-  </g>
-
-  <!-- Central AI Prompt &amp; LLM Inference Card Graphic -->
-  <g transform="translate(400, 155)" filter="url(#tsl-shadow)">
-    <!-- Terminal Prompt Card -->
-    <rect x="-190" y="-70" width="380" height="120" rx="10" fill="#0b1626" fill-opacity="0.9" stroke="#10b981" stroke-width="1.8" />
-    <rect x="-185" y="-65" width="370" height="20" fill="#112238" rx="5" />
-    <!-- Window Control Dots -->
-    <circle cx="-172" cy="-55" r="3.5" fill="#ef4444" />
-    <circle cx="-161" cy="-55" r="3.5" fill="#f59e0b" />
-    <circle cx="-150" cy="-55" r="3.5" fill="#10b981" />
-    <text x="0" y="-51" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#94a3b8" text-anchor="middle">
-      AI CONVERSATIONAL INTERACTION · LLM ENGINE
+  <!-- Center Conversational AI Interaction Terminal -->
+  <g transform="translate(500, 240)" filter="url(#sl-dropGlow)">
+    <rect x="-210" y="-100" width="420" height="190" rx="14" fill="#071424" fill-opacity="0.9" stroke="#10b981" stroke-width="2" />
+    <rect x="-210" y="-100" width="420" height="32" rx="14" fill="#0e2338" />
+    <!-- Console Dots &amp; Title -->
+    <circle cx="-190" cy="-84" r="4" fill="#ef4444" />
+    <circle cx="-178" cy="-84" r="4" fill="#f59e0b" />
+    <circle cx="-166" cy="-84" r="4" fill="#10b981" />
+    <text x="0" y="-80" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#a7f3d0" text-anchor="middle">
+      LLM GENERATIVE CONSOLE · CHATGPT 101
     </text>
 
-    <!-- Chat Prompt 1 (User) -->
-    <rect x="-165" y="-32" width="230" height="24" rx="6" fill="#182c47" />
-    <text x="-155" y="-16" font-family="'JetBrains Mono', monospace" font-size="9" fill="#38bdf8">
-      &gt; "Explain LLM tokenization &amp; weights"
-    </text>
+    <!-- User Prompt Bubble -->
+    <g transform="translate(0, -42)">
+      <rect x="-190" y="0" width="380" height="42" rx="8" fill="#0f2942" stroke="#38bdf8" stroke-width="1" />
+      <circle cx="-172" cy="21" r="5" fill="#38bdf8" />
+      <text x="-158" y="18" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#38bdf8">USER PROMPT:</text>
+      <text x="-158" y="32" font-family="'Inter', sans-serif" font-size="10.5" fill="#f8fafc">
+        "Explain LLM attention weights &amp; generative inference in game dev."
+      </text>
+    </g>
 
-    <!-- AI Response 2 -->
-    <rect x="-70" y="2" width="235" height="34" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1" />
-    <text x="-60" y="16" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#34d399">
-      [GPT-4o]: Transformer architecture
-    </text>
-    <text x="-60" y="28" font-family="'JetBrains Mono', monospace" font-size="8" fill="#a7f3d0">
-      Self-attention mechanism computed.
-    </text>
-
-    <!-- Glowing Brain / AI Core Badge Floating on Top Right -->
-    <g transform="translate(145, -5)">
-      <circle cx="0" cy="0" r="16" fill="#0f172a" stroke="#f97316" stroke-width="1.8" />
-      <polygon points="0,-7 6,-3 6,5 0,9 -6,5 -6,-3" fill="#f97316" fill-opacity="0.8" />
+    <!-- AI Response Bubble -->
+    <g transform="translate(0, 10)">
+      <rect x="-190" y="0" width="380" height="68" rx="8" fill="#063826" stroke="#10b981" stroke-width="1.2" />
+      <circle cx="-172" cy="20" r="5" fill="#10b981" />
+      <text x="-158" y="18" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#34d399">CHATGPT [MODEL 4o]:</text>
+      <text x="-158" y="34" font-family="'Inter', sans-serif" font-size="10.5" fill="#e2e8f0">
+        "Transformer self-attention maps contextual dependencies across tokens..."
+      </text>
+      <text x="-158" y="52" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#a7f3d0">
+        ● Generating response: [Tokens: 248 · Speed: 95 t/s]
+      </text>
     </g>
   </g>
 
-  <!-- Top Left Badge -->
-  <g transform="translate(35, 35)">
-    <rect x="0" y="0" width="180" height="26" rx="13" fill="#0b1626" fill-opacity="0.85" stroke="#f97316" stroke-width="1.2" />
-    <circle cx="14" cy="13" r="4" fill="#f97316" />
-    <text x="26" y="17" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#fed7aa" letter-spacing="1.5">
+  <!-- Left Floating UI Card: Neural Network Architecture -->
+  <g transform="translate(60, 140)" filter="url(#sl-hudGlow)">
+    <rect x="0" y="0" width="210" height="230" rx="12" fill="#071424" fill-opacity="0.9" stroke="#10b981" stroke-width="1.8" />
+    <rect x="0" y="0" width="210" height="32" rx="12" fill="#0d263b" />
+    <circle cx="16" cy="16" r="4" fill="#10b981" />
+    <text x="28" y="20" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#f8fafc" letter-spacing="1">NEURAL TOPOLOGY</text>
+
+    <!-- Neural Network Node Diagram -->
+    <g transform="translate(105, 115)">
+      <!-- Input Layer (Left) -->
+      <circle cx="-55" cy="-35" r="7" fill="#0f172a" stroke="#38bdf8" stroke-width="2" />
+      <circle cx="-55" cy="0" r="7" fill="#0f172a" stroke="#38bdf8" stroke-width="2" />
+      <circle cx="-55" cy="35" r="7" fill="#0f172a" stroke="#38bdf8" stroke-width="2" />
+
+      <!-- Hidden Layer (Center) -->
+      <circle cx="0" cy="-45" r="8" fill="#0f172a" stroke="#10b981" stroke-width="2" />
+      <circle cx="0" cy="-15" r="8" fill="#0f172a" stroke="#10b981" stroke-width="2" />
+      <circle cx="0" cy="15" r="8" fill="#0f172a" stroke="#10b981" stroke-width="2" />
+      <circle cx="0" cy="45" r="8" fill="#0f172a" stroke="#10b981" stroke-width="2" />
+
+      <!-- Output Layer (Right) -->
+      <circle cx="55" cy="-20" r="7" fill="#0f172a" stroke="#f97316" stroke-width="2" />
+      <circle cx="55" cy="20" r="7" fill="#0f172a" stroke="#f97316" stroke-width="2" />
+
+      <!-- Synaptic Weight Connections -->
+      <line x1="-55" y1="-35" x2="0" y2="-45" stroke="#10b981" stroke-width="1.2" opacity="0.6" />
+      <line x1="-55" y1="-35" x2="0" y2="-15" stroke="#10b981" stroke-width="1.2" opacity="0.6" />
+      <line x1="-55" y1="0" x2="0" y2="-15" stroke="#10b981" stroke-width="1.5" opacity="0.8" />
+      <line x1="-55" y1="0" x2="0" y2="15" stroke="#10b981" stroke-width="1.5" opacity="0.8" />
+      <line x1="-55" y1="35" x2="0" y2="15" stroke="#10b981" stroke-width="1.2" opacity="0.6" />
+      <line x1="-55" y1="35" x2="0" y2="45" stroke="#10b981" stroke-width="1.2" opacity="0.6" />
+
+      <line x1="0" y1="-45" x2="55" y2="-20" stroke="#f97316" stroke-width="1.5" opacity="0.8" />
+      <line x1="0" y1="-15" x2="55" y2="-20" stroke="#f97316" stroke-width="1.5" opacity="0.8" />
+      <line x1="0" y1="15" x2="55" y2="20" stroke="#f97316" stroke-width="1.5" opacity="0.8" />
+      <line x1="0" y1="45" x2="55" y2="20" stroke="#f97316" stroke-width="1.5" opacity="0.8" />
+    </g>
+
+    <line x1="16" y1="190" x2="194" y2="190" stroke="#1e293b" stroke-width="1" />
+    <text x="16" y="212" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#34d399">TRANSFORMER ATTENTION</text>
+  </g>
+
+  <!-- Right Floating UI Card: Model Parameters -->
+  <g transform="translate(730, 140)" filter="url(#sl-hudGlow)">
+    <rect x="0" y="0" width="210" height="230" rx="12" fill="#071424" fill-opacity="0.9" stroke="#f97316" stroke-width="1.8" />
+    <rect x="0" y="0" width="210" height="32" rx="12" fill="#261608" />
+    <circle cx="16" cy="16" r="4" fill="#f97316" />
+    <text x="28" y="20" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#f8fafc" letter-spacing="1">HYPERPARAMETERS</text>
+
+    <text x="16" y="55" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">Model: ChatGPT 4o</text>
+    <text x="16" y="75" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">Provider: OpenAI</text>
+
+    <text x="16" y="105" font-family="'JetBrains Mono', monospace" font-size="10" fill="#f97316">Temperature: 0.70</text>
+    <rect x="16" y="112" width="178" height="6" rx="3" fill="#1e293b" />
+    <rect x="16" y="112" width="125" height="6" rx="3" fill="#f97316" />
+
+    <text x="16" y="140" font-family="'JetBrains Mono', monospace" font-size="10" fill="#38bdf8">Top_P: 0.95</text>
+    <rect x="16" y="147" width="178" height="6" rx="3" fill="#1e293b" />
+    <rect x="16" y="147" width="160" height="6" rx="3" fill="#38bdf8" />
+
+    <line x1="16" y1="190" x2="194" y2="190" stroke="#1e293b" stroke-width="1" />
+    <text x="16" y="212" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#f97316">SIMPLILEARN SKILLUP</text>
+  </g>
+
+  <!-- Top Badges -->
+  <g transform="translate(60, 45)" filter="url(#sl-hudGlow)">
+    <rect x="0" y="0" width="200" height="38" rx="10" fill="#071424" fill-opacity="0.9" stroke="#f97316" stroke-width="1.8" />
+    <circle cx="20" cy="19" r="5" fill="#f97316" />
+    <text x="34" y="23" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="800" fill="#fed7aa" letter-spacing="1.5">
       SIMPLILEARN · AI
     </text>
   </g>
 
-  <!-- Top Right Badge -->
-  <g transform="translate(615, 35)">
-    <rect x="0" y="0" width="150" height="26" rx="13" fill="#0b1626" fill-opacity="0.85" stroke="#10b981" stroke-width="1.2" />
-    <text x="75" y="17" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#34d399" text-anchor="middle" letter-spacing="2">
+  <g transform="translate(740, 45)" filter="url(#sl-hudGlow)">
+    <rect x="0" y="0" width="200" height="38" rx="10" fill="#071424" fill-opacity="0.9" stroke="#10b981" stroke-width="1.8" />
+    <text x="100" y="24" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#34d399" text-anchor="middle" letter-spacing="2">
       CERTIFIED 2026
     </text>
   </g>
 
-  <!-- Vignette Gradient at Bottom for Title Contrast -->
-  <rect x="0" y="240" width="800" height="210" fill="url(#tsl-bg)" opacity="0.94" />
+  <!-- Bottom Hero Title Bar Card -->
+  <g transform="translate(60, 480)" filter="url(#sl-dropGlow)">
+    <rect x="0" y="0" width="880" height="85" rx="14" fill="#06121f" fill-opacity="0.95" stroke="#10b981" stroke-width="2" />
+    <rect x="0" y="0" width="880" height="4" rx="2" fill="#10b981" />
+    <text x="30" y="36" font-family="'Inter', sans-serif" font-size="22" font-weight="900" fill="#f8fafc" letter-spacing="0.5">
+      CHATGPT 101 : WHAT IS CHATGPT?
+    </text>
+    <text x="30" y="62" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" fill="#94a3b8">
+      LARGE LANGUAGE MODELS · GENERATIVE CONVERSATIONAL WORKFLOWS &amp; INFERENCE
+    </text>
+    <g transform="translate(630, 26)">
+      <rect x="0" y="0" width="105" height="30" rx="6" fill="#0f2942" stroke="#10b981" stroke-width="1" />
+      <text x="52" y="19" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#34d399" text-anchor="middle">LLM MODELS</text>
 
-  <!-- Bottom Title Block -->
-  <g transform="translate(400, 310)" text-anchor="middle" filter="url(#tsl-shadow)">
-    <!-- Small Category Label -->
-    <text x="0" y="0" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="800" fill="#10b981" letter-spacing="4">
-      SIMPLILEARN · ARTIFICIAL INTELLIGENCE
-    </text>
-    <!-- Big Bold Title -->
-    <text x="0" y="38" font-family="'Inter', -apple-system, sans-serif" font-size="34" font-weight="900" fill="url(#tsl-titleGrad)" letter-spacing="1">
-      CHATGPT 101
-    </text>
-    <!-- Subtitle -->
-    <text x="0" y="66" font-family="'Inter', -apple-system, sans-serif" font-size="13" font-weight="600" fill="#94a3b8" letter-spacing="1">
-      WHAT IS CHATGPT? · LARGE LANGUAGE MODELS &amp; GENERATIVE AI
-    </text>
+      <rect x="115" y="0" width="105" height="30" rx="6" fill="#0f2942" stroke="#f97316" stroke-width="1" />
+      <text x="167" y="19" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#fb923c" text-anchor="middle">GENERATIVE</text>
+    </g>
   </g>
-
-  <!-- Bottom Tech Pills / Tags -->
-  <g transform="translate(400, 412)" text-anchor="middle">
-    <!-- Pill 1 -->
-    <rect x="-260" y="-12" width="120" height="24" rx="6" fill="#0b1626" stroke="#334155" stroke-width="1" />
-    <text x="-200" y="4" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#10b981">LLM FOUNDATIONS</text>
-
-    <!-- Pill 2 -->
-    <rect x="-125" y="-12" width="115" height="24" rx="6" fill="#0b1626" stroke="#334155" stroke-width="1" />
-    <text x="-67" y="4" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#f97316">GENERATIVE AI</text>
-
-    <!-- Pill 3 -->
-    <rect x="10" y="-12" width="115" height="24" rx="6" fill="#0b1626" stroke="#334155" stroke-width="1" />
-    <text x="67" y="4" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#38bdf8">WORKFLOWS</text>
-
-    <!-- Pill 4 -->
-    <rect x="145" y="-12" width="115" height="24" rx="6" fill="#0b1626" stroke="#334155" stroke-width="1" />
-    <text x="202" y="4" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#34d399">AUTOMATION</text>
-  </g>
-
-  <!-- Corner Accents -->
-  <path d="M 16 32 L 16 16 L 32 16" fill="none" stroke="#f97316" stroke-width="2.5" />
-  <path d="M 784 32 L 784 16 L 768 16" fill="none" stroke="#f97316" stroke-width="2.5" />
-  <path d="M 16 418 L 16 434 L 32 434" fill="none" stroke="#10b981" stroke-width="2.5" />
-  <path d="M 784 418 L 784 434 L 768 434" fill="none" stroke="#10b981" stroke-width="2.5" />
 </svg>

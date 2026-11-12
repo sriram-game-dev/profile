@@ -1,155 +1,172 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="100%" height="100%">
   <defs>
-    <linearGradient id="twb-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="tw-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#050614" />
-      <stop offset="50%" stop-color="#0e0e29" />
+      <stop offset="50%" stop-color="#0d0e26" />
       <stop offset="100%" stop-color="#140f30" />
     </linearGradient>
-    <radialGradient id="twb-glow" cx="50%" cy="40%" r="65%">
+    <radialGradient id="tw-purpleGlow" cx="50%" cy="45%" r="55%">
       <stop offset="0%" stop-color="#a855f7" stop-opacity="0.32" />
-      <stop offset="45%" stop-color="#06b6d4" stop-opacity="0.15" />
+      <stop offset="50%" stop-color="#06b6d4" stop-opacity="0.14" />
       <stop offset="100%" stop-color="#050614" stop-opacity="0" />
     </radialGradient>
-    <linearGradient id="twb-neon" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#c084fc" />
-      <stop offset="50%" stop-color="#a855f7" />
-      <stop offset="100%" stop-color="#38bdf8" />
-    </linearGradient>
-    <linearGradient id="twb-titleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="100%" stop-color="#e2e8f0" />
-    </linearGradient>
-    <filter id="twb-shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <pattern id="tw-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="1" stroke-opacity="0.45" />
+    </pattern>
+    <filter id="tw-dropGlow" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.85" />
+      <feDropShadow dx="0" dy="0" stdDeviation="20" flood-color="#a855f7" flood-opacity="0.35" />
+    </filter>
+    <filter id="tw-hudGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#a855f7" flood-opacity="0.6" />
     </filter>
   </defs>
 
-  <!-- Background Base -->
-  <rect width="800" height="450" fill="url(#twb-bg)" />
-  <rect width="800" height="450" fill="url(#twb-glow)" />
+  <!-- Ambient Backdrop -->
+  <rect width="1000" height="600" fill="url(#tw-bg)" />
+  <rect width="1000" height="600" fill="url(#tw-purpleGlow)" />
+  <rect width="1000" height="600" fill="url(#tw-grid)" />
 
-  <!-- Studio Grid &amp; Audio/Profiler Waveform Background -->
+  <!-- Background Signal &amp; Studio Audio Waves -->
   <g opacity="0.3">
-    <!-- Horizontal Grid Lines -->
-    <line x1="0" y1="100" x2="800" y2="100" stroke="#334155" stroke-width="0.8" />
-    <line x1="0" y1="160" x2="800" y2="160" stroke="#334155" stroke-width="0.8" />
-    <line x1="0" y1="220" x2="800" y2="220" stroke="#334155" stroke-width="0.8" />
-    <!-- Vertical Grid Lines -->
-    <line x1="160" y1="60" x2="160" y2="260" stroke="#334155" stroke-width="0.8" stroke-dasharray="4,4" />
-    <line x1="320" y1="60" x2="320" y2="260" stroke="#334155" stroke-width="0.8" stroke-dasharray="4,4" />
-    <line x1="480" y1="60" x2="480" y2="260" stroke="#334155" stroke-width="0.8" stroke-dasharray="4,4" />
-    <line x1="640" y1="60" x2="640" y2="260" stroke="#334155" stroke-width="0.8" stroke-dasharray="4,4" />
+    <line x1="0" y1="360" x2="1000" y2="360" stroke="#334155" stroke-width="1" />
+    <line x1="0" y1="410" x2="1000" y2="410" stroke="#334155" stroke-width="1" />
+    <path d="M 0 320 Q 250 290, 500 320 T 1000 320" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-dasharray="6,4" />
   </g>
 
-  <!-- Center Studio Pipeline Node &amp; Profiler Graphic -->
-  <g transform="translate(400, 160)" filter="url(#twb-shadow)">
-    <!-- Central Monitor Console Frame -->
-    <rect x="-190" y="-75" width="380" height="130" rx="10" fill="#0f1124" fill-opacity="0.88" stroke="#a855f7" stroke-width="1.8" />
-    <rect x="-185" y="-70" width="370" height="20" fill="#181533" rx="5" />
-    <!-- Window Control Dots -->
-    <circle cx="-172" cy="-60" r="3.5" fill="#ef4444" />
-    <circle cx="-161" cy="-60" r="3.5" fill="#f59e0b" />
-    <circle cx="-150" cy="-60" r="3.5" fill="#10b981" />
-    <text x="0" y="-56" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#94a3b8" text-anchor="middle">
-      MONOLITH STUDIO PROFILER · PIPELINE MONITOR
+  <!-- Center Architecture Node Flow Graph -->
+  <g transform="translate(500, 240)" filter="url(#tw-dropGlow)">
+    <!-- Central Node Console Panel -->
+    <rect x="-210" y="-100" width="420" height="190" rx="14" fill="#0c0e21" fill-opacity="0.9" stroke="#a855f7" stroke-width="2" />
+    <rect x="-210" y="-100" width="420" height="32" rx="14" fill="#151538" />
+    <!-- Console Dots &amp; Title -->
+    <circle cx="-190" cy="-84" r="4" fill="#ef4444" />
+    <circle cx="-178" cy="-84" r="4" fill="#f59e0b" />
+    <circle cx="-166" cy="-84" r="4" fill="#10b981" />
+    <text x="0" y="-80" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#e9d5ff" text-anchor="middle">
+      GAME ENGINE ARCHITECTURE · PIPELINE GRAPH
     </text>
 
-    <!-- Node Architecture Flow Inside Monitor -->
-    <!-- Node 1: Input -->
-    <rect x="-165" y="-35" width="65" height="34" rx="5" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.2" />
-    <text x="-132" y="-14" font-family="monospace" font-size="8.5" font-weight="700" fill="#c084fc" text-anchor="middle">INPUT</text>
+    <!-- Node 1: Input System -->
+    <g transform="translate(-140, -35)">
+      <rect x="-50" y="-18" width="100" height="36" rx="6" fill="#1e1b4b" stroke="#38bdf8" stroke-width="1.5" />
+      <text x="0" y="4" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#38bdf8" text-anchor="middle">InputManager</text>
+    </g>
 
-    <!-- Arrow 1 -->
-    <line x1="-100" y1="-18" x2="-80" y2="-18" stroke="#a855f7" stroke-width="1.5" stroke-dasharray="3,2" />
-    <polygon points="-80,-18 -85,-21 -85,-15" fill="#a855f7" />
+    <!-- Node 2: Core State Machine (Center) -->
+    <g transform="translate(0, -35)">
+      <rect x="-65" y="-22" width="130" height="44" rx="8" fill="#2e1065" stroke="#a855f7" stroke-width="2" />
+      <text x="0" y="-4" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="800" fill="#ffffff" text-anchor="middle">GameStateMachine</text>
+      <text x="0" y="12" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#c084fc" text-anchor="middle">[Tick / FixedUpdate]</text>
+    </g>
 
-    <!-- Node 2: Game Logic / Core -->
-    <rect x="-80" y="-40" width="80" height="44" rx="6" fill="#2e1065" stroke="#a855f7" stroke-width="1.8" />
-    <text x="-40" y="-22" font-family="monospace" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">SYSTEMS</text>
-    <text x="-40" y="-9" font-family="monospace" font-size="7.5" fill="#38bdf8" text-anchor="middle">C# LOOP</text>
+    <!-- Node 3: Physics 3D Engine -->
+    <g transform="translate(140, -35)">
+      <rect x="-50" y="-18" width="100" height="36" rx="6" fill="#1e1b4b" stroke="#f59e0b" stroke-width="1.5" />
+      <text x="0" y="4" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#f59e0b" text-anchor="middle">PhysicsSystem</text>
+    </g>
 
-    <!-- Arrow 2 -->
-    <line x1="0" y1="-18" x2="20" y2="-18" stroke="#a855f7" stroke-width="1.5" stroke-dasharray="3,2" />
-    <polygon points="20,-18 15,-21 15,-15" fill="#a855f7" />
+    <!-- Connecting Data Lines (Horizontal) -->
+    <line x1="-90" y1="-35" x2="-65" y2="-35" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,2" />
+    <polygon points="-65,-35 -70,-38 -70,-32" fill="#38bdf8" />
+    <line x1="65" y1="-35" x2="90" y2="-35" stroke="#a855f7" stroke-width="2" stroke-dasharray="4,2" />
+    <polygon points="90,-35 85,-38 85,-32" fill="#a855f7" />
 
-    <!-- Node 3: Physics &amp; Audio -->
-    <rect x="20" y="-35" width="70" height="34" rx="5" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.2" />
-    <text x="55" y="-14" font-family="monospace" font-size="8.5" font-weight="700" fill="#c084fc" text-anchor="middle">PHYSICS</text>
+    <!-- Node 4: GPU Rendering Pipeline (Bottom Center) -->
+    <g transform="translate(0, 45)">
+      <rect x="-70" y="-18" width="140" height="36" rx="6" fill="#0f172a" stroke="#22c55e" stroke-width="1.5" />
+      <text x="0" y="4" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#22c55e" text-anchor="middle">URP Render Pipeline</text>
+    </g>
 
-    <!-- Arrow 3 -->
-    <line x1="90" y1="-18" x2="110" y2="-18" stroke="#a855f7" stroke-width="1.5" stroke-dasharray="3,2" />
-    <polygon points="110,-18 105,-21 105,-15" fill="#a855f7" />
-
-    <!-- Node 4: GPU Render -->
-    <rect x="110" y="-35" width="60" height="34" rx="5" fill="#0c4a6e" stroke="#38bdf8" stroke-width="1.2" />
-    <text x="140" y="-14" font-family="monospace" font-size="8.5" font-weight="700" fill="#38bdf8" text-anchor="middle">RENDER</text>
-
-    <!-- Real-Time Metrics Bar at bottom of console -->
-    <rect x="-165" y="16" width="330" height="24" rx="4" fill="#090a16" />
-    <text x="-150" y="32" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#22c55e">CPU: 5.4ms</text>
-    <text x="-65" y="32" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#38bdf8">GPU: 7.8ms</text>
-    <text x="15" y="32" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#f59e0b">DRAWCALLS: 124</text>
-    <text x="110" y="32" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#c084fc">60 FPS OK</text>
+    <!-- Vertical Connector Line to Renderer -->
+    <line x1="0" y1="-13" x2="0" y2="27" stroke="#22c55e" stroke-width="2" stroke-dasharray="4,2" />
+    <polygon points="0,27 -3,22 3,22" fill="#22c55e" />
   </g>
 
-  <!-- Top Left Badge -->
-  <g transform="translate(35, 35)">
-    <rect x="0" y="0" width="180" height="26" rx="13" fill="#0f1124" fill-opacity="0.85" stroke="#a855f7" stroke-width="1.2" />
-    <circle cx="14" cy="13" r="4" fill="#ef4444" />
-    <text x="26" y="17" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#e9d5ff" letter-spacing="1.5">
+  <!-- Left Floating UI Card: Real-Time Performance Profiler -->
+  <g transform="translate(60, 140)" filter="url(#tw-hudGlow)">
+    <rect x="0" y="0" width="210" height="230" rx="12" fill="#0c0e21" fill-opacity="0.9" stroke="#a855f7" stroke-width="1.8" />
+    <rect x="0" y="0" width="210" height="32" rx="12" fill="#151538" />
+    <circle cx="16" cy="16" r="4" fill="#a855f7" />
+    <text x="28" y="20" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#f8fafc" letter-spacing="1">SYSTEM PROFILER</text>
+
+    <!-- Metric 1: CPU -->
+    <text x="16" y="55" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">CPU Frame: 5.8 ms</text>
+    <rect x="16" y="62" width="178" height="6" rx="3" fill="#1e293b" />
+    <rect x="16" y="62" width="95" height="6" rx="3" fill="#22c55e" />
+
+    <!-- Metric 2: GPU -->
+    <text x="16" y="90" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">GPU Frame: 7.4 ms</text>
+    <rect x="16" y="97" width="178" height="6" rx="3" fill="#1e293b" />
+    <rect x="16" y="97" width="125" height="6" rx="3" fill="#38bdf8" />
+
+    <!-- Metric 3: Draw Calls -->
+    <text x="16" y="125" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">Draw Calls: 124</text>
+    <rect x="16" y="132" width="178" height="6" rx="3" fill="#1e293b" />
+    <rect x="16" y="132" width="80" height="6" rx="3" fill="#c084fc" />
+
+    <!-- Metric 4: Memory -->
+    <text x="16" y="160" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">Alloc: 38.2 MB</text>
+    <rect x="16" y="167" width="178" height="6" rx="3" fill="#1e293b" />
+    <rect x="16" y="167" width="60" height="6" rx="3" fill="#f59e0b" />
+
+    <line x1="16" y1="190" x2="194" y2="190" stroke="#1e293b" stroke-width="1" />
+    <text x="16" y="212" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#22c55e">● 60 FPS [16.6ms STABLE]</text>
+  </g>
+
+  <!-- Right Floating UI Card: Studio Stream Broadcast -->
+  <g transform="translate(730, 140)" filter="url(#tw-hudGlow)">
+    <rect x="0" y="0" width="210" height="230" rx="12" fill="#0c0e21" fill-opacity="0.9" stroke="#38bdf8" stroke-width="1.8" />
+    <rect x="0" y="0" width="210" height="32" rx="12" fill="#0f1f3d" />
+    <circle cx="16" cy="16" r="4" fill="#38bdf8" />
+    <text x="28" y="20" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#f8fafc" letter-spacing="1">MASTERCLASS INFO</text>
+
+    <text x="16" y="55" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">HOST: Monolith Academy</text>
+    <text x="16" y="75" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">TRACK: Studio Production</text>
+
+    <!-- Live Status Box -->
+    <rect x="14" y="90" width="182" height="42" rx="8" fill="#1e1b4b" stroke="#a855f7" stroke-width="1" />
+    <circle cx="28" cy="111" r="5" fill="#ef4444" />
+    <text x="40" y="115" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#ffffff">ON AIR: LIVE STREAM</text>
+
+    <text x="16" y="155" font-family="'JetBrains Mono', monospace" font-size="10" fill="#38bdf8">► Memory Budgets</text>
+    <text x="16" y="175" font-family="'JetBrains Mono', monospace" font-size="10" fill="#38bdf8">► Multithreading ECS</text>
+    <line x1="16" y1="190" x2="194" y2="190" stroke="#1e293b" stroke-width="1" />
+    <text x="16" y="212" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#c084fc">CERTIFIED ATTENDEE</text>
+  </g>
+
+  <!-- Top Badges -->
+  <g transform="translate(60, 45)" filter="url(#tw-hudGlow)">
+    <rect x="0" y="0" width="220" height="38" rx="10" fill="#0c0e21" fill-opacity="0.9" stroke="#a855f7" stroke-width="1.8" />
+    <circle cx="20" cy="19" r="5" fill="#ef4444" />
+    <text x="34" y="23" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="800" fill="#e9d5ff" letter-spacing="1.5">
       ● LIVE MASTERCLASS
     </text>
   </g>
 
-  <!-- Top Right Badge -->
-  <g transform="translate(620, 35)">
-    <rect x="0" y="0" width="145" height="26" rx="13" fill="#0f1124" fill-opacity="0.85" stroke="#06b6d4" stroke-width="1.2" />
-    <text x="72" y="17" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#38bdf8" text-anchor="middle" letter-spacing="2">
+  <g transform="translate(720, 45)" filter="url(#tw-hudGlow)">
+    <rect x="0" y="0" width="220" height="38" rx="10" fill="#0c0e21" fill-opacity="0.9" stroke="#38bdf8" stroke-width="1.8" />
+    <text x="110" y="24" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#38bdf8" text-anchor="middle" letter-spacing="2">
       MONOLITH 2026
     </text>
   </g>
 
-  <!-- Vignette Gradient at Bottom for Title Contrast -->
-  <rect x="0" y="240" width="800" height="210" fill="url(#twb-bg)" opacity="0.94" />
-
-  <!-- Bottom Title Block -->
-  <g transform="translate(400, 310)" text-anchor="middle" filter="url(#twb-shadow)">
-    <!-- Small Category Label -->
-    <text x="0" y="0" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="800" fill="#c084fc" letter-spacing="4">
-      MONOLITH ACADEMY · TECHNICAL WEBINAR
-    </text>
-    <!-- Big Bold Title -->
-    <text x="0" y="38" font-family="'Inter', -apple-system, sans-serif" font-size="34" font-weight="900" fill="url(#twb-titleGrad)" letter-spacing="1">
+  <!-- Bottom Hero Title Bar Card -->
+  <g transform="translate(60, 480)" filter="url(#tw-dropGlow)">
+    <rect x="0" y="0" width="880" height="85" rx="14" fill="#090a1a" fill-opacity="0.95" stroke="#a855f7" stroke-width="2" />
+    <rect x="0" y="0" width="880" height="4" rx="2" fill="#a855f7" />
+    <text x="30" y="36" font-family="'Inter', sans-serif" font-size="22" font-weight="900" fill="#f8fafc" letter-spacing="0.5">
       GAME DEVELOPMENT
     </text>
-    <!-- Subtitle -->
-    <text x="0" y="66" font-family="'Inter', -apple-system, sans-serif" font-size="13" font-weight="600" fill="#94a3b8" letter-spacing="1">
-      PRODUCTION PIPELINES · GAMEPLAY SYSTEM DESIGN &amp; PROFILING
+    <text x="30" y="62" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" fill="#94a3b8">
+      PRODUCTION PIPELINES · SYSTEM ARCHITECTURE &amp; PERFORMANCE OPTIMIZATION
     </text>
+    <g transform="translate(630, 26)">
+      <rect x="0" y="0" width="105" height="30" rx="6" fill="#1e1b4b" stroke="#a855f7" stroke-width="1" />
+      <text x="52" y="19" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#c084fc" text-anchor="middle">PROFILING</text>
+
+      <rect x="115" y="0" width="105" height="30" rx="6" fill="#1e1b4b" stroke="#06b6d4" stroke-width="1" />
+      <text x="167" y="19" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#38bdf8" text-anchor="middle">PIPELINES</text>
+    </g>
   </g>
-
-  <!-- Bottom Tech Pills / Tags -->
-  <g transform="translate(400, 412)" text-anchor="middle">
-    <!-- Pill 1 -->
-    <rect x="-260" y="-12" width="120" height="24" rx="6" fill="#0f1124" stroke="#334155" stroke-width="1" />
-    <text x="-200" y="4" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#c084fc">PIPELINES</text>
-
-    <!-- Pill 2 -->
-    <rect x="-125" y="-12" width="115" height="24" rx="6" fill="#0f1124" stroke="#334155" stroke-width="1" />
-    <text x="-67" y="4" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#38bdf8">SYSTEM DESIGN</text>
-
-    <!-- Pill 3 -->
-    <rect x="10" y="-12" width="115" height="24" rx="6" fill="#0f1124" stroke="#334155" stroke-width="1" />
-    <text x="67" y="4" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#a855f7">PROFILING</text>
-
-    <!-- Pill 4 -->
-    <rect x="145" y="-12" width="115" height="24" rx="6" fill="#0f1124" stroke="#334155" stroke-width="1" />
-    <text x="202" y="4" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#06b6d4">OPTIMIZATION</text>
-  </g>
-
-  <!-- Corner Accents -->
-  <path d="M 16 32 L 16 16 L 32 16" fill="none" stroke="#a855f7" stroke-width="2.5" />
-  <path d="M 784 32 L 784 16 L 768 16" fill="none" stroke="#a855f7" stroke-width="2.5" />
-  <path d="M 16 418 L 16 434 L 32 434" fill="none" stroke="#a855f7" stroke-width="2.5" />
-  <path d="M 784 418 L 784 434 L 768 434" fill="none" stroke="#a855f7" stroke-width="2.5" />
 </svg>

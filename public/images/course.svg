@@ -1,141 +1,149 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="100%" height="100%">
   <defs>
-    <linearGradient id="tc-ut-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="ut-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#050a16" />
-      <stop offset="50%" stop-color="#0b162c" />
-      <stop offset="100%" stop-color="#0e1f3d" />
+      <stop offset="50%" stop-color="#09142b" />
+      <stop offset="100%" stop-color="#0d1f3d" />
     </linearGradient>
-    <radialGradient id="tc-ut-glow" cx="50%" cy="40%" r="65%">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3" />
-      <stop offset="45%" stop-color="#0284c7" stop-opacity="0.15" />
+    <radialGradient id="ut-cyanGlow" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.32" />
+      <stop offset="50%" stop-color="#22c55e" stop-opacity="0.12" />
       <stop offset="100%" stop-color="#050a16" stop-opacity="0" />
     </radialGradient>
-    <linearGradient id="tc-ut-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#7dd3fc" />
-      <stop offset="50%" stop-color="#38bdf8" />
-      <stop offset="100%" stop-color="#0284c7" />
-    </linearGradient>
-    <linearGradient id="tc-ut-titleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="100%" stop-color="#e2e8f0" />
-    </linearGradient>
-    <filter id="tc-ut-shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <pattern id="ut-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="1" stroke-opacity="0.45" />
+    </pattern>
+    <filter id="ut-dropGlow" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.85" />
+      <feDropShadow dx="0" dy="0" stdDeviation="20" flood-color="#38bdf8" flood-opacity="0.35" />
+    </filter>
+    <filter id="ut-hudGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#38bdf8" flood-opacity="0.6" />
     </filter>
   </defs>
 
-  <!-- Background Base -->
-  <rect width="800" height="450" fill="url(#tc-ut-bg)" />
-  <rect width="800" height="450" fill="url(#tc-ut-glow)" />
+  <!-- Ambient Backdrop -->
+  <rect width="1000" height="600" fill="url(#ut-bg)" />
+  <rect width="1000" height="600" fill="url(#ut-cyanGlow)" />
+  <rect width="1000" height="600" fill="url(#ut-grid)" />
 
-  <!-- Unity 3D Physics Track Grid in Background -->
-  <g opacity="0.32">
-    <!-- Perspective Track Floor -->
-    <polygon points="120,240 680,240 760,280 40,280" fill="#0f172a" stroke="#38bdf8" stroke-width="1.2" />
-    <line x1="260" y1="240" x2="220" y2="280" stroke="#38bdf8" stroke-width="1" />
-    <line x1="400" y1="240" x2="400" y2="280" stroke="#38bdf8" stroke-width="1.5" />
-    <line x1="540" y1="240" x2="580" y2="280" stroke="#38bdf8" stroke-width="1" />
+  <!-- 3D Perspective Ground Grid -->
+  <g opacity="0.35">
+    <line x1="0" y1="380" x2="1000" y2="380" stroke="#38bdf8" stroke-width="1.2" />
+    <line x1="0" y1="440" x2="1000" y2="440" stroke="#38bdf8" stroke-width="1.5" />
+    <line x1="500" y1="340" x2="100" y2="600" stroke="#38bdf8" stroke-width="1" />
+    <line x1="500" y1="340" x2="350" y2="600" stroke="#38bdf8" stroke-width="1.2" />
+    <line x1="500" y1="340" x2="650" y2="600" stroke="#38bdf8" stroke-width="1.2" />
+    <line x1="500" y1="340" x2="900" y2="600" stroke="#38bdf8" stroke-width="1" />
   </g>
 
-  <!-- Central Unity Game Prototype Visual -->
-  <g transform="translate(400, 155)" filter="url(#tc-ut-shadow)">
-    <!-- Code Editor Card on the Left -->
-    <g transform="translate(-190, -65)">
-      <rect x="0" y="0" width="220" height="95" rx="8" fill="#0f172a" fill-opacity="0.9" stroke="#38bdf8" stroke-width="1.5" />
-      <rect x="0" y="0" width="220" height="18" rx="8" fill="#1e293b" />
-      <!-- Dots -->
-      <circle cx="12" cy="9" r="3" fill="#ef4444" />
-      <circle cx="22" cy="9" r="3" fill="#f59e0b" />
-      <circle cx="32" cy="9" r="3" fill="#10b981" />
-      <text x="110" y="12" font-family="'JetBrains Mono', monospace" font-size="8" fill="#94a3b8" text-anchor="middle">
-        PlayerController.cs
-      </text>
+  <!-- Center 3D Isometric Game Level Prototype -->
+  <g transform="translate(500, 270)" filter="url(#ut-dropGlow)">
+    <!-- Floating Platform Track -->
+    <polygon points="0,-20 150,55 0,130 -150,55" fill="#1e293b" stroke="#38bdf8" stroke-width="2" />
+    <polygon points="-150,55 0,130 0,165 -150,90" fill="#0f172a" stroke="#1e293b" stroke-width="1.5" />
+    <polygon points="150,55 0,130 0,165 150,90" fill="#131c33" stroke="#1e293b" stroke-width="1.5" />
 
-      <text x="12" y="34" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#38bdf8">void Update() {</text>
-      <text x="22" y="48" font-family="'JetBrains Mono', monospace" font-size="8" fill="#e2e8f0">float v = Input.GetAxis("V");</text>
-      <text x="22" y="62" font-family="'JetBrains Mono', monospace" font-size="8" fill="#38bdf8">transform.Translate(</text>
-      <text x="32" y="74" font-family="'JetBrains Mono', monospace" font-size="7.5" fill="#fde047">Vector3.forward * v * speed);</text>
-      <text x="12" y="88" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#38bdf8">}</text>
+    <!-- Checkered Finish / Start Zone -->
+    <polygon points="0,5 60,35 0,65 -60,35" fill="#0284c7" fill-opacity="0.4" stroke="#38bdf8" stroke-width="1.5" />
+
+    <!-- Physics Rolling Ball (Player) -->
+    <g transform="translate(-20, -10)">
+      <circle cx="0" cy="0" r="28" fill="#0284c7" stroke="#38bdf8" stroke-width="2.5" />
+      <circle cx="-8" cy="-8" r="8" fill="#bae6fd" opacity="0.8" />
+      <!-- Motion Dash Trails -->
+      <path d="M -28 5 Q -60 12, -90 18" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.8" />
+      <path d="M -24 -10 Q -55 -4, -85 0" fill="none" stroke="#7dd3fc" stroke-width="2" stroke-dasharray="4,4" opacity="0.6" />
+      <!-- Ground Bounce Ring -->
+      <ellipse cx="0" cy="28" rx="20" ry="6" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.7" />
     </g>
 
-    <!-- 3D Physics Sphere &amp; Obstacle Ramps on the Right -->
-    <g transform="translate(100, -10)">
-      <!-- Physics Sphere Player -->
-      <circle cx="0" cy="0" r="32" fill="#0284c7" stroke="#38bdf8" stroke-width="2.5" />
-      <circle cx="-10" cy="-10" r="8" fill="#bae6fd" opacity="0.8" />
-      <!-- Motion Rings / Trail -->
-      <ellipse cx="-45" cy="5" rx="20" ry="12" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.7" />
-      <ellipse cx="-75" cy="8" rx="14" ry="8" fill="none" stroke="#38bdf8" stroke-width="1" stroke-dasharray="3,3" opacity="0.4" />
-
-      <!-- Collectible Floating Diamond Gem -->
-      <g transform="translate(60, -35)">
-        <polygon points="0,-16 12,0 0,16 -12,0" fill="#fde047" stroke="#f59e0b" stroke-width="1.5" />
-        <line x1="0" y1="-16" x2="0" y2="16" stroke="#ffffff" stroke-width="1" />
-        <!-- Sparkles -->
-        <circle cx="18" cy="-8" r="2" fill="#ffffff" />
-        <circle cx="-14" cy="14" r="1.5" fill="#ffffff" />
-      </g>
+    <!-- Collectible Diamond Gems on Track -->
+    <g transform="translate(65, 0)">
+      <polygon points="0,-18 12,0 0,18 -12,0" fill="#fde047" stroke="#f59e0b" stroke-width="1.8" />
+      <line x1="0" y1="-18" x2="0" y2="18" stroke="#ffffff" stroke-width="1" />
+      <circle cx="0" cy="0" r="14" fill="none" stroke="#fde047" stroke-width="1" stroke-dasharray="3,3" opacity="0.8" />
+    </g>
+    <g transform="translate(-85, -20)">
+      <polygon points="0,-14 9,0 0,14 -9,0" fill="#fde047" stroke="#f59e0b" stroke-width="1.5" />
+      <line x1="0" y1="-14" x2="0" y2="14" stroke="#ffffff" stroke-width="1" />
     </g>
   </g>
 
-  <!-- Top Left Badge -->
-  <g transform="translate(35, 35)">
-    <rect x="0" y="0" width="180" height="26" rx="13" fill="#0c162d" fill-opacity="0.85" stroke="#38bdf8" stroke-width="1.2" />
-    <circle cx="14" cy="13" r="4" fill="#38bdf8" />
-    <text x="26" y="17" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#bae6fd" letter-spacing="1.5">
+  <!-- Left Floating UI Card: C# Scripting -->
+  <g transform="translate(60, 140)" filter="url(#ut-hudGlow)">
+    <rect x="0" y="0" width="220" height="230" rx="12" fill="#0b1429" fill-opacity="0.9" stroke="#38bdf8" stroke-width="1.8" />
+    <rect x="0" y="0" width="220" height="32" rx="12" fill="#102347" />
+    <circle cx="16" cy="16" r="4" fill="#38bdf8" />
+    <text x="28" y="20" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#f8fafc" letter-spacing="1">C# GAMEPLAY SCRIPT</text>
+
+    <text x="14" y="55" font-family="'JetBrains Mono', monospace" font-size="9" fill="#38bdf8">using UnityEngine;</text>
+    <text x="14" y="75" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#f8fafc">public class Player :</text>
+    <text x="24" y="90" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#bae6fd">MonoBehaviour {</text>
+    <text x="20" y="112" font-family="'JetBrains Mono', monospace" font-size="9" fill="#fde047">public float speed = 12f;</text>
+    <text x="20" y="132" font-family="'JetBrains Mono', monospace" font-size="9" fill="#38bdf8">void FixedUpdate() {</text>
+    <text x="28" y="148" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#94a3b8">float h = Input.GetAxis();</text>
+    <text x="28" y="164" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#22c55e">rb.AddForce(move * spd);</text>
+    <text x="20" y="180" font-family="'JetBrains Mono', monospace" font-size="9" fill="#38bdf8">}</text>
+    <text x="14" y="196" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#bae6fd">}</text>
+
+    <line x1="16" y1="205" x2="204" y2="205" stroke="#1e293b" stroke-width="1" />
+    <text x="16" y="220" font-family="'JetBrains Mono', monospace" font-size="9" fill="#22c55e">● SCRIPT COMPILED: OK</text>
+  </g>
+
+  <!-- Right Floating UI Card: Components &amp; Audio -->
+  <g transform="translate(720, 140)" filter="url(#ut-hudGlow)">
+    <rect x="0" y="0" width="220" height="230" rx="12" fill="#0b1429" fill-opacity="0.9" stroke="#7dd3fc" stroke-width="1.8" />
+    <rect x="0" y="0" width="220" height="32" rx="12" fill="#13274f" />
+    <circle cx="16" cy="16" r="4" fill="#7dd3fc" />
+    <text x="28" y="20" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#f8fafc" letter-spacing="1">PHYSICS &amp; AUDIO</text>
+
+    <text x="16" y="55" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#38bdf8">SphereCollider</text>
+    <text x="16" y="73" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#94a3b8">Radius: 0.5 · IsTrigger: No</text>
+
+    <rect x="12" y="88" width="196" height="1" fill="#334155" />
+    <text x="16" y="108" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#22c55e">PhysicMaterial</text>
+    <text x="16" y="126" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#94a3b8">Bounciness: 0.65</text>
+    <text x="16" y="142" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#94a3b8">Friction Combine: Average</text>
+
+    <rect x="12" y="156" width="196" height="1" fill="#334155" />
+    <text x="16" y="176" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#fde047">AudioSource (SFX)</text>
+    <text x="16" y="194" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#94a3b8">Clip: Gem_Pickup.wav</text>
+    <text x="16" y="220" font-family="'JetBrains Mono', monospace" font-size="9" fill="#38bdf8">UNITY LEARN OFFICIAL</text>
+  </g>
+
+  <!-- Top Badges -->
+  <g transform="translate(60, 45)" filter="url(#ut-hudGlow)">
+    <rect x="0" y="0" width="220" height="38" rx="10" fill="#0b1429" fill-opacity="0.9" stroke="#38bdf8" stroke-width="1.8" />
+    <circle cx="20" cy="19" r="5" fill="#38bdf8" />
+    <text x="34" y="23" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="800" fill="#bae6fd" letter-spacing="1.5">
       UNITY TECHNOLOGIES
     </text>
   </g>
 
-  <!-- Top Right Badge -->
-  <g transform="translate(625, 35)">
-    <rect x="0" y="0" width="140" height="26" rx="13" fill="#0c162d" fill-opacity="0.85" stroke="#7dd3fc" stroke-width="1.2" />
-    <text x="70" y="17" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#7dd3fc" text-anchor="middle" letter-spacing="2">
+  <g transform="translate(740, 45)" filter="url(#ut-hudGlow)">
+    <rect x="0" y="0" width="200" height="38" rx="10" fill="#0b1429" fill-opacity="0.9" stroke="#7dd3fc" stroke-width="1.8" />
+    <text x="100" y="24" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#7dd3fc" text-anchor="middle" letter-spacing="2">
       FOUNDATION 2023
     </text>
   </g>
 
-  <!-- Vignette Gradient at Bottom for Title Contrast -->
-  <rect x="0" y="240" width="800" height="210" fill="url(#tc-ut-bg)" opacity="0.94" />
-
-  <!-- Bottom Title Block -->
-  <g transform="translate(400, 310)" text-anchor="middle" filter="url(#tc-ut-shadow)">
-    <!-- Small Category Label -->
-    <text x="0" y="0" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="800" fill="#38bdf8" letter-spacing="4">
-      UNITY LEARN · OFFICIAL CURRICULUM
-    </text>
-    <!-- Big Bold Title -->
-    <text x="0" y="38" font-family="'Inter', -apple-system, sans-serif" font-size="34" font-weight="900" fill="url(#tc-ut-titleGrad)" letter-spacing="1">
+  <!-- Bottom Hero Title Bar Card -->
+  <g transform="translate(60, 480)" filter="url(#ut-dropGlow)">
+    <rect x="0" y="0" width="880" height="85" rx="14" fill="#071226" fill-opacity="0.95" stroke="#38bdf8" stroke-width="2" />
+    <rect x="0" y="0" width="880" height="4" rx="2" fill="#38bdf8" />
+    <text x="30" y="36" font-family="'Inter', sans-serif" font-size="22" font-weight="900" fill="#f8fafc" letter-spacing="0.5">
       CREATE WITH CODE
     </text>
-    <!-- Subtitle -->
-    <text x="0" y="66" font-family="'Inter', -apple-system, sans-serif" font-size="13" font-weight="600" fill="#94a3b8" letter-spacing="1">
+    <text x="30" y="62" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" fill="#94a3b8">
       C# SCRIPTING FOUNDATIONS · PLAYER CONTROLLERS · 3D PHYSICS &amp; SOUND
     </text>
+    <g transform="translate(630, 26)">
+      <rect x="0" y="0" width="105" height="30" rx="6" fill="#13274f" stroke="#38bdf8" stroke-width="1" />
+      <text x="52" y="19" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#38bdf8" text-anchor="middle">C# CODE</text>
+
+      <rect x="115" y="0" width="105" height="30" rx="6" fill="#13274f" stroke="#22c55e" stroke-width="1" />
+      <text x="167" y="19" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#22c55e" text-anchor="middle">PHYSICS 3D</text>
+    </g>
   </g>
-
-  <!-- Bottom Tech Pills / Tags -->
-  <g transform="translate(400, 412)" text-anchor="middle">
-    <!-- Pill 1 -->
-    <rect x="-260" y="-12" width="120" height="24" rx="6" fill="#0c162d" stroke="#334155" stroke-width="1" />
-    <text x="-200" y="4" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#38bdf8">C# SCRIPTING</text>
-
-    <!-- Pill 2 -->
-    <rect x="-125" y="-12" width="115" height="24" rx="6" fill="#0c162d" stroke="#334155" stroke-width="1" />
-    <text x="-67" y="4" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#7dd3fc">CONTROLLERS</text>
-
-    <!-- Pill 3 -->
-    <rect x="10" y="-12" width="115" height="24" rx="6" fill="#0c162d" stroke="#334155" stroke-width="1" />
-    <text x="67" y="4" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#38bdf8">3D PHYSICS</text>
-
-    <!-- Pill 4 -->
-    <rect x="145" y="-12" width="115" height="24" rx="6" fill="#0c162d" stroke="#334155" stroke-width="1" />
-    <text x="202" y="4" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#bae6fd">UI &amp; AUDIO</text>
-  </g>
-
-  <!-- Corner Accents -->
-  <path d="M 16 32 L 16 16 L 32 16" fill="none" stroke="#38bdf8" stroke-width="2.5" />
-  <path d="M 784 32 L 784 16 L 768 16" fill="none" stroke="#38bdf8" stroke-width="2.5" />
-  <path d="M 16 418 L 16 434 L 32 434" fill="none" stroke="#38bdf8" stroke-width="2.5" />
-  <path d="M 784 418 L 784 434 L 768 434" fill="none" stroke="#38bdf8" stroke-width="2.5" />
 </svg>
