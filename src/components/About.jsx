@@ -468,7 +468,7 @@ function About() {
                 <div className="certificate-image-wrapper">
 
                   <img
-                    src={`${BASE}/images/course.jpg`}
+                    src={`${BASE}/images/course.svg`}
                     alt="Create with Code Course"
                     onError={handleImageError}
                   />
