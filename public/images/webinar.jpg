@@ -1,65 +1,140 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="100%" height="100%">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b1120" />
-      <stop offset="50%" stop-color="#0f172a" />
-      <stop offset="100%" stop-color="#1e293b" />
+    <linearGradient id="wb-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060714" />
+      <stop offset="50%" stop-color="#0d1127" />
+      <stop offset="100%" stop-color="#151739" />
     </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="45%" r="50%">
-      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.3" />
-      <stop offset="60%" stop-color="#06b6d4" stop-opacity="0.1" />
-      <stop offset="100%" stop-color="#0b1120" stop-opacity="0" />
+    <radialGradient id="wb-glow" cx="50%" cy="38%" r="60%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.25" />
+      <stop offset="50%" stop-color="#06b6d4" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#060714" stop-opacity="0" />
     </radialGradient>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.4" />
+    <linearGradient id="wb-neon" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c084fc" />
+      <stop offset="50%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+    <pattern id="wb-techgrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.6" stroke-opacity="0.3" />
+      <circle cx="0" cy="0" r="1.5" fill="#a855f7" fill-opacity="0.4" />
     </pattern>
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.6"/>
+    <filter id="wb-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.75" />
     </filter>
   </defs>
 
-  <!-- Background -->
-  <rect width="800" height="500" fill="url(#bgGrad)" />
-  <rect width="800" height="500" fill="url(#glow)" />
-  <rect width="800" height="500" fill="url(#grid)" />
+  <!-- Background Base -->
+  <rect width="800" height="520" fill="url(#wb-bg)" />
+  <rect width="800" height="520" fill="url(#wb-glow)" />
+  <rect width="800" height="520" fill="url(#wb-techgrid)" />
 
-  <!-- Geometric Accent Lines -->
-  <line x1="0" y1="440" x2="800" y2="440" stroke="#334155" stroke-width="1" stroke-dasharray="4,8" />
-  <circle cx="400" cy="220" r="160" fill="none" stroke="#8b5cf6" stroke-opacity="0.15" stroke-width="1.5" stroke-dasharray="6,6" />
-  <circle cx="400" cy="220" r="110" fill="none" stroke="#06b6d4" stroke-opacity="0.2" stroke-width="2" />
+  <!-- Outer Technical Certificate Frame -->
+  <rect x="22" y="22" width="756" height="476" rx="8" fill="none" stroke="url(#wb-neon)" stroke-width="1.8" />
+  <rect x="28" y="28" width="744" height="464" rx="6" fill="none" stroke="#06b6d4" stroke-width="0.8" stroke-opacity="0.4" stroke-dasharray="8,5" />
+  <rect x="34" y="34" width="732" height="452" rx="4" fill="none" stroke="#64748b" stroke-width="0.5" stroke-opacity="0.3" />
 
-  <!-- Main Icon &amp; Illustration Container -->
-  <g transform="translate(400, 205)" filter="url(#shadow)">
-    
-  <g transform="translate(-48, -40)">
-    <rect x="0" y="0" width="96" height="74" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="3" />
-    <line x1="0" y1="18" x2="96" y2="18" stroke="#334155" stroke-width="2" />
-    <circle cx="12" cy="9" r="3" fill="#ef4444" />
-    <circle cx="22" cy="9" r="3" fill="#f59e0b" />
-    <circle cx="32" cy="9" r="3" fill="#10b981" />
-    <!-- 3D wireframe cube inside -->
-    <path d="M 48 26 L 68 36 L 48 46 L 28 36 Z" fill="none" stroke="#818cf8" stroke-width="2" />
-    <path d="M 28 36 L 28 56 L 48 66 L 48 46" fill="none" stroke="#818cf8" stroke-width="2" />
-    <path d="M 68 36 L 68 56 L 48 66" fill="none" stroke="#818cf8" stroke-width="2" />
+  <!-- Corner Brackets -->
+  <g transform="translate(34, 34)">
+    <path d="M 0 28 L 0 0 L 28 0" fill="none" stroke="#c084fc" stroke-width="3" />
+    <circle cx="8" cy="8" r="2.5" fill="#38bdf8" />
+  </g>
+  <g transform="translate(766, 34)">
+    <path d="M 0 28 L 0 0 L -28 0" fill="none" stroke="#c084fc" stroke-width="3" />
+    <circle cx="-8" cy="8" r="2.5" fill="#38bdf8" />
+  </g>
+  <g transform="translate(34, 486)">
+    <path d="M 0 -28 L 0 0 L 28 0" fill="none" stroke="#c084fc" stroke-width="3" />
+    <circle cx="8" cy="-8" r="2.5" fill="#38bdf8" />
+  </g>
+  <g transform="translate(766, 486)">
+    <path d="M 0 -28 L 0 0 L -28 0" fill="none" stroke="#c084fc" stroke-width="3" />
+    <circle cx="-8" cy="-8" r="2.5" fill="#38bdf8" />
   </g>
 
+  <!-- Top Badge -->
+  <g transform="translate(400, 68)" text-anchor="middle">
+    <rect x="-195" y="-13" width="390" height="26" rx="13" fill="#0d1127" stroke="url(#wb-neon)" stroke-width="1.2" />
+    <text x="0" y="5" font-family="'Inter', -apple-system, sans-serif" font-size="10" font-weight="700" fill="#e9d5ff" letter-spacing="3">
+      MONOLITH ACADEMY · GAME ARCHITECTURE MASTERCLASS
+    </text>
   </g>
 
-  <!-- Tag / Badge -->
-  <g transform="translate(400, 320)">
-    <rect x="-90" y="-14" width="180" height="28" rx="14" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5" />
-    <text x="0" y="5" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="700" fill="#8b5cf6" text-anchor="middle" letter-spacing="2.5">WEBINAR · 2026</text>
+  <!-- Monolith Crest Icon -->
+  <g transform="translate(400, 122)" filter="url(#wb-shadow)">
+    <!-- Monolith Obelisk / 3D Crystal -->
+    <polygon points="0,-28 20,-6 14,24 -14,24 -20,-6" fill="#1e1b4b" stroke="#a855f7" stroke-width="1.8" />
+    <polygon points="0,-28 0,24 14,24 20,-6" fill="#6b21a8" fill-opacity="0.7" />
+    <polygon points="0,-28 0,24 -14,24 -20,-6" fill="#3b0764" fill-opacity="0.8" />
+    <polyline points="-8,4 0,-4 8,4" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" />
   </g>
 
-  <!-- Title -->
-  <text x="400" y="375" font-family="'Inter', -apple-system, sans-serif" font-size="24" font-weight="800" fill="#f8fafc" text-anchor="middle" letter-spacing="-0.5">GAME DEVELOPMENT WEBINAR</text>
+  <!-- Certificate Subtitle -->
+  <text x="400" y="188" font-family="'Inter', -apple-system, sans-serif" font-size="12" font-weight="700" fill="#38bdf8" text-anchor="middle" letter-spacing="4">
+    CERTIFICATE OF ATTENDANCE &amp; PARTICIPATION
+  </text>
 
-  <!-- Subtitle -->
-  <text x="400" y="405" font-family="'Inter', -apple-system, sans-serif" font-size="13" font-weight="500" fill="#94a3b8" text-anchor="middle" letter-spacing="0.5">Monolith Academy · Production Pipelines</text>
+  <!-- Masterclass Title -->
+  <text x="400" y="222" font-family="'Inter', -apple-system, sans-serif" font-size="25" font-weight="900" fill="#f8fafc" text-anchor="middle" letter-spacing="0.5">
+    GAME DEVELOPMENT WEBINAR
+  </text>
+  <text x="400" y="246" font-family="'Inter', -apple-system, sans-serif" font-size="13" font-weight="600" fill="#c084fc" text-anchor="middle" letter-spacing="1.2">
+    PRODUCTION PIPELINES · GAMEPLAY DESIGN &amp; PERFORMANCE OPTIMIZATION
+  </text>
 
-  <!-- Decorative Corner Accents -->
-  <path d="M 24 40 L 24 24 L 40 24" fill="none" stroke="#8b5cf6" stroke-width="2.5" />
-  <path d="M 776 40 L 776 24 L 760 24" fill="none" stroke="#8b5cf6" stroke-width="2.5" />
-  <path d="M 24 460 L 24 476 L 40 476" fill="none" stroke="#8b5cf6" stroke-width="2.5" />
-  <path d="M 776 460 L 776 476 L 760 476" fill="none" stroke="#8b5cf6" stroke-width="2.5" />
+  <!-- Divider Line -->
+  <g transform="translate(400, 264)">
+    <line x1="-220" y1="0" x2="-20" y2="0" stroke="url(#wb-neon)" stroke-width="1" stroke-opacity="0.6" />
+    <polygon points="0,-5 5,0 0,5 -5,0" fill="#c084fc" />
+    <line x1="20" y1="0" x2="220" y2="0" stroke="url(#wb-neon)" stroke-width="1" stroke-opacity="0.6" />
+  </g>
+
+  <!-- Conferred To Subtitle -->
+  <text x="400" y="290" font-family="'Georgia', serif" font-size="13" font-style="italic" fill="#94a3b8" text-anchor="middle" letter-spacing="0.5">
+    Conferred upon verified completion to
+  </text>
+
+  <!-- Recipient Name -->
+  <text x="400" y="328" font-family="'Inter', -apple-system, sans-serif" font-size="28" font-weight="900" fill="url(#wb-neon)" text-anchor="middle" letter-spacing="2">
+    SRIRAM S
+  </text>
+
+  <!-- Description Text -->
+  <text x="400" y="358" font-family="'Inter', -apple-system, sans-serif" font-size="11.5" font-weight="400" fill="#94a3b8" text-anchor="middle" letter-spacing="0.2">
+    for actively participating in professional masterclass sessions exploring commercial studio
+  </text>
+  <text x="400" y="375" font-family="'Inter', -apple-system, sans-serif" font-size="11.5" font-weight="400" fill="#94a3b8" text-anchor="middle" letter-spacing="0.2">
+    workflows, architecture patterns, GPU memory budgets &amp; real-time interactive game systems.
+  </text>
+
+  <!-- Bottom Details &amp; Verification Section -->
+  <!-- Left: Signature -->
+  <g transform="translate(130, 420)">
+    <path d="M 0 14 Q 30 -4, 60 16 T 110 8 T 145 16" fill="none" stroke="#c084fc" stroke-width="1.8" stroke-linecap="round" />
+    <line x1="0" y1="24" x2="160" y2="24" stroke="#475569" stroke-width="1" />
+    <text x="80" y="38" font-family="'Inter', -apple-system, sans-serif" font-size="9" font-weight="700" fill="#f8fafc" text-anchor="middle" letter-spacing="1">MONOLITH INSTRUCTOR</text>
+    <text x="80" y="49" font-family="'Inter', -apple-system, sans-serif" font-size="8" font-weight="500" fill="#94a3b8" text-anchor="middle">Lead Technical Architect</text>
+  </g>
+
+  <!-- Center: Monolith Glowing Seal -->
+  <g transform="translate(400, 436)" filter="url(#wb-shadow)">
+    <circle cx="0" cy="0" r="32" fill="#11162d" stroke="url(#wb-neon)" stroke-width="2.2" />
+    <circle cx="0" cy="0" r="26" fill="none" stroke="#a855f7" stroke-width="0.8" stroke-dasharray="3,2" />
+    <!-- Center Crystal Glyph -->
+    <polygon points="0,-12 10,-2 7,10 -7,10 -10,-2" fill="#6b21a8" stroke="#38bdf8" stroke-width="1.2" />
+    <text x="0" y="19" font-family="'Inter', sans-serif" font-size="7" font-weight="800" fill="#e9d5ff" text-anchor="middle" letter-spacing="1">MONOLITH</text>
+  </g>
+
+  <!-- Right: Verification &amp; Serial -->
+  <g transform="translate(670, 420)" text-anchor="middle">
+    <g transform="translate(-16, 0)">
+      <rect x="0" y="0" width="32" height="20" rx="3" fill="#0f172a" stroke="#a855f7" stroke-width="1.2" />
+      <line x1="8" y1="5" x2="24" y2="5" stroke="#a855f7" stroke-width="1.5" />
+      <line x1="8" y1="10" x2="18" y2="10" stroke="#38bdf8" stroke-width="1.5" />
+      <line x1="8" y1="15" x2="22" y2="15" stroke="#e9d5ff" stroke-width="1.5" />
+    </g>
+    <line x1="-80" y1="24" x2="80" y2="24" stroke="#475569" stroke-width="1" />
+    <text x="0" y="38" font-family="'Inter', -apple-system, sans-serif" font-size="8.5" font-weight="700" fill="#f8fafc" letter-spacing="1">ID: MNL-GDEV-2026-SR</text>
+    <text x="0" y="49" font-family="'Inter', -apple-system, sans-serif" font-size="8" font-weight="500" fill="#38bdf8">Attended: 2026 · Webinar</text>
+  </g>
 </svg>
