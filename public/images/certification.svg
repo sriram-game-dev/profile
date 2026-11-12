@@ -1,148 +1,142 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
   <defs>
-    <linearGradient id="sl-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#050a14" />
-      <stop offset="50%" stop-color="#0a1526" />
-      <stop offset="100%" stop-color="#082032" />
+    <linearGradient id="tsl-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040814" />
+      <stop offset="50%" stop-color="#081426" />
+      <stop offset="100%" stop-color="#081e2b" />
     </linearGradient>
-    <radialGradient id="sl-glow" cx="50%" cy="38%" r="60%">
-      <stop offset="0%" stop-color="#f97316" stop-opacity="0.22" />
-      <stop offset="50%" stop-color="#10b981" stop-opacity="0.14" />
-      <stop offset="100%" stop-color="#050a14" stop-opacity="0" />
+    <radialGradient id="tsl-glow" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.25" />
+      <stop offset="45%" stop-color="#f97316" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="#040814" stop-opacity="0" />
     </radialGradient>
-    <linearGradient id="sl-orange" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="tsl-orange" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#fb923c" />
       <stop offset="50%" stop-color="#f97316" />
-      <stop offset="100%" stop-color="#ea580c" />
+      <stop offset="100%" stop-color="#34d399" />
     </linearGradient>
-    <linearGradient id="sl-green" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#34d399" />
-      <stop offset="100%" stop-color="#10b981" />
+    <linearGradient id="tsl-titleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e2e8f0" />
     </linearGradient>
-    <pattern id="sl-pattern" width="50" height="50" patternUnits="userSpaceOnUse">
-      <circle cx="25" cy="25" r="1.5" fill="#38bdf8" fill-opacity="0.2" />
-      <line x1="25" y1="25" x2="50" y2="25" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.4" />
-      <line x1="25" y1="25" x2="25" y2="50" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.4" />
-    </pattern>
-    <filter id="sl-shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.75" />
+    <filter id="tsl-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.85" />
     </filter>
   </defs>
 
   <!-- Background Base -->
-  <rect width="800" height="520" fill="url(#sl-bg)" />
-  <rect width="800" height="520" fill="url(#sl-glow)" />
-  <rect width="800" height="520" fill="url(#sl-pattern)" />
+  <rect width="800" height="450" fill="url(#tsl-bg)" />
+  <rect width="800" height="450" fill="url(#tsl-glow)" />
 
-  <!-- Outer Certificate Frame -->
-  <rect x="22" y="22" width="756" height="476" rx="8" fill="none" stroke="url(#sl-orange)" stroke-width="2" />
-  <rect x="28" y="28" width="744" height="464" rx="6" fill="none" stroke="#10b981" stroke-width="0.8" stroke-opacity="0.4" stroke-dasharray="6,4" />
-  <rect x="34" y="34" width="732" height="452" rx="4" fill="none" stroke="#475569" stroke-width="0.5" stroke-opacity="0.3" />
-
-  <!-- Corner Filigree -->
-  <g transform="translate(34, 34)">
-    <path d="M 0 0 L 32 0 L 32 6 L 6 6 L 6 32 L 0 32 Z" fill="url(#sl-orange)" />
-    <circle cx="14" cy="14" r="2.5" fill="#10b981" />
-  </g>
-  <g transform="translate(766, 34)">
-    <path d="M 0 0 L -32 0 L -32 6 L -6 6 L -6 32 L 0 32 Z" fill="url(#sl-orange)" />
-    <circle cx="-14" cy="14" r="2.5" fill="#10b981" />
-  </g>
-  <g transform="translate(34, 486)">
-    <path d="M 0 0 L 32 0 L 32 -6 L 6 -6 L 6 -32 L 0 -32 Z" fill="url(#sl-orange)" />
-    <circle cx="14" cy="-14" r="2.5" fill="#10b981" />
-  </g>
-  <g transform="translate(766, 486)">
-    <path d="M 0 0 L -32 0 L -32 -6 L -6 -6 L -6 -32 L 0 -32 Z" fill="url(#sl-orange)" />
-    <circle cx="-14" cy="-14" r="2.5" fill="#10b981" />
+  <!-- Neural Network Mesh Pattern in Background -->
+  <g opacity="0.28">
+    <circle cx="200" cy="120" r="3" fill="#10b981" />
+    <circle cx="320" cy="90" r="4" fill="#34d399" />
+    <circle cx="480" cy="90" r="4" fill="#f97316" />
+    <circle cx="600" cy="120" r="3" fill="#fb923c" />
+    <circle cx="260" cy="180" r="3.5" fill="#38bdf8" />
+    <circle cx="540" cy="180" r="3.5" fill="#38bdf8" />
+    <line x1="200" y1="120" x2="320" y2="90" stroke="#10b981" stroke-width="1" />
+    <line x1="320" y1="90" x2="480" y2="90" stroke="#f97316" stroke-width="1" stroke-dasharray="4,3" />
+    <line x1="480" y1="90" x2="600" y2="120" stroke="#fb923c" stroke-width="1" />
+    <line x1="200" y1="120" x2="260" y2="180" stroke="#38bdf8" stroke-width="1" />
+    <line x1="600" y1="120" x2="540" y2="180" stroke="#38bdf8" stroke-width="1" />
+    <line x1="260" y1="180" x2="540" y2="180" stroke="#10b981" stroke-width="0.8" stroke-dasharray="6,4" />
   </g>
 
-  <!-- Top Badge -->
-  <g transform="translate(400, 68)" text-anchor="middle">
-    <rect x="-185" y="-13" width="370" height="26" rx="13" fill="#0c1626" stroke="url(#sl-orange)" stroke-width="1.2" />
-    <text x="0" y="5" font-family="'Inter', -apple-system, sans-serif" font-size="10.5" font-weight="700" fill="#fed7aa" letter-spacing="3.5">
-      SIMPLILEARN SKILLUP · AI CREDENTIAL
+  <!-- Central AI Prompt &amp; LLM Inference Card Graphic -->
+  <g transform="translate(400, 155)" filter="url(#tsl-shadow)">
+    <!-- Terminal Prompt Card -->
+    <rect x="-190" y="-70" width="380" height="120" rx="10" fill="#0b1626" fill-opacity="0.9" stroke="#10b981" stroke-width="1.8" />
+    <rect x="-185" y="-65" width="370" height="20" fill="#112238" rx="5" />
+    <!-- Window Control Dots -->
+    <circle cx="-172" cy="-55" r="3.5" fill="#ef4444" />
+    <circle cx="-161" cy="-55" r="3.5" fill="#f59e0b" />
+    <circle cx="-150" cy="-55" r="3.5" fill="#10b981" />
+    <text x="0" y="-51" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#94a3b8" text-anchor="middle">
+      AI CONVERSATIONAL INTERACTION · LLM ENGINE
+    </text>
+
+    <!-- Chat Prompt 1 (User) -->
+    <rect x="-165" y="-32" width="230" height="24" rx="6" fill="#182c47" />
+    <text x="-155" y="-16" font-family="'JetBrains Mono', monospace" font-size="9" fill="#38bdf8">
+      &gt; "Explain LLM tokenization &amp; weights"
+    </text>
+
+    <!-- AI Response 2 -->
+    <rect x="-70" y="2" width="235" height="34" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1" />
+    <text x="-60" y="16" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#34d399">
+      [GPT-4o]: Transformer architecture
+    </text>
+    <text x="-60" y="28" font-family="'JetBrains Mono', monospace" font-size="8" fill="#a7f3d0">
+      Self-attention mechanism computed.
+    </text>
+
+    <!-- Glowing Brain / AI Core Badge Floating on Top Right -->
+    <g transform="translate(145, -5)">
+      <circle cx="0" cy="0" r="16" fill="#0f172a" stroke="#f97316" stroke-width="1.8" />
+      <polygon points="0,-7 6,-3 6,5 0,9 -6,5 -6,-3" fill="#f97316" fill-opacity="0.8" />
+    </g>
+  </g>
+
+  <!-- Top Left Badge -->
+  <g transform="translate(35, 35)">
+    <rect x="0" y="0" width="180" height="26" rx="13" fill="#0b1626" fill-opacity="0.85" stroke="#f97316" stroke-width="1.2" />
+    <circle cx="14" cy="13" r="4" fill="#f97316" />
+    <text x="26" y="17" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#fed7aa" letter-spacing="1.5">
+      SIMPLILEARN · AI
     </text>
   </g>
 
-  <!-- AI Brain / Circuit Icon -->
-  <g transform="translate(400, 122)" filter="url(#sl-shadow)">
-    <circle cx="0" cy="0" r="24" fill="#0f1f33" stroke="url(#sl-orange)" stroke-width="1.8" />
-    <!-- Neural Node Diagram -->
-    <circle cx="-10" cy="-6" r="3" fill="#10b981" />
-    <circle cx="10" cy="-6" r="3" fill="#10b981" />
-    <circle cx="0" cy="8" r="3.5" fill="#f97316" />
-    <line x1="-10" y1="-6" x2="0" y2="8" stroke="#38bdf8" stroke-width="1.5" />
-    <line x1="10" y1="-6" x2="0" y2="8" stroke="#38bdf8" stroke-width="1.5" />
-    <line x1="-10" y1="-6" x2="10" y2="-6" stroke="#38bdf8" stroke-width="1.5" />
+  <!-- Top Right Badge -->
+  <g transform="translate(615, 35)">
+    <rect x="0" y="0" width="150" height="26" rx="13" fill="#0b1626" fill-opacity="0.85" stroke="#10b981" stroke-width="1.2" />
+    <text x="75" y="17" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#34d399" text-anchor="middle" letter-spacing="2">
+      CERTIFIED 2026
+    </text>
   </g>
 
-  <!-- Certificate Subtitle -->
-  <text x="400" y="188" font-family="'Inter', -apple-system, sans-serif" font-size="12" font-weight="700" fill="#10b981" text-anchor="middle" letter-spacing="4">
-    CERTIFICATE OF ACHIEVEMENT
-  </text>
+  <!-- Vignette Gradient at Bottom for Title Contrast -->
+  <rect x="0" y="240" width="800" height="210" fill="url(#tsl-bg)" opacity="0.94" />
 
-  <!-- Certificate Title -->
-  <text x="400" y="222" font-family="'Inter', -apple-system, sans-serif" font-size="26" font-weight="900" fill="url(#sl-orange)" text-anchor="middle" letter-spacing="0.5">
-    CHATGPT 101 : WHAT IS CHATGPT?
-  </text>
-  <text x="400" y="246" font-family="'Inter', -apple-system, sans-serif" font-size="13" font-weight="600" fill="#94a3b8" text-anchor="middle" letter-spacing="1.2">
-    LARGE LANGUAGE MODELS · GENERATIVE WORKFLOWS &amp; PROMPT FUNDAMENTALS
-  </text>
-
-  <!-- Divider Line -->
-  <g transform="translate(400, 264)">
-    <line x1="-220" y1="0" x2="-20" y2="0" stroke="url(#sl-orange)" stroke-width="1" stroke-opacity="0.6" />
-    <polygon points="0,-5 5,0 0,5 -5,0" fill="#f97316" />
-    <line x1="20" y1="0" x2="220" y2="0" stroke="url(#sl-orange)" stroke-width="1" stroke-opacity="0.6" />
+  <!-- Bottom Title Block -->
+  <g transform="translate(400, 310)" text-anchor="middle" filter="url(#tsl-shadow)">
+    <!-- Small Category Label -->
+    <text x="0" y="0" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="800" fill="#10b981" letter-spacing="4">
+      SIMPLILEARN · ARTIFICIAL INTELLIGENCE
+    </text>
+    <!-- Big Bold Title -->
+    <text x="0" y="38" font-family="'Inter', -apple-system, sans-serif" font-size="34" font-weight="900" fill="url(#tsl-titleGrad)" letter-spacing="1">
+      CHATGPT 101
+    </text>
+    <!-- Subtitle -->
+    <text x="0" y="66" font-family="'Inter', -apple-system, sans-serif" font-size="13" font-weight="600" fill="#94a3b8" letter-spacing="1">
+      WHAT IS CHATGPT? · LARGE LANGUAGE MODELS &amp; GENERATIVE AI
+    </text>
   </g>
 
-  <!-- Conferred To Subtitle -->
-  <text x="400" y="290" font-family="'Georgia', serif" font-size="13" font-style="italic" fill="#94a3b8" text-anchor="middle" letter-spacing="0.5">
-    This certificate is proudly presented to
-  </text>
+  <!-- Bottom Tech Pills / Tags -->
+  <g transform="translate(400, 412)" text-anchor="middle">
+    <!-- Pill 1 -->
+    <rect x="-260" y="-12" width="120" height="24" rx="6" fill="#0b1626" stroke="#334155" stroke-width="1" />
+    <text x="-200" y="4" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#10b981">LLM FOUNDATIONS</text>
 
-  <!-- Recipient Name -->
-  <text x="400" y="328" font-family="'Inter', -apple-system, sans-serif" font-size="28" font-weight="900" fill="#f8fafc" text-anchor="middle" letter-spacing="2">
-    SRIRAM S
-  </text>
+    <!-- Pill 2 -->
+    <rect x="-125" y="-12" width="115" height="24" rx="6" fill="#0b1626" stroke="#334155" stroke-width="1" />
+    <text x="-67" y="4" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#f97316">GENERATIVE AI</text>
 
-  <!-- Description Text -->
-  <text x="400" y="358" font-family="'Inter', -apple-system, sans-serif" font-size="11.5" font-weight="400" fill="#94a3b8" text-anchor="middle" letter-spacing="0.2">
-    for successfully completing the certified curriculum covering LLM architecture, generative AI
-  </text>
-  <text x="400" y="375" font-family="'Inter', -apple-system, sans-serif" font-size="11.5" font-weight="400" fill="#94a3b8" text-anchor="middle" letter-spacing="0.2">
-    principles, conversational interfaces &amp; practical developer acceleration techniques.
-  </text>
+    <!-- Pill 3 -->
+    <rect x="10" y="-12" width="115" height="24" rx="6" fill="#0b1626" stroke="#334155" stroke-width="1" />
+    <text x="67" y="4" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#38bdf8">WORKFLOWS</text>
 
-  <!-- Bottom Details &amp; Verification Section -->
-  <!-- Left: Signature -->
-  <g transform="translate(130, 420)">
-    <path d="M 0 16 Q 35 0, 70 14 T 120 8 T 150 16" fill="none" stroke="#f97316" stroke-width="1.8" stroke-linecap="round" />
-    <line x1="0" y1="24" x2="160" y2="24" stroke="#475569" stroke-width="1" />
-    <text x="80" y="38" font-family="'Inter', -apple-system, sans-serif" font-size="9" font-weight="700" fill="#f8fafc" text-anchor="middle" letter-spacing="1">SIMPLILEARN DEAN</text>
-    <text x="80" y="49" font-family="'Inter', -apple-system, sans-serif" font-size="8" font-weight="500" fill="#64748b" text-anchor="middle">Academic Certification</text>
+    <!-- Pill 4 -->
+    <rect x="145" y="-12" width="115" height="24" rx="6" fill="#0b1626" stroke="#334155" stroke-width="1" />
+    <text x="202" y="4" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#34d399">AUTOMATION</text>
   </g>
 
-  <!-- Center: Simplilearn Gold/Orange Seal -->
-  <g transform="translate(400, 436)" filter="url(#sl-shadow)">
-    <circle cx="0" cy="0" r="32" fill="#0d1b2a" stroke="url(#sl-orange)" stroke-width="2.2" />
-    <circle cx="0" cy="0" r="26" fill="none" stroke="#10b981" stroke-width="0.8" stroke-dasharray="3,2" />
-    <text x="0" y="-8" font-family="'Inter', sans-serif" font-size="8" font-weight="900" fill="#fb923c" text-anchor="middle">★ ★ ★</text>
-    <text x="0" y="4" font-family="'Inter', sans-serif" font-size="8" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="1">SKILLUP</text>
-    <text x="0" y="14" font-family="'Inter', sans-serif" font-size="7" font-weight="700" fill="#10b981" text-anchor="middle" letter-spacing="1">VERIFIED</text>
-  </g>
-
-  <!-- Right: Verification &amp; Serial -->
-  <g transform="translate(670, 420)" text-anchor="middle">
-    <g transform="translate(-16, 0)">
-      <rect x="0" y="0" width="32" height="20" rx="3" fill="#0f172a" stroke="#10b981" stroke-width="1.2" />
-      <line x1="8" y1="5" x2="24" y2="5" stroke="#10b981" stroke-width="1.5" />
-      <line x1="8" y1="10" x2="18" y2="10" stroke="#f97316" stroke-width="1.5" />
-      <line x1="8" y1="15" x2="22" y2="15" stroke="#38bdf8" stroke-width="1.5" />
-    </g>
-    <line x1="-80" y1="24" x2="80" y2="24" stroke="#475569" stroke-width="1" />
-    <text x="0" y="38" font-family="'Inter', -apple-system, sans-serif" font-size="8.5" font-weight="700" fill="#f8fafc" letter-spacing="1">ID: SL-GPT101-2026-SR</text>
-    <text x="0" y="49" font-family="'Inter', -apple-system, sans-serif" font-size="8" font-weight="500" fill="#10b981">Completed: 2026 · Certification</text>
-  </g>
+  <!-- Corner Accents -->
+  <path d="M 16 32 L 16 16 L 32 16" fill="none" stroke="#f97316" stroke-width="2.5" />
+  <path d="M 784 32 L 784 16 L 768 16" fill="none" stroke="#f97316" stroke-width="2.5" />
+  <path d="M 16 418 L 16 434 L 32 434" fill="none" stroke="#10b981" stroke-width="2.5" />
+  <path d="M 784 418 L 784 434 L 768 434" fill="none" stroke="#10b981" stroke-width="2.5" />
 </svg>
