@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { normalizePath, route } from '../utils/asset';
 
 function NavBar({
-  onOpenCommandPalette = () => {},
   theme = 'dark',
   onToggleTheme = () => {}
 }) {
@@ -125,7 +124,7 @@ function NavBar({
             onClick={handleLogoClick}
           >
             <span className="brand-name">
-              <strong>sriram</strong>sridhar
+              <strong>Sriram</strong> S
             </span>
           </a>
           <div className="studio-status-pill" title="Indie Game Dev - Ready for Opportunities">
@@ -207,17 +206,6 @@ function NavBar({
             title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
           >
             <span aria-hidden="true">{theme === 'dark' ? '☀️' : '🌙'}</span>
-          </button>
-
-          <button
-            type="button"
-            className="nav-cmd-k-btn"
-            onClick={onOpenCommandPalette}
-            aria-label="Open command palette (Ctrl+K or Cmd+K)"
-            title="Open Command Palette (Ctrl+K / Cmd+K)"
-          >
-            <span className="cmd-k-symbol">⌘</span>
-            <span className="cmd-k-key">K</span>
           </button>
 
           <a

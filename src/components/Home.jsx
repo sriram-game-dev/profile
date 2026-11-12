@@ -2,23 +2,17 @@ import { useEffect, useState } from "react";
 import { route } from "../utils/asset";
 import HeroCanvasToy from "./HeroCanvasToy";
 
-const AUDIENCES = [
-  { id: 'all', label: 'All Projects', icon: '✦', role: 'Game & XR Dev', titleText: 'A Game Developer' },
-  { id: 'games', label: 'Games', icon: '🎮', role: 'Gameplay Programmer', titleText: 'A Game Developer' },
-  { id: 'xr', label: 'XR / VR', icon: '🥽', role: 'Spatial XR Engineer', titleText: 'An XR Developer' },
-  { id: 'industrial', label: 'Industrial Training', icon: '🏭', role: 'Simulation Engineer', titleText: 'A Simulation Specialist' }
+const FOCUS_AREAS = [
+  { id: 'all', label: 'All Projects', icon: '✦' },
+  { id: 'games', label: 'Games', icon: '🎮' },
+  { id: 'xr', label: 'XR / VR', icon: '🥽' },
+  { id: 'industrial', label: 'Industrial Training', icon: '🏭' }
 ];
 
 function Home({ activeAudience = 'all', onSelectAudience = () => {} }) {
   const [text, setText] = useState("A Gamer.");
   const [phase, setPhase] = useState("intro");
   const [showCursor, setShowCursor] = useState(false);
-
-  const selectedAudience = AUDIENCES.find((a) => a.id === activeAudience) || AUDIENCES[0];
-
-  const displayText = (phase === "done" && activeAudience !== 'all')
-    ? selectedAudience.titleText
-    : text;
 
   useEffect(() => {
     // Wait for the bottom → center animation
@@ -77,22 +71,10 @@ function Home({ activeAudience = 'all', onSelectAudience = () => {} }) {
     <section className="home" id="home">
       <HeroCanvasToy />
 
-      <div className="hero-status-badge" role="status" aria-live="polite">
-        <span className="status-dot">
-          <span className="status-dot-ping"></span>
-          <span className="status-dot-core"></span>
-        </span>
-        <span className="status-badge-text">Available for Work · Full-time &amp; Contracts</span>
-      </div>
-
-      <span className="home-label">
-        <span className="syntax-keyword">const</span> role = <span className="syntax-string">&quot;{selectedAudience.role}&quot;</span>;
-      </span>
-
       <h1>SRIRAM S</h1>
 
       <p className="home-description">
-        <span className="syntax-fn">player</span>.<span className="syntax-keyword">identity</span> = <span className="syntax-string">&quot;{displayText.replace(/^A\s+|^An\s+/, '')}&quot;</span>
+        <span className="syntax-fn">player</span>.<span className="syntax-keyword">identity</span> = <span className="syntax-string">&quot;{text.replace(/^A\s+|^An\s+/, '')}&quot;</span>
         {showCursor && <span className="typing-cursor">_</span>}
       </p>
 
@@ -119,26 +101,25 @@ function Home({ activeAudience = 'all', onSelectAudience = () => {} }) {
         </a>
       </div>
 
-      {/* AUDIENCE SWITCHER */}
-      <div className="audience-switcher" role="radiogroup" aria-label="Audience focus filter">
-        <span className="audience-switcher-label">I&apos;m looking for:</span>
+      {/* WHAT I DO FILTER */}
+      <div className="audience-switcher" role="radiogroup" aria-label="What I do">
+        <span className="audience-switcher-label">What I do:</span>
         <div className="audience-pill-group">
-          {AUDIENCES.map((aud) => (
+          {FOCUS_AREAS.map((area) => (
             <button
-              key={aud.id}
+              key={area.id}
               type="button"
               role="radio"
-              aria-checked={activeAudience === aud.id}
-              className={`audience-pill ${activeAudience === aud.id ? 'active' : ''}`}
-              onClick={() => onSelectAudience(aud.id)}
+              aria-checked={activeAudience === area.id}
+              className={`audience-pill ${activeAudience === area.id ? 'active' : ''}`}
+              onClick={() => onSelectAudience(area.id)}
             >
-              <span className="audience-icon" aria-hidden="true">{aud.icon}</span>
-              <span>{aud.label}</span>
+              <span className="audience-icon" aria-hidden="true">{area.icon}</span>
+              <span>{area.label}</span>
             </button>
           ))}
         </div>
       </div>
-
 
     </section>
   );
