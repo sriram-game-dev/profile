@@ -893,6 +893,53 @@ section {
   font-size: 0.95rem;
 }
 
+.audience-pill--auto {
+  cursor: default;
+  user-select: none;
+  opacity: 0.7;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.audience-pill--auto:hover {
+  transform: none;
+  border-color: rgba(139, 92, 246, 0.25);
+  color: #cbd5e1;
+  box-shadow: none;
+}
+
+.audience-pill--auto.active {
+  opacity: 1;
+  transform: translateY(-3px) scale(1.04);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.22) 0%, rgba(139, 92, 246, 0.22) 100%);
+  border-color: #f59e0b;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35), 0 0 12px rgba(139, 92, 246, 0.2);
+}
+
+.audience-pill--auto .audience-icon {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.audience-pill--auto.active .audience-icon {
+  transform: scale(1.2);
+}
+
+[data-theme="light"] .audience-pill--auto {
+  background: rgba(255, 255, 255, 0.85);
+  color: #475569;
+}
+
+[data-theme="light"] .audience-pill--auto:hover {
+  color: #475569;
+  border-color: rgba(139, 92, 246, 0.25);
+}
+
+[data-theme="light"] .audience-pill--auto.active {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.16) 0%, rgba(139, 92, 246, 0.14) 100%);
+  color: #0f172a;
+}
+
 /* Projects Category Highlighting & Focus Banner */
 .active-audience-banner {
   display: inline-flex;

@@ -2,18 +2,33 @@ import { useEffect, useState } from "react";
 import { route } from "../utils/asset";
 import HeroCanvasToy from "./HeroCanvasToy";
 
-const FOCUS_AREAS = [
-  { id: 'all', label: 'All Projects', icon: '✦' },
+const WHAT_I_DO = [
   { id: 'games', label: 'Games', icon: '🎮' },
   { id: 'game-design', label: 'Game Design', icon: '🎲' },
   { id: 'xr', label: 'XR', icon: '🥽' },
   { id: 'industrial', label: 'Industrial Training', icon: '🏭' }
 ];
 
-function Home({ activeAudience = 'all', onSelectAudience = () => {} }) {
+function Home() {
   const [text, setText] = useState("A Gamer.");
   const [phase, setPhase] = useState("intro");
   const [showCursor, setShowCursor] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  // Automatic spotlight cycle through "What I do" specialties
+  useEffect(() => {
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) return;
+
+    const cycleTimer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % WHAT_I_DO.length);
+    }, 2000);
+
+    return () => clearInterval(cycleTimer);
+  }, []);
 
   useEffect(() => {
     // Wait for the bottom → center animation
@@ -102,22 +117,18 @@ function Home({ activeAudience = 'all', onSelectAudience = () => {} }) {
         </a>
       </div>
 
-      {/* WHAT I DO FILTER */}
-      <div className="audience-switcher" role="radiogroup" aria-label="What I do">
+      {/* WHAT I DO AUTO-SHOWCASE */}
+      <div className="audience-switcher" aria-label="What I do">
         <span className="audience-switcher-label">What I do:</span>
         <div className="audience-pill-group">
-          {FOCUS_AREAS.map((area) => (
-            <button
+          {WHAT_I_DO.map((area, index) => (
+            <div
               key={area.id}
-              type="button"
-              role="radio"
-              aria-checked={activeAudience === area.id}
-              className={`audience-pill ${activeAudience === area.id ? 'active' : ''}`}
-              onClick={() => onSelectAudience(area.id)}
+              className={`audience-pill audience-pill--auto ${activeIndex === index ? 'active' : ''}`}
             >
               <span className="audience-icon" aria-hidden="true">{area.icon}</span>
               <span>{area.label}</span>
-            </button>
+            </div>
           ))}
         </div>
       </div>

@@ -28,7 +28,6 @@ function App() {
   const [path, setPath] = useState(
     normalizePath(window.location.pathname)
   );
-  const [activeAudience, setActiveAudience] = useState('all');
   const [skillFilter, setSkillFilter] = useState('');
   const [theme, setTheme] = useState(() => {
     try {
@@ -187,15 +186,10 @@ function App() {
         />
 
         <main>
-          <Home
-            activeAudience={activeAudience}
-            onSelectAudience={setActiveAudience}
-          />
+          <Home />
           <About />
           <Experience />
           <Projects
-            activeAudience={activeAudience}
-            onSelectAudience={setActiveAudience}
             skillFilter={skillFilter}
             onClearSkillFilter={() => setSkillFilter('')}
           />
