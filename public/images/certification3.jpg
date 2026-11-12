@@ -28,7 +28,7 @@
   <circle cx="400" cy="220" r="160" fill="none" stroke="#ec4899" stroke-opacity="0.15" stroke-width="1.5" stroke-dasharray="6,6" />
   <circle cx="400" cy="220" r="110" fill="none" stroke="#f59e0b" stroke-opacity="0.2" stroke-width="2" />
 
-  <!-- Main Icon & Illustration Container -->
+  <!-- Main Icon &amp; Illustration Container -->
   <g transform="translate(400, 205)" filter="url(#shadow)">
     
   <g transform="translate(-40, -45)">
@@ -47,10 +47,10 @@
   </g>
 
   <!-- Title -->
-  <text x="400" y="375" font-family="'Inter', -apple-system, sans-serif" font-size="24" font-weight="800" fill="#f8fafc" text-anchor="middle" letter-spacing="-0.5">PROMPT ENGINEERING & AI</text>
+  <text x="400" y="375" font-family="'Inter', -apple-system, sans-serif" font-size="24" font-weight="800" fill="#f8fafc" text-anchor="middle" letter-spacing="-0.5">PROMPT ENGINEERING &amp; AI</text>
 
   <!-- Subtitle -->
-  <text x="400" y="405" font-family="'Inter', -apple-system, sans-serif" font-size="13" font-weight="500" fill="#94a3b8" text-anchor="middle" letter-spacing="0.5">Simplilearn · GenAI & LLM Integration</text>
+  <text x="400" y="405" font-family="'Inter', -apple-system, sans-serif" font-size="13" font-weight="500" fill="#94a3b8" text-anchor="middle" letter-spacing="0.5">Simplilearn · GenAI &amp; LLM Integration</text>
 
   <!-- Decorative Corner Accents -->
   <path d="M 24 40 L 24 24 L 40 24" fill="none" stroke="#ec4899" stroke-width="2.5" />

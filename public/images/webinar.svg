@@ -28,7 +28,7 @@
   <circle cx="400" cy="220" r="160" fill="none" stroke="#8b5cf6" stroke-opacity="0.15" stroke-width="1.5" stroke-dasharray="6,6" />
   <circle cx="400" cy="220" r="110" fill="none" stroke="#06b6d4" stroke-opacity="0.2" stroke-width="2" />
 
-  <!-- Main Icon & Illustration Container -->
+  <!-- Main Icon &amp; Illustration Container -->
   <g transform="translate(400, 205)" filter="url(#shadow)">
     
   <g transform="translate(-48, -40)">

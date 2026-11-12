@@ -10,12 +10,10 @@ function About() {
 
   const handleOpenPopup = (type) => {
     setPopup(type);
-    document.body.style.overflow = "hidden";
   };
 
   const handleClosePopup = () => {
     setPopup(null);
-    document.body.style.overflow = "unset";
   };
 
   useEffect(() => {
@@ -28,12 +26,6 @@ function About() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [popup]);
-
-  useEffect(() => {
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, []);
 
   const handleImageError = (e) => {
     if (!e.currentTarget.dataset.errored) {
@@ -182,7 +174,7 @@ function About() {
           </p>
 
           <h2 className="about-name-heading">
-            My name is <strong>S. Sriram</strong>
+            My name is <strong>Sriram S</strong>
           </h2>
 
           <p className="about-subheading">Game · XR Developer</p>

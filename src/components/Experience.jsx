@@ -66,12 +66,10 @@ function Experience() {
 
   const handleOpenPopup = (type) => {
     setPopup(type);
-    document.body.style.overflow = "hidden";
   };
 
   const handleClosePopup = () => {
     setPopup(null);
-    document.body.style.overflow = "unset";
   };
 
   useEffect(() => {
@@ -84,12 +82,6 @@ function Experience() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [popup]);
-
-  useEffect(() => {
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, []);
 
   return (
     <section id="experience" className="experience backstory-section">

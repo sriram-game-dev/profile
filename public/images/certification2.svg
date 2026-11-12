@@ -28,7 +28,7 @@
   <circle cx="400" cy="220" r="160" fill="none" stroke="#3b82f6" stroke-opacity="0.15" stroke-width="1.5" stroke-dasharray="6,6" />
   <circle cx="400" cy="220" r="110" fill="none" stroke="#8b5cf6" stroke-opacity="0.2" stroke-width="2" />
 
-  <!-- Main Icon & Illustration Container -->
+  <!-- Main Icon &amp; Illustration Container -->
   <g transform="translate(400, 205)" filter="url(#shadow)">
     
   <g transform="translate(-42, -45)">
@@ -52,7 +52,7 @@
   <text x="400" y="375" font-family="'Inter', -apple-system, sans-serif" font-size="24" font-weight="800" fill="#f8fafc" text-anchor="middle" letter-spacing="-0.5">3D GAME DEVELOPMENT DIPLOMA</text>
 
   <!-- Subtitle -->
-  <text x="400" y="405" font-family="'Inter', -apple-system, sans-serif" font-size="13" font-weight="500" fill="#94a3b8" text-anchor="middle" letter-spacing="0.5">Alison · Unity Engine & C# Architecture</text>
+  <text x="400" y="405" font-family="'Inter', -apple-system, sans-serif" font-size="13" font-weight="500" fill="#94a3b8" text-anchor="middle" letter-spacing="0.5">Alison · Unity Engine &amp; C# Architecture</text>
 
   <!-- Decorative Corner Accents -->
   <path d="M 24 40 L 24 24 L 40 24" fill="none" stroke="#3b82f6" stroke-width="2.5" />
