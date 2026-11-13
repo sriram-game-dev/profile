@@ -32,8 +32,13 @@
   </g>
 
   <!-- Bottom: Create With Code Title Block -->
-  <g transform="translate(55, 650)" filter="url(#shadow)">
-    <text x="0" y="-32" font-family="'Inter', -apple-system, sans-serif" font-size="14" font-weight="700" fill="#cbd5e1" letter-spacing="2" text-transform="uppercase">OFFICIAL UNITY LEARN COURSE</text>
-    <text x="0" y="18" font-family="'Inter', -apple-system, sans-serif" font-size="56" font-weight="900" fill="#ffffff" letter-spacing="-0.5">Create With Code</text>
+  <g transform="translate(60, 642)" filter="url(#shadow)">
+    <!-- Status / Credential Badge -->
+    <g transform="translate(0, -38)">
+      <rect x="0" y="-18" width="232" height="26" rx="6" fill="#0f172a" fill-opacity="0.85" stroke="#38bdf8" stroke-opacity="0.6" stroke-width="1.2" />
+      <circle cx="14" cy="-5" r="3.5" fill="#38bdf8" />
+      <text x="25" y="-1" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="700" fill="#e2e8f0" letter-spacing="1">COMPLETED COURSE · 2023</text>
+    </g>
+    <text x="0" y="24" font-family="'Inter', -apple-system, sans-serif" font-size="54" font-weight="900" fill="#ffffff" letter-spacing="-0.5">Create With Code</text>
   </g>
 </svg>
