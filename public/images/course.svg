@@ -2,10 +2,10 @@
   <defs>
     <!-- Dark gradient scrim for maximum text & art contrast -->
     <linearGradient id="scrim" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#000000" stop-opacity="0.65" />
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.45" />
       <stop offset="25%" stop-color="#000000" stop-opacity="0" />
       <stop offset="55%" stop-color="#000000" stop-opacity="0" />
-      <stop offset="85%" stop-color="#000000" stop-opacity="0.85" />
+      <stop offset="80%" stop-color="#000000" stop-opacity="0.8" />
       <stop offset="100%" stop-color="#000000" stop-opacity="0.95" />
     </linearGradient>
 
@@ -20,65 +20,26 @@
   <!-- 2. Contrast Scrim Overlay -->
   <rect width="1280" height="720" fill="url(#scrim)" />
 
-  <!-- 3. Top Left: Official Unity Logo & Wordmark -->
-  <g transform="translate(55, 45)" filter="url(#shadow)">
-    <svg width="42" height="46" viewBox="0 0 100 110" fill="none">
-      <polygon points="50,5 95,31 95,83 50,109 5,83 5,31" stroke="#ffffff" stroke-width="8" fill="none" stroke-linejoin="round" />
-      <line x1="50" y1="5" x2="50" y2="57" stroke="#ffffff" stroke-width="8" stroke-linecap="round" />
-      <line x1="50" y1="57" x2="95" y2="83" stroke="#ffffff" stroke-width="8" stroke-linecap="round" />
-      <line x1="50" y1="57" x2="5" y2="83" stroke="#ffffff" stroke-width="8" stroke-linecap="round" />
-      <polygon points="50,28 72,40 50,52 28,40" fill="#ffffff" />
-      <polygon points="28,40 50,52 50,72 28,60" fill="#cbd5e1" />
-      <polygon points="72,40 50,52 50,72 72,60" fill="#94a3b8" />
-    </svg>
-    <text x="54" y="34" font-family="'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="36" font-weight="800" fill="#ffffff">unity</text>
-  </g>
-
-  <!-- 4. Bottom Title Block (Flushed & Perfectly Aligned at x=60, positioned above bottom bar) -->
+  <!-- 3. Bottom-Left: Course Title Block (Flush Left Alignment at x=60) -->
   <g transform="translate(60, 545)" filter="url(#shadow)">
-    <!-- Subtitle / Original Badge: font-size 18, weight 800, perfectly left-aligned at x=0 -->
+    <!-- Original Subtitle Badge: flush left at x=0 -->
     <text x="0" y="0" font-family="'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800" fill="#cbd5e1">OFFICIAL UNITY LEARN COURSE</text>
-    <!-- Course Title: font-size 54, weight 900, perfectly left-aligned at x=0 -->
+    <!-- Course Title: flush left at x=0 -->
     <text x="0" y="48" font-family="'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="54" font-weight="900" fill="#ffffff">Create With Code</text>
   </g>
 
-  <!-- 5. Bottom Border Bar (matching reference image 2) -->
+  <!-- 4. Bottom Border Bar -->
   <g transform="translate(0, 642)">
     <!-- Dark Bar Background -->
     <rect x="0" y="0" width="1280" height="78" fill="#090d16" fill-opacity="0.96" />
     <!-- Top Border Line -->
     <line x1="0" y1="0" x2="1280" y2="0" stroke="rgba(255, 255, 255, 0.14)" stroke-width="1.5" />
 
-    <!-- Left: Monogram + Divider + Text -->
-    <g transform="translate(45, 18)">
-      <!-- Tripod / Caliper Monogram Logo -->
-      <svg width="40" height="42" viewBox="0 0 40 42" fill="none">
-        <!-- Top bar -->
-        <line x1="4" y1="6" x2="36" y2="6" stroke="#f8fafc" stroke-width="2.5" stroke-linecap="round" />
-        <!-- Left leg -->
-        <line x1="12" y1="6" x2="6" y2="38" stroke="#f8fafc" stroke-width="2.5" stroke-linecap="round" />
-        <!-- Right leg -->
-        <line x1="28" y1="6" x2="34" y2="38" stroke="#f8fafc" stroke-width="2.5" stroke-linecap="round" />
-        <!-- Inner caliper struts -->
-        <line x1="20" y1="6" x2="15" y2="38" stroke="#f8fafc" stroke-width="1.8" />
-        <line x1="20" y1="6" x2="25" y2="38" stroke="#f8fafc" stroke-width="1.8" />
-        <!-- Center pivot dot -->
-        <circle cx="20" cy="20" r="2.8" fill="#f8fafc" />
-      </svg>
-
-      <!-- Vertical Divider -->
-      <line x1="56" y1="4" x2="56" y2="38" stroke="#334155" stroke-width="1.5" />
-
-      <!-- Text: PORTFOLIO / TRAINING -->
-      <text x="72" y="18" font-family="'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#f1f5f9" letter-spacing="1.5">PORTFOLIO</text>
-      <text x="72" y="34" font-family="'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="600" fill="#64748b" letter-spacing="1.5">TRAINING</text>
-    </g>
-
-    <!-- Right: Software & Tech Stack Badges (matching reference image 2) -->
-    <g transform="translate(940, 24)">
-      <!-- 1. Unity Logo + wordmark -->
+    <!-- Right: Unity & C# Badges Alone (Original Official Branding) -->
+    <g transform="translate(1100, 24)">
+      <!-- Official Unity Logo + Wordmark Badge -->
       <g transform="translate(0, 4)">
-        <svg width="22" height="24" viewBox="0 0 100 110" fill="none">
+        <svg width="24" height="26" viewBox="0 0 100 110" fill="none">
           <polygon points="50,5 95,31 95,83 50,109 5,83 5,31" stroke="#ffffff" stroke-width="9" fill="none" stroke-linejoin="round" />
           <line x1="50" y1="5" x2="50" y2="57" stroke="#ffffff" stroke-width="9" stroke-linecap="round" />
           <line x1="50" y1="57" x2="95" y2="83" stroke="#ffffff" stroke-width="9" stroke-linecap="round" />
@@ -87,41 +48,16 @@
           <polygon points="28,40 50,52 50,72 28,60" fill="#cbd5e1" />
           <polygon points="72,40 50,52 50,72 72,60" fill="#94a3b8" />
         </svg>
-        <text x="28" y="19" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#ffffff">unity</text>
+        <text x="32" y="20" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="20" font-weight="800" fill="#ffffff">unity</text>
       </g>
 
-      <!-- 2. Python Icon -->
-      <g transform="translate(100, 2)">
-        <svg width="26" height="26" viewBox="0 0 110 110">
-          <path d="M53.6,5.3 C30.6,5.3 32.1,15.3 32.1,15.3 L32.1,25.7 L54.4,25.7 L54.4,28.9 L21.7,28.9 C21.7,28.9 5.3,27 5.3,53.6 C5.3,80.2 19.8,78.7 19.8,78.7 L27.7,78.7 L27.7,67.6 C27.7,67.6 27.2,54.4 40.5,54.4 L62.8,54.4 C62.8,54.4 75,54.8 75,41.9 L75,17.4 C75,17.4 77.3,5.3 53.6,5.3 Z M42.3,13.2 C45.1,13.2 47.4,15.5 47.4,18.3 C47.4,21.1 45.1,23.4 42.3,23.4 C39.5,23.4 37.2,21.1 37.2,18.3 C37.2,15.5 39.5,13.2 42.3,13.2 Z" fill="#387eb8" />
-          <path d="M56.4,104.7 C79.4,104.7 77.9,94.7 77.9,94.7 L77.9,84.3 L55.6,84.3 L55.6,81.1 L88.3,81.1 C88.3,81.1 104.7,83 104.7,56.4 C104.7,29.8 90.2,31.3 90.2,31.3 L82.3,31.3 L82.3,42.4 C82.3,42.4 82.8,55.6 69.5,55.6 L47.2,55.6 C47.2,55.6 35,55.2 35,68.1 L35,92.6 C35,92.6 32.7,104.7 56.4,104.7 Z M67.7,96.8 C64.9,96.8 62.6,94.5 62.6,91.7 C62.6,88.9 64.9,86.6 67.7,86.6 C70.5,86.6 72.8,88.9 72.8,91.7 C72.8,94.5 70.5,96.8 67.7,96.8 Z" fill="#ffe052" />
-        </svg>
-      </g>
-
-      <!-- 3. Git Branch Icon -->
-      <g transform="translate(148, 2)">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f05032" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="6" y1="3" x2="6" y2="15"></line>
-          <circle cx="18" cy="6" r="3" fill="#f05032" stroke="none"></circle>
-          <circle cx="6" cy="18" r="3" fill="#f05032" stroke="none"></circle>
-          <path d="M18 9a9 9 0 0 1-9 9"></path>
-        </svg>
-      </g>
-
-      <!-- 4. C# Hexagon Icon -->
-      <g transform="translate(196, 2)">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-          <polygon points="12,2 21,7 21,17 12,22 3,17 3,7" stroke="#a855f7" stroke-width="2.2" stroke-linejoin="round" fill="#1e1035" />
-          <text x="12" y="15.5" font-family="'Inter', sans-serif" font-size="9" font-weight="900" fill="#ffffff" text-anchor="middle">C#</text>
-        </svg>
-      </g>
-
-      <!-- 5. 3D Engine Cube Icon -->
-      <g transform="translate(244, 2)">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-          <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-          <line x1="12" y1="22.08" x2="12" y2="12"></line>
+      <!-- Official C# Hexagon Badge -->
+      <g transform="translate(125, 2)">
+        <svg width="28" height="28" viewBox="0 0 100 110" fill="none">
+          <!-- Hexagon -->
+          <polygon points="50,5 95,30 95,80 50,105 5,80 5,30" fill="#68217a" stroke="#a24dbf" stroke-width="6" stroke-linejoin="round" />
+          <!-- C# Symbol -->
+          <text x="50" y="68" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="44" font-weight="900" fill="#ffffff" text-anchor="middle">C#</text>
         </svg>
       </g>
     </g>
