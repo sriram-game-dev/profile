@@ -278,6 +278,13 @@ function About() {
                     </a>
                   </p>
 
+                  <div className="certificate-tech-chips">
+                    <span className="cert-tech-chip">Unity 3D</span>
+                    <span className="cert-tech-chip">C#</span>
+                    <span className="cert-tech-chip">3D Physics</span>
+                    <span className="cert-tech-chip">Animation Loops</span>
+                  </div>
+
                   <span>
                     2026
                   </span>
@@ -333,6 +340,13 @@ function About() {
                       Monolith Academy
                     </a>
                   </p>
+
+                  <div className="certificate-tech-chips">
+                    <span className="cert-tech-chip">Game Design</span>
+                    <span className="cert-tech-chip">Systems Architecture</span>
+                    <span className="cert-tech-chip">Profiling</span>
+                    <span className="cert-tech-chip">Optimization</span>
+                  </div>
 
                   <span>
                     2026
@@ -390,6 +404,13 @@ function About() {
                     </a>
                   </p>
 
+                  <div className="certificate-tech-chips">
+                    <span className="cert-tech-chip">LLMs</span>
+                    <span className="cert-tech-chip">Generative AI</span>
+                    <span className="cert-tech-chip">OpenAI</span>
+                    <span className="cert-tech-chip">Prompt Workflows</span>
+                  </div>
+
                   <span>
                     2026
                   </span>
@@ -446,6 +467,13 @@ function About() {
                     </a>
                   </p>
 
+                  <div className="certificate-tech-chips">
+                    <span className="cert-tech-chip">Prompt Design</span>
+                    <span className="cert-tech-chip">Few-Shot Conditioning</span>
+                    <span className="cert-tech-chip">AI Orchestration</span>
+                    <span className="cert-tech-chip">API Integrations</span>
+                  </div>
+
                   <span>
                     2026
                   </span>
@@ -501,6 +529,13 @@ function About() {
                       Unity Technologies
                     </a>
                   </p>
+
+                  <div className="certificate-tech-chips">
+                    <span className="cert-tech-chip">Unity Engine</span>
+                    <span className="cert-tech-chip">C# Scripting</span>
+                    <span className="cert-tech-chip">Physics & Colliders</span>
+                    <span className="cert-tech-chip">Player Controllers</span>
+                  </div>
 
                   <span>
                     2023
@@ -588,6 +623,12 @@ function About() {
                   <p>
                     Gen Z Level Up Laptop Gaming Championship
                   </p>
+
+                  <div className="certificate-tech-chips">
+                    <span className="cert-tech-chip">EA Sports FC</span>
+                    <span className="cert-tech-chip">Competitive Esports</span>
+                    <span className="cert-tech-chip">High-Pressure Strategy</span>
+                  </div>
 
                   <span>
                     2026

@@ -1632,6 +1632,36 @@ section {
   font-weight: 600;
 }
 
+/* ========================================
+   CERTIFICATE TECH CHIPS
+======================================== */
+.certificate-tech-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 12px;
+}
+
+.cert-tech-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 999px;
+  color: #cbd5e1;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: all 0.2s ease;
+}
+
+.cert-tech-chip:hover {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.4);
+  color: #ffffff;
+}
+
 
 /* ========================================
    DIVIDER
