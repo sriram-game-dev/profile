@@ -531,10 +531,8 @@ function About() {
                   </p>
 
                   <div className="certificate-tech-chips">
-                    <span className="cert-tech-chip">Unity Engine</span>
-                    <span className="cert-tech-chip">C# Scripting</span>
-                    <span className="cert-tech-chip">Physics & Colliders</span>
-                    <span className="cert-tech-chip">Player Controllers</span>
+                    <span className="cert-tech-chip">Unity 3D</span>
+                    <span className="cert-tech-chip">C#</span>
                   </div>
 
                   <span>
